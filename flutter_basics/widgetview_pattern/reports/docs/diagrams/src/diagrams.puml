@@ -1,0 +1,40 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "widgetview_pattern::src::infrastructure::widget_view::widget_view.dart::WidgetView" {
+  +T2 state
+  +T1 widget
+  +Widget build()
+}
+
+abstract class "widgetview_pattern::src::infrastructure::widget_view::widget_view.dart::StatelessView" {
+  +T1 widget
+  +Widget build()
+}
+
+class "widgetview_pattern::src::myapp.dart::MyApp" {
+  +Widget build()
+}
+
+class "widgetview_pattern::src::presentation::features::home::ui::mycounterhome.dart::MyCounterHome" {
+  +Color textColor
+  +MyCounterController createState()
+}
+
+"widgetview_pattern::src::presentation::features::home::ui::mycounterhome.dart::MyCounterHome" o-- "dart::ui::Color"
+
+class "widgetview_pattern::src::presentation::features::home::ui::mycounterwidgetview.dart::MyCounterWidgetView" {
+  +MyCounterController state
+  +Widget build()
+}
+
+"widgetview_pattern::src::presentation::features::home::ui::mycounterwidgetview.dart::MyCounterWidgetView" o-- "widgetview_pattern::src::presentation::features::home::viewcontroller::mycountercontroller.dart::MyCounterController"
+
+class "widgetview_pattern::src::presentation::features::home::viewcontroller::mycountercontroller.dart::MyCounterController" {
+  +int counter
+  +Widget build()
+  +void handleCounterPressed()
+}
+
+
+@enduml

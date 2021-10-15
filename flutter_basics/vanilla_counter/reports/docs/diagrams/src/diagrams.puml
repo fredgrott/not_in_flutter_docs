@@ -1,0 +1,20 @@
+@startuml
+set namespaceSeparator ::
+
+class "vanilla_counter::main.dart::MyApp" {
+  +Widget build()
+}
+
+class "vanilla_counter::main.dart::MyHomePage" {
+  +String title
+  +State<MyHomePage> createState()
+}
+
+class "vanilla_counter::main.dart::_MyHomePageState" {
+  -int _counter
+  -void _incrementCounter()
+  +Widget build()
+}
+
+
+@enduml

@@ -1,0 +1,14 @@
+01 start
+02 setstate
+03 futurebuilder
+04 streambuilder
+05 viewmodel
+06 StateLifecycel
+07 StatefulVSstateless
+
+No
+
+0 counter_app_zero
+1 widgetview_pattern&view model
+2 setstate
+3 lift up state

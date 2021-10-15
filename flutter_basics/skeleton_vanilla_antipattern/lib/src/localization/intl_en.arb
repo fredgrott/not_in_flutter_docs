@@ -1,0 +1,6 @@
+{
+  "appTitle": "skeleton_vanilla_antipattern",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
