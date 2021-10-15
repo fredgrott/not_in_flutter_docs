@@ -29,6 +29,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  obsobject: ^1.1.0
+  intl: ^0.17.0
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,6 +41,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  dart_code_metrics: ^4.1.0
+  # project workflow automation
+  build_runner: ^2.1.2
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
