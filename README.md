@@ -1,6 +1,6 @@
 # Not In Flutter Docs
 
-![not in flutter docs](./media/not-in-flutter-docs.kpg)
+![not in flutter docs](./media/not-in-flutter-docs.jpg)
 
 It says it all. Not In Flutter Docs, a sort of underground guide to flutter app development and design.
 
