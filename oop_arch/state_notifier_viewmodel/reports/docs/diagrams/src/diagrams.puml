@@ -1,0 +1,36 @@
+@startuml
+set namespaceSeparator ::
+
+class "state_notifier_viewmodel::main.dart::MyApp" {
+  +Widget build()
+}
+
+class "state_notifier_viewmodel::main.dart::MyHomePage" {
+  +String title
+  +State<MyHomePage> createState()
+}
+
+class "state_notifier_viewmodel::main.dart::_MyHomePageState" {
+  -int _counter
+  -void _incrementCounter()
+  +Widget build()
+}
+
+class "state_notifier_viewmodel::src::myapp.dart::MyApp" {
+  +Widget build()
+}
+
+class "state_notifier_viewmodel::src::presentation::features::home::ui::counterpage.dart::CounterPage" {
+  -CounterState _counter
+  +Widget build()
+}
+
+"state_notifier_viewmodel::src::presentation::features::home::ui::counterpage.dart::CounterPage" o-- "state_notifier_viewmodel::src::presentation::features::home::viewcontroller::counterstate.dart::CounterState"
+
+class "state_notifier_viewmodel::src::presentation::features::home::viewcontroller::counterstate.dart::CounterState" {
+  +void increment()
+  +void decrement()
+}
+
+
+@enduml

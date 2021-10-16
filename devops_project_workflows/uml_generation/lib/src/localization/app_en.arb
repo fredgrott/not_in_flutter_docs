@@ -1,0 +1,6 @@
+{
+  "appTitle": "uml_generation",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

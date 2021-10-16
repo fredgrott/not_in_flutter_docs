@@ -1,0 +1,320 @@
+@startuml
+set namespaceSeparator ::
+
+class "reactive_viewmodel::main.dart::MyApp" {
+  +Widget build()
+}
+
+class "reactive_viewmodel::main.dart::MyHomePage" {
+  +String title
+  +State<MyHomePage> createState()
+}
+
+class "reactive_viewmodel::main.dart::_MyHomePageState" {
+  -int _counter
+  -void _incrementCounter()
+  +Widget build()
+}
+
+class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::Reactive" {
+  -Stream<D>? _stream
+  -D _data
+  -void Function()? _onDispose
+  -void Function()? _onListen
+  -void Function()? _onPause
+  -void Function()? _onResume
+  -FutureOr<void> Function()? _onCancel
+  -List<MultiStreamController<D>> _controllers
+  -Completer<void> _doneCompleter
+  +Stream<D> stream
+  +D data
+  +bool isClosed
+  +Future<void> done
+  +StreamSink<D> sink
+  +bool isPaused
+  +bool hasListener
+  +void Function()? onListen
+  +void Function()? onPause
+  +void Function()? onResume
+  +FutureOr<void> Function()? onCancel
+  +void add()
+  +void addError()
+  +Future<void> addStream()
+  +Future<void> close()
+  #void onDispose()
+  #Future<void> doDispose()
+  -Future<void> _onListenMultiStream()
+  -Future<void> _handleOnCancelThenRemoveController()
+  -Future<void> _close()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::Reactive" o-- "dart::async::Stream<D>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::Reactive" o-- "dart::ui::void Function()"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::Reactive" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::FutureOr<void> Function()"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::Reactive" o-- "dart::async::Completer<void>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::Reactive" o-- "dart::async::StreamSink<D>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::ReactiveResource" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::Reactive"
+"dart::async::StreamController" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::Reactive"
+
+class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::_StreamSinkWrapper" {
+  -StreamController<D> _target
+  +Future<void> done
+  +void add()
+  +void addError()
+  +Future<void> close()
+  +Future<void> addStream()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::_StreamSinkWrapper" o-- "dart::async::StreamController<D>"
+"dart::async::StreamSink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::_StreamSinkWrapper"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveComponent" {
+  +VoidSink dispose
+  +Stream<void> disposed
+  +ResourceDisposer disposer
+  +bool isDisposeEventSent
+  -ResourceDisposer? _disposer
+  #Future<void> doDispose()
+  #void onDispose()
+  #void delegateDisposingTo()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveComponent" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::sinks.dart::VoidSink"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveComponent" o-- "dart::async::Stream<void>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveComponent" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::ReactiveResource" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveComponent"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveOutputComponent" {
+  +VoidSink dispose
+  +Stream<void> disposed
+  +ResourceDisposer disposer
+  +bool isDisposeEventSent
+  -ResourceDisposer? _disposer
+  #Future<void> doDispose()
+  #void onDispose()
+  #void delegateDisposingTo()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveOutputComponent" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::sinks.dart::VoidSink"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveOutputComponent" o-- "dart::async::Stream<void>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveOutputComponent" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::ReactiveResource" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveOutputComponent"
+
+class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::_StreamIO" {
+}
+
+class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::_StreamOutput" {
+}
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::ReactiveResource" {
+  +VoidSink dispose
+  +Stream<void> disposed
+  +ResourceDisposer disposer
+  +bool isDisposeEventSent
+  -ResourceDisposer? _disposer
+  #Future<void> doDispose()
+  #void onDispose()
+  #void delegateDisposingTo()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::ReactiveResource" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::sinks.dart::VoidSink"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::ReactiveResource" o-- "dart::async::Stream<void>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::ReactiveResource" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::_ReactiveResource" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::ReactiveResource"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::_ReactiveResource" {
+  +VoidSink dispose
+  +Stream<void> disposed
+  +ResourceDisposer disposer
+  +bool isDisposeEventSent
+  #Future<void> doDispose()
+  #void onDispose()
+  #void delegateDisposingTo()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::_ReactiveResource" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::sinks.dart::VoidSink"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::_ReactiveResource" o-- "dart::async::Stream<void>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::_ReactiveResource" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveSink" {
+  +StreamSubscription<T>? eventStreamSubscription
+  +VoidSink dispose
+  +Stream<void> disposed
+  +void call()
+  +void add()
+  +Future<void> testSinkDone()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveSink" o-- "dart::async::StreamSubscription<T>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveSink" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::sinks.dart::VoidSink"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveSink" o-- "dart::async::Stream<void>"
+"dart::core::Sink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveSink"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveEventSink" {
+  +void addError()
+}
+
+"dart::async::EventSink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveEventSink"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveStreamSink" {
+  +Future<void> done
+  +Future<void> addStream()
+}
+
+"dart::async::StreamSink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveStreamSink"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveSink" {
+  +StreamSubscription<void>? eventStreamSubscription
+  +VoidSink dispose
+  +Stream<dynamic> disposed
+  +void call()
+  +void add()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveSink" o-- "dart::async::StreamSubscription<void>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveSink" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::sinks.dart::VoidSink"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveSink" o-- "dart::async::Stream<dynamic>"
+"dart::core::Sink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveSink"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveEventSink" {
+  +void addError()
+}
+
+"dart::async::EventSink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveEventSink"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveStreamSink" {
+  +Future<void> addStream()
+}
+
+"dart::async::StreamSink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveStreamSink"
+
+class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_ReactiveStreamSink" {
+  -void Function(T) _onEvent
+  -Stream<T> Function(Stream<T>)? _transform
+  -void Function()? _onDispose
+  -void Function(Object, StackTrace)? _onError
+  -bool? _cancelOnError
+  -void Function()? _onListen
+  -void Function()? _onPause
+  -void Function()? _onResume
+  -void Function()? _onCancel
+  -StreamController<T> _eventStreamController
+  +StreamSubscription<T>? eventStreamSubscription
+  +Future<void> done
+  +void call()
+  +void add()
+  +void addError()
+  +Future<void> addStream()
+  +Future<void> close()
+  +Future<void> testSinkDone()
+  #void onDispose()
+  #Future<void> doDispose()
+  -Future<void> _doCloseSink()
+  -void _listenOnce()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_ReactiveStreamSink" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::void Function(T)"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_ReactiveStreamSink" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::Stream<T> Function(Stream<T>)"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_ReactiveStreamSink" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::typedefs.dart::void Function()"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_ReactiveStreamSink" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::void Function(Object, StackTrace)"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_ReactiveStreamSink" o-- "dart::async::StreamController<T>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_ReactiveStreamSink" o-- "dart::async::StreamSubscription<T>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_resources.dart::ReactiveResource" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_ReactiveStreamSink"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::ReactiveStreamSink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_ReactiveStreamSink"
+
+class "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_VoidReactiveStreamSink" {
+  +void call()
+  +void add()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveStreamSink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::_VoidReactiveStreamSink"
+
+class "reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer" {
+  -Future<void> Function()? _doDispose
+  -List<ResourceDisposer> _disposers
+  -StreamController<void>? __disposeController
+  -void Function()? _onDispose
+  -bool _isDisposeEventSent
+  +VoidSink dispose
+  +Stream<void> disposed
+  +bool isDisposeEventSent
+  -StreamController<void> _disposeController
+  +void register()
+  +void delegateDisposingTo()
+  -Future<void>? _dispose()
+  -Future<void>? _disposePrivateResource()
+  -void Function() _wrapOnDispose()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer" o-- "null::Future<void> Function()"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer" o-- "dart::async::StreamController<void>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer" o-- "dart::ui::void Function()"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::sinks.dart::VoidSink"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::ResourceDisposer" o-- "dart::async::Stream<void>"
+
+class "reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::_VoidSink" {
+  -Sink<dynamic> _sink
+  -bool Function() _canAdd
+  -void Function() _onAdd
+  +void call()
+  +void add()
+  +void close()
+}
+
+"reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::_VoidSink" o-- "null::bool Function()"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::_VoidSink" o-- "dart::ui::void Function()"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::sinks.dart::VoidSink" <|-- "reactive_viewmodel::src::infrastructure::reactivecomponents::resources_disposer.dart::_VoidSink"
+
+abstract class "reactive_viewmodel::src::infrastructure::reactivecomponents::sinks.dart::VoidSink" {
+  +void call()
+}
+
+abstract class "reactive_viewmodel::src::infrastructure::widgetview::widegtview.dart::WidgetView" {
+  +T2 state
+  +T1 widget
+  +Widget build()
+}
+
+abstract class "reactive_viewmodel::src::infrastructure::widgetview::widegtview.dart::StatelessView" {
+  +T1 widget
+  +Widget build()
+}
+
+class "reactive_viewmodel::src::myapp.dart::MyApp" {
+  +Widget build()
+}
+
+class "reactive_viewmodel::src::presentation::features::home::blocs::mycounterbloc.dart::CounterBloc" {
+  -int _initialCount
+  +VoidReactiveSink increment
+  -Reactive<int> _count
+  +Stream<int> count
+}
+
+"reactive_viewmodel::src::presentation::features::home::blocs::mycounterbloc.dart::CounterBloc" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_sink.dart::VoidReactiveSink"
+"reactive_viewmodel::src::presentation::features::home::blocs::mycounterbloc.dart::CounterBloc" o-- "reactive_viewmodel::src::infrastructure::reactivecomponents::reactive.dart::Reactive<int>"
+"reactive_viewmodel::src::presentation::features::home::blocs::mycounterbloc.dart::CounterBloc" o-- "dart::async::Stream<int>"
+"reactive_viewmodel::src::infrastructure::reactivecomponents::reactive_component.dart::ReactiveComponent" <|-- "reactive_viewmodel::src::presentation::features::home::blocs::mycounterbloc.dart::CounterBloc"
+
+class "reactive_viewmodel::src::presentation::features::home::ui::mycounterhome.dart::MyCounterHome" {
+  +String title
+  +MyCounterViewController createState()
+}
+
+class "reactive_viewmodel::src::presentation::features::home::ui::mycounterviewwidget.dart::MyCounterWidgetView" {
+  +MyCounterViewController state
+  +Widget build()
+}
+
+"reactive_viewmodel::src::presentation::features::home::ui::mycounterviewwidget.dart::MyCounterWidgetView" o-- "reactive_viewmodel::src::presentation::features::home::viewcontroller::mycounterviewcontroller.dart::MyCounterViewController"
+
+class "reactive_viewmodel::src::presentation::features::home::viewcontroller::mycounterviewcontroller.dart::MyCounterViewController" {
+  +CounterBloc counter
+  +Widget build()
+  +void handleCounterPressed()
+}
+
+"reactive_viewmodel::src::presentation::features::home::viewcontroller::mycounterviewcontroller.dart::MyCounterViewController" o-- "reactive_viewmodel::src::presentation::features::home::blocs::mycounterbloc.dart::CounterBloc"
+
+
+@enduml

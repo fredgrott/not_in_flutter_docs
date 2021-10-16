@@ -1,0 +1,52 @@
+@startuml
+set namespaceSeparator ::
+
+class "uml_generation::src::app.dart::MyApp" {
+  +SettingsController settingsController
+  +Widget build()
+}
+
+"uml_generation::src::app.dart::MyApp" o-- "uml_generation::src::settings::settings_controller.dart::SettingsController"
+
+class "uml_generation::src::sample_feature::sample_item.dart::SampleItem" {
+  +int id
+}
+
+class "uml_generation::src::sample_feature::sample_item_details_view.dart::SampleItemDetailsView" {
+  {static} +String routeName
+  +Widget build()
+}
+
+class "uml_generation::src::sample_feature::sample_item_list_view.dart::SampleItemListView" {
+  {static} +String routeName
+  +List<SampleItem> items
+  +Widget build()
+}
+
+class "uml_generation::src::settings::settings_controller.dart::SettingsController" {
+  -SettingsService _settingsService
+  -ThemeMode _themeMode
+  +ThemeMode themeMode
+  +Future<void> loadSettings()
+  +Future<void> updateThemeMode()
+}
+
+"uml_generation::src::settings::settings_controller.dart::SettingsController" o-- "uml_generation::src::settings::settings_service.dart::SettingsService"
+"uml_generation::src::settings::settings_controller.dart::SettingsController" o-- "flutter::src::material::app.dart::ThemeMode"
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "uml_generation::src::settings::settings_controller.dart::SettingsController"
+
+class "uml_generation::src::settings::settings_service.dart::SettingsService" {
+  +Future<ThemeMode> themeMode()
+  +Future<void> updateThemeMode()
+}
+
+class "uml_generation::src::settings::settings_view.dart::SettingsView" {
+  {static} +String routeName
+  +SettingsController controller
+  +Widget build()
+}
+
+"uml_generation::src::settings::settings_view.dart::SettingsView" o-- "uml_generation::src::settings::settings_controller.dart::SettingsController"
+
+
+@enduml

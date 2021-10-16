@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="93c8a060-0305-49e3-a896-0ab7705e4364" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../devops_project_workflows/uml_generation/test/widget_test.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[D:\androidstuff\androidsdk\.android\avd\Pixel_4_API_27.avd]" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1zavKsnSXI8bFOTs36r8JcJ8b4Y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../androidstuff/androidsdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="93c8a060-0305-49e3-a896-0ab7705e4364" name="Default Changelist" comment="" />
+      <created>1634398992096</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634398992096</updated>
+    </task>
+    <servers />
+  </component>
+</project>
