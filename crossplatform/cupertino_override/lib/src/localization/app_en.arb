@@ -1,0 +1,6 @@
+{
+  "appTitle": "cupertino_override",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

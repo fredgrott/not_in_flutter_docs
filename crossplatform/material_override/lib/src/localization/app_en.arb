@@ -1,0 +1,6 @@
+{
+  "appTitle": "material_override",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

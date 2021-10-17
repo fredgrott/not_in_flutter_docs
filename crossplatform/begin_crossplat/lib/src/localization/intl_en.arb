@@ -1,0 +1,6 @@
+{
+  "appTitle": "begin_crossplat",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
