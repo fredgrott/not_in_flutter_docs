@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
-import '../settings/settings_view.dart';
-import 'sample_item.dart';
+import '../../../../domain/entities/sample_item.dart';
+import '../../settings/ui/settings_view.dart';
 import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
@@ -17,11 +18,11 @@ class SampleItemListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return PlatformScaffold(
+      appBar: PlatformAppBar(
         title: const Text('Sample Items'),
-        actions: [
-          IconButton(
+        trailingActions: [
+          PlatformIconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
               // Navigate to the settings page. If the user leaves and returns
@@ -49,7 +50,7 @@ class SampleItemListView extends StatelessWidget {
           final item = items[index];
 
           return ListTile(
-            title: Text('SampleItem ${item.id}'),
+            title: PlatformText('SampleItem ${item.id}'),
             leading: const CircleAvatar(
               // Display the Flutter Logo image asset.
               foregroundImage: AssetImage('assets/images/flutter_logo.png'),
@@ -62,7 +63,7 @@ class SampleItemListView extends StatelessWidget {
                 context,
                 SampleItemDetailsView.routeName,
               );
-            }
+            },
           );
         },
       ),

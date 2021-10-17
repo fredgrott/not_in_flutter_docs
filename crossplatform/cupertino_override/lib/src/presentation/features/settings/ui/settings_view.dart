@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 
-import 'settings_controller.dart';
+import '../viewcontroller/settings_controller.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
@@ -15,9 +16,9 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Settings'),
+    return PlatformScaffold(
+      appBar: PlatformAppBar(
+        title: PlatformText('Settings'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
