@@ -4,8 +4,9 @@
 
 
 
-import 'package:cupertino_overrride/src/presentation/themes/my_typography.dart';
-import 'package:cupertino_overrride/src/presentation/themes/myappcolorschemes.dart';
+
+import 'package:cupertino_override/src/presentation/themes/my_typography.dart';
+import 'package:cupertino_override/src/presentation/themes/myappcolorschemes.dart';
 import 'package:flutter/material.dart';
 
 

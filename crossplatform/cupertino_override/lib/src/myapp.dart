@@ -2,14 +2,14 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:cupertino_overrride/src/localization_gen/l10n.dart';
-import 'package:cupertino_overrride/src/presentation/features/home/ui/sample_item_details_view.dart';
-import 'package:cupertino_overrride/src/presentation/features/home/ui/sample_item_list_view.dart';
-import 'package:cupertino_overrride/src/presentation/features/settings/ui/settings_view.dart';
-import 'package:cupertino_overrride/src/presentation/features/settings/viewcontroller/settings_controller.dart';
-import 'package:cupertino_overrride/src/presentation/themes/myappthemedata.dart';
-import 'package:cupertino_overrride/src/presentation/themes/mycupertinothemedata.dart';
-import 'package:cupertino_overrride/src/presentation/themes/mymaterialtheme.dart';
+import 'package:cupertino_override/src/localization_gen/l10n.dart';
+import 'package:cupertino_override/src/presentation/features/home/ui/sample_item_details_view.dart';
+import 'package:cupertino_override/src/presentation/features/home/ui/sample_item_list_view.dart';
+import 'package:cupertino_override/src/presentation/features/settings/ui/settings_view.dart';
+import 'package:cupertino_override/src/presentation/features/settings/viewcontroller/settings_controller.dart';
+import 'package:cupertino_override/src/presentation/themes/myappthemedata.dart';
+import 'package:cupertino_override/src/presentation/themes/mycupertinothemedata.dart';
+import 'package:cupertino_override/src/presentation/themes/mymaterialtheme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

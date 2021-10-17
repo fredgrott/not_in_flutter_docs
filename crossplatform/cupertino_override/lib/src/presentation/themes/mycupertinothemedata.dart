@@ -2,7 +2,8 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:cupertino_overrride/src/presentation/themes/myappcolors.dart';
+
+import 'package:cupertino_override/src/presentation/themes/myappcolors.dart';
 import 'package:flutter/cupertino.dart';
 
 // We use CupertinoDynamicColor to translate colors
