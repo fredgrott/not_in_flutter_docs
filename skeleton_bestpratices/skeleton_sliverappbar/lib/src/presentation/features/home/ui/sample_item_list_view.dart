@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../settings/settings_view.dart';
-import 'sample_item.dart';
+import '../../../../domain/entities/sample_item.dart';
+import '../../settings/ui/settings_view.dart';
 import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
@@ -62,7 +62,7 @@ class SampleItemListView extends StatelessWidget {
                 context,
                 SampleItemDetailsView.routeName,
               );
-            }
+            },
           );
         },
       ),

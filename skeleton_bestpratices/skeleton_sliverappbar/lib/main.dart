@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:skeleton_sliverappbar/src/presentation/widgets/error_screen.dart';
 
 import 'src/app.dart';
-import 'src/settings/settings_controller.dart';
-import 'src/settings/settings_service.dart';
+import 'src/presentation/features/settings/services/settings_service.dart';
+import 'src/presentation/features/settings/viewcontrollers/settings_controller.dart';
 
-void main() async {
+Future<void> main() async {
+  ErrorWidget.builder = (FlutterErrorDetails flutterErrorDetails) =>
+      errorScreen(flutterErrorDetails.exception);
+
   // Set up the SettingsController, which will glue user settings to multiple
   // Flutter Widgets.
   final settingsController = SettingsController(SettingsService());
