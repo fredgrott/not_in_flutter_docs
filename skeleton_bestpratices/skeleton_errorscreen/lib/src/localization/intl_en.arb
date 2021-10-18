@@ -1,0 +1,6 @@
+{
+  "appTitle": "skeleton_errorscreen",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

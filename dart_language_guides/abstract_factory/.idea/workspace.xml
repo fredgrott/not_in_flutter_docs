@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3e21dd61-c2dc-47f9-8850-25bb6e159492" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../crossplatform/material_override/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../crossplatform/material_override/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../crossplatform/material_override/lib/src/app.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../crossplatform/material_override/lib/src/app.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../crossplatform/material_override/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../crossplatform/material_override/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../oop_arch/reactive_viewmodel/test/widget_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../../oop_arch/reactive_viewmodel/test/widget_test.dart" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[D:\androidstuff\androidsdk\.android\avd\Pixel_4_API_27.avd]" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1zeVu08YBNPtAz7iScNj5YfroDk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$PROJECT_DIR$/../../../../../androidstuff/androidsdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="abstract_factory.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <option name="filePath" value="$PROJECT_DIR$/bin/abstract_factory.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3e21dd61-c2dc-47f9-8850-25bb6e159492" name="Default Changelist" comment="" />
+      <created>1634508761571</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1634508761571</updated>
+    </task>
+    <servers />
+  </component>
+</project>

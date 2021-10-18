@@ -1,0 +1,54 @@
+name: skeleton_errorscreen
+description: A new Flutter project.
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  # localization helper
+  intl: ^0.17.0
+  # localization automation
+  intl_utils: ^2.4.0
+  # custom fonts
+  google_fonts: ^2.1.0
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  dart_code_metrics: ^4.1.0
+  # project workflow automation
+  build_runner: ^2.1.2
+
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/images/
+    - google_fonts/
+    - images/
+# flutter intl for localization settings
+flutter_intl:
+  enabled: true   
+  class_name: S   
+  main_locale: en 
+  arb_dir: lib/src/localization
+  output_dir: lib/src/localization_gen
+  use_deferred_loading: false
+
