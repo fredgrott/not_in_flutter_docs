@@ -16,6 +16,8 @@ Flutter Basics
 
 DevOPS
 
+[Flutter Missing Best Practices, Brand Error Widgets](https://medium.com/p/flutter-missing-best-practices-brand-error-widgets-d9d71ace61ff)
+
 
 State
 

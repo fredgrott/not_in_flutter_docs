@@ -1,0 +1,6 @@
+{
+  "appTitle": "skeleton_buildvariants",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}

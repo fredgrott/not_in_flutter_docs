@@ -1,3 +1,35 @@
-1 ErrorScreen
-   -error screen and switch to better intl and  switch to 
-    custom google fonts and branded error screen
+have
+0 [app without changes](./skeleton_zero)
+App without any best practices improvements.
+
+1 [skeleton error screen](./skeleton_errorscreen)
+A Branded error screen has been added.
+
+Not Have
+
+2 [skeleton sliverappbar]
+Added sliverappbar for a more branded appbar approach to integrate with adaptive navigation pattern.
+
+3 [skeleton widget view]
+Added widget view pattern to separate out presenting from the layout layers in the UI layer.
+
+3a [build variants]
+
+4 [skeleton logging and error guarding functions]
+
+5 [skeleton catcher app exceptions]
+
+6 [skeleton adaptive navigation]
+
+7 [skeleton crossplatform]
+
+8 [skeleton testing basics and test harness]
+
+9 [skeleton test page object model]
+
+10 [skeleton goldens]
+
+11 [skeleton test mocking]
+
+12 [skeleton repository patterns using shared prefs and themes]
+
