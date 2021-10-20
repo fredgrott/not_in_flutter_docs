@@ -1,0 +1,28 @@
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QHitCountMaintainerGitHub forksGitHub starsGitHub followersGitHub contributorsGitHub issuesGitHub issues-closed\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QTwitterXingkeybasegithubmediumlinkedindartfluttervscodeandroid studiomarkdownbsdlicense\\E$"}
+{"rule":"MULTIPLICATION_SIGN","sentence":"^\\QAny state management based on ChangeNotifier is O*N^2 which is terrible performance due to use of plain list instead of Linked-List\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q-DCDG, UML generation\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q-junitreport\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q-DartDoc\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q-Dhttpd, it's optional if you want to view API docs generated correctly\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q-PlantUML, UML Generation\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q-GENHTML, which is part of LCOV I am showing the windows port\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q-GENHTML, LCOV on Unix-Linux systems\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QApple Inc owns the trademarks iOS, MacOSX, Swift, and Objective-C.\\E$"}
+{"rule":"WORD_CONTAINS_UNDERSCORE","sentence":"^\\QAs of 4-4-21, the support for integration_test screenshots on iOS and android has been merged per:\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q-full screen app aesthetic for edge-to-edge immersive experience\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q-state management using riverpod\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q-background image along with some basic layout techniques\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q-basic logging and debug feedback\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q-basic application exception catcher plugin setup\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q-full cross-platform solution with full theme solution\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q-state management using riverpod and view-model dependency injection using provider\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q-integration instrumented testing\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q-goldens testing\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qfproject_layout\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qfproject_layout\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qfboilerplate\\E$"}
+{"rule":"UPPERCASE_SENTENCE_START","sentence":"^\\Qfboilerplate\\E$"}
+{"rule":"PREPOSITION_VERB","sentence":"^\\QThe Flutter Counter App from the create project template modified\\E$"}
+{"rule":"WORD_CONTAINS_UNDERSCORE","sentence":"^\\QReboot and install Android Studio, and it will automatically install one android SDK with the ANDROID_SDK_ROOT you have already set.\\E$"}
+{"rule":"BY_BUY","sentence":"^\\QThe installation of LCOV allows us to by cmd-line generate the code coverage reports as far as unit testing.\\E$"}

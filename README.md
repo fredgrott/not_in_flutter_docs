@@ -18,6 +18,8 @@ DevOPS
 
 [Flutter Missing Best Practices, Brand Error Widgets](https://medium.com/p/flutter-missing-best-practices-brand-error-widgets-d9d71ace61ff)
 
+[Missing Flutter Best Pratices, Revisited](https://medium.com/p/missing-flutter-best-practices-revisited-876c6aa284fd)
+
 
 State
 
@@ -28,11 +30,16 @@ State
 UI
 
 
+
 Cross-Platform
 
 [Expert Flutter Cross Platform ThemeING](https://medium.com/p/expert-flutter-cross-platform-themeing-8c7a7f3707cd)
 
 Widgets
+
+[Writing Your First Flutter Widget And Best Practices](https://medium.com/p/writing-your-first-flutter-widgetand-best-practices-8dc0ea74dc86)
+
+
 
 Layout
 

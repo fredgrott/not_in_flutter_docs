@@ -1,0 +1,30 @@
+# This file is used by dartdoc when generating API documentation for Flutter.
+dartdoc:
+  # Before you can run dartdoc, the snippets tool needs to have a snapshot built.
+  # The dev/tools/dartdoc.dart script does this automatically.
+  
+  errors:
+    # Default errors of dartdoc:
+    - duplicate-file
+    - invalid-parameter
+    - no-defining-library-found
+    - tool-error
+    - unresolved-export
+    # Warnings that are elevated to errors:
+    - ambiguous-doc-reference
+    - ambiguous-reexport
+    - broken-link
+    - category-order-gives-missing-package-name
+    - deprecated
+    - ignored-canonical-for
+    - missing-from-search-index
+    - no-canonical-found
+    - no-documentable-libraries
+    - no-library-level-docs
+    - not-implemented
+    - orphaned-file
+    - reexported-private-api-across-packages
+    # - unknown-directive  # Disabled due to https://github.com/dart-lang/dartdoc/issues/2353
+    - unknown-file
+    - unknown-macro
+    - unresolved-doc-reference

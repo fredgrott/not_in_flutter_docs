@@ -1,0 +1,77 @@
+{ // Created 3-2021 Fredrick Allan Grott
+  // Note: Not using compounds on the emulator and simulators yet as I do not have enough 
+  //       laptop ram but whoever is forking and modifying this can figure out how to add it.
+  //       Keeping things similar to Android Studio setup as these repos are being used 
+  //       to teach flutter app development using android studio and vscode.
+  //       I use emulator plugins to handle starting emulators and simulators.
+  //
+  //       Also, note that some of this stuff is platformOS specifc. Take it and modify according 
+  //       to your platformOS shell specifics.
+	"version": "2.0.0",
+	"tasks": [
+     
+    
+    
+    
+
+    { // build an android apk
+      "type": "flutter",
+      "command": "flutter",
+      "args": [
+        "build",
+        "apk"
+      ],
+      "group": "build",
+      "problemMatcher": [],
+      "label": "flutter: flutter build apk"
+    },
+    { // build and ios app
+      "type": "flutter",
+      "command": "flutter",
+      "args": [
+        "build",
+        "ios"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": [],
+      "label": "flutter: flutter build ios"
+    },
+    { // install a flutter app
+      "type": "flutter",
+      "command": "flutter",
+      "args": [
+        "install"
+      ],
+      "problemMatcher": [],
+      "label": "flutter: flutter install"
+    },
+    {  // get flutter(dart) packages
+      "type": "flutter",
+      "command": "flutter",
+      "args": [
+        "pub",
+        "get"
+      ],
+      "problemMatcher": [],
+      "label": "flutter: flutter pub get"
+    },
+    { // upgrade flutter packages
+      "type": "flutter",
+      "command": "flutter",
+      "args": [
+        "pub",
+        "upgrade"
+      ],
+      "problemMatcher": [],
+      "label": "flutter: flutter pub upgrade"
+    },
+
+
+
+
+
+  ]
+}
