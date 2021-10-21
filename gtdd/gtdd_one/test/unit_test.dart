@@ -6,24 +6,20 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gtdd_one/src/domain/entities/sample_item.dart';
-import 'package:mocktail/mocktail.dart';
 
-class MyID {
-  final myID = 1;
-}
 
-class MockID extends Mock implements MyID {}
 
 void main() {
-  late final int anID;
+  
 
+  // ignore: no-empty-block
   setUpAll(() async {
-    anID = MockID().myID;
+    
   });
 
   group('Sample Item', () {
     test('Sample Item', () {
-      final sampleItem = SampleItem(anID);
+      const sampleItem = SampleItem(1);
 
       expect(sampleItem.id, 1);
     });
