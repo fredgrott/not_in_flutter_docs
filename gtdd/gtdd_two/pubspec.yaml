@@ -40,7 +40,8 @@ dev_dependencies:
   # bdd harness and fixtures  testing
   given_when_then: ^0.2.0
 
-
+dependency_overrides:
+  mocktail: ^0.2.0
 
 
   flutter_lints: ^1.0.0

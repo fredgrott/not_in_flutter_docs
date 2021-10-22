@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'settings_controller.dart';
+import '../viewcontrollers/settings_controller.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
@@ -42,7 +42,7 @@ class SettingsView extends StatelessWidget {
             DropdownMenuItem(
               value: ThemeMode.dark,
               child: Text('Dark Theme'),
-            )
+            ),
           ],
         ),
       ),

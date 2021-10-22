@@ -1,0 +1,57 @@
+PS D:\fredgrttsstuff\GithubProjects\not_in_flutter_docs\gtdd\gtdd_two> flutter test --update-goldens
+00:11 +1: D:\fredgrttsstuff\GithubProjects\not_in_flutter_docs\gtdd\gtdd_two\test\golden_widget_test.dart: Basic Golden Tests  Golden test
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following assertion was thrown building SampleItemListView:
+No MediaQuery widget ancestor found.
+Scaffold widgets require a MediaQuery widget ancestor.
+The specific widget that could not find a MediaQuery ancestor was:
+  Scaffold
+The ownership chain for the affected widget is: "Scaffold ← SampleItemListView ← [root]"
+No MediaQuery ancestor could be found starting from the context that was passed to MediaQuery.of().
+This can happen because you have not added a WidgetsApp, CupertinoApp, or MaterialApp widget (those
+widgets introduce a MediaQuery), or it can happen if the context you use comes from a widget above
+those widgets.
+
+The relevant error-causing widget was:
+  SampleItemListView
+  SampleItemListView:file:///D:/fredgrttsstuff/GithubProjects/not_in_flutter_docs/gtdd/gtdd_two/test/golden_widget_test.dart:79:37
+
+When the exception was thrown, this was the stack:
+#0      debugCheckHasMediaQuery.<anonymous closure> (package:flutter/src/widgets/debug.dart:221:7)
+#1      debugCheckHasMediaQuery (package:flutter/src/widgets/debug.dart:236:4)
+#2      MediaQuery.of (package:flutter/src/widgets/media_query.dart:837:12)
+#3      ScaffoldState.didChangeDependencies (package:flutter/src/material/scaffold.dart:2644:50)
+#4      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:4747:11)
+#5      ComponentElement.mount (package:flutter/src/widgets/framework.dart:4559:5)
+...     Normal element mounting (7 frames)
+#12     Element.inflateWidget (package:flutter/src/widgets/framework.dart:3631:14)
+#13     Element.updateChild (package:flutter/src/widgets/framework.dart:3380:20)
+#14     RenderObjectToWidgetElement._rebuild (package:flutter/src/widgets/binding.dart:1198:16)
+#15     RenderObjectToWidgetElement.update (package:flutter/src/widgets/binding.dart:1175:5)
+#16     RenderObjectToWidgetElement.performRebuild (package:flutter/src/widgets/binding.dart:1189:7)
+#17     Element.rebuild (package:flutter/src/widgets/framework.dart:4311:5)
+#18     BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:2578:33)
+#19     AutomatedTestWidgetsFlutterBinding.drawFrame (package:flutter_test/src/binding.dart:1125:19)
+#20     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:319:5)
+#21     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1145:15)
+#22     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1082:9)
+#23     AutomatedTestWidgetsFlutterBinding.pump.<anonymous closure> (package:flutter_test/src/binding.dart:992:9)
+#26     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:71:41)
+#27     AutomatedTestWidgetsFlutterBinding.pump (package:flutter_test/src/binding.dart:979:27)
+#28     WidgetTester.pumpWidget.<anonymous closure> (package:flutter_test/src/widget_tester.dart:548:22)
+#31     TestAsyncUtils.guard (package:flutter_test/src/test_async_utils.dart:71:41)
+#32     WidgetTester.pumpWidget (package:flutter_test/src/widget_tester.dart:545:27)
+#33     main.<anonymous closure>.<anonymous closure> (file:///D:/fredgrttsstuff/GithubProjects/not_in_flutter_docs/gtdd/gtdd_two/test/golden_widget_test.dart:79:20)
+#34     main.<anonymous closure>.<anonymous closure> (file:///D:/fredgrttsstuff/GithubProjects/not_in_flutter_docs/gtdd/gtdd_two/test/golden_widget_test.dart:77:32)
+#35     testWidgets.<anonymous closure>.<anonymous closure> (package:flutter_test/src/widget_tester.dart:170:29)
+<asynchronous suspension>
+<asynchronous suspension>
+(elided 5 frames from dart:async and package:stack_trace)
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+00:11 +1 -1: D:\fredgrttsstuff\GithubProjects\not_in_flutter_docs\gtdd\gtdd_two\test\golden_widget_test.dart: Basic Golden Tests  Golden test [E]
+  Test failed. See exception logs above.
+  The test description was: Golden test
+
+00:16 +3 -1: Some tests failed.
+PS D:\fredgrttsstuff\GithubProjects\not_in_flutter_docs\gtdd\gtdd_two>
