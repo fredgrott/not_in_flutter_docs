@@ -1,0 +1,6 @@
+{
+  "appTitle": "gtdd_five",
+  "@appTitle": {
+    "description": "The title of the application"
+  }
+}
