@@ -49,19 +49,10 @@ class SampleItemListViewPageObject extends PageObject {
         matching: find.byKey(SampleItemListView.titleKey),
       );
 
-  //Finder get listTileTitleOne => find.descendant(
-       // of: this,
-       // matching: find.byKey(
-      //    SampleItemListView.listTileTitle1Key,
-      //  ),
-     // );
-  //Finder get listTileTitleTwo => find.descendant(
-       // of: this,
-       // matching: find.byKey(SampleItemListView.listTileTitle2Key),
-     // );
-  //Finder get listTileTitleThree => find.descendant(
-     // of: this,
-      //matching: find.byKey(SampleItemListView.listTileTitle3Key),);
+  Finder get listTileTitle => find.descendant(
+      of: this, matching: find.byKey(SampleItemListView.listTileTitleKey),);
+
+  
 }
 
 class SampleItemDetailsViewPageObject extends PageObject {

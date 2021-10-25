@@ -179,18 +179,10 @@ void main() {
           app.homeScreen.appbarTitle,
           allOf(findsOneWidget, HasText('Sample Items')),
         );
-        //expect(
-         // app.homeScreen.listTileTitleOne,
-         // allOf(findsOneWidget, HasText(containsSubstringNoCase('1'))),
-        //);
-        //expect(
-          //app.homeScreen.listTileTitleTwo,
-          //allOf(findsOneWidget, HasText(containsSubstringNoCase('2'))),
-        //);
-        //expect(
-          //app.homeScreen.listTileTitleThree,
-          //allOf(findsOneWidget, HasText(containsSubstringNoCase('3'))),
-        //);
+        
+
+        expect(app.homeScreen.listTileTitle, findsNWidgets(3));
+        
       },
     );
 
@@ -265,7 +257,10 @@ void main() {
           allOf(findsOneWidget, HasText("System Theme")),
         );
 
-        expect(app.settingsScreen.dropButtonLightTheme, allOf(findsOneWidget, HasText("Light Theme")),);
+        expect(
+          app.settingsScreen.dropButtonLightTheme,
+          allOf(findsOneWidget, HasText("Light Theme")),
+        );
       },
     );
   });

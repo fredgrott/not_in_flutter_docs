@@ -19,14 +19,12 @@ class SampleItemListView extends StatelessWidget {
 
   static Key titleKey = const Key('SampleItemListView.title');
 
-  static Key? listTileTitleKey;
+  static Key listTileTitleKey = const Key('ListTileKey');
 
-  static Key listTileTitle1Key = const Key('listTileTitle1');
+  
+  
 
-  static Key listTileTitle2Key= const Key('listTileTitle2');
-
-  static Key listTileTitle3Key= const Key('listTileTitle3');
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +67,7 @@ class SampleItemListView extends StatelessWidget {
           return ListTile(
             title: Text(
               'SampleItem ${item.id}',
-              key: Key('listTileTitle${item.id}Key'),
+              key: listTileTitleKey,
             ),
             leading: const CircleAvatar(
               // Display the Flutter Logo image asset.
