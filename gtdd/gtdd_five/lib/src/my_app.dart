@@ -1,20 +1,36 @@
+// Copyright 2021 Fredrick Allan Grott. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+// One small difference from the Skeleton  app template in that
+// if myChild supplied than it  uses that in the home slot
+
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:gtdd_five/src/localization_gen/l10n.dart';
+import 'package:gtdd_five/src/presentation/features/home/ui/sample_item_details_view.dart';
+import 'package:gtdd_five/src/presentation/features/home/ui/sample_item_list_view.dart';
+import 'package:gtdd_five/src/presentation/features/settings/ui/settings_view.dart';
+import 'package:gtdd_five/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
 
-import 'sample_feature/sample_item_details_view.dart';
-import 'sample_feature/sample_item_list_view.dart';
-import 'settings/settings_controller.dart';
-import 'settings/settings_view.dart';
-
-/// The Widget that configures your application.
 class MyApp extends StatelessWidget {
   const MyApp({
     Key? key,
     required this.settingsController,
+    this.myChild,
   }) : super(key: key);
 
   final SettingsController settingsController;
+  final Widget? myChild;
+  static String? myRestoreAppId;
+
+  
+
+  Widget? isItGolden() {
+    if (myChild != null) {
+      return myChild;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +42,21 @@ class MyApp extends StatelessWidget {
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
         return MaterialApp(
+          debugShowCheckedModeBanner: false,
           // Providing a restorationScopeId allows the Navigator built by the
           // MaterialApp to restore the navigation stack when a user leaves and
           // returns to the app after it has been killed while running in the
           // background.
-          restorationScopeId: 'app',
+
+          
+          restorationScopeId: "app",
+          
 
           // Provide the generated AppLocalizations to the MaterialApp. This
           // allows descendant Widgets to display the correct translations
           // depending on the user's locale.
           localizationsDelegates: const [
-            AppLocalizations.delegate,
+            S.delegate,
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
@@ -50,8 +70,7 @@ class MyApp extends StatelessWidget {
           //
           // The appTitle is defined in .arb files found in the localization
           // directory.
-          onGenerateTitle: (BuildContext context) =>
-              AppLocalizations.of(context)!.appTitle,
+          onGenerateTitle: (BuildContext context) => S.of(context).appTitle,
 
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
@@ -78,6 +97,8 @@ class MyApp extends StatelessWidget {
               },
             );
           },
+
+          
         );
       },
     );
