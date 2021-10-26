@@ -4,7 +4,7 @@
 
 // ignore_for_file: cast_nullable_to_non_nullable
 
-
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:gtdd_five/src/presentation/features/home/ui/sample_item_details_view.dart';
@@ -50,9 +50,9 @@ class SampleItemListViewPageObject extends PageObject {
       );
 
   Finder get listTileTitle => find.descendant(
-      of: this, matching: find.byKey(SampleItemListView.listTileTitleKey),);
-
-  
+        of: this,
+        matching: find.byKey(SampleItemListView.listTileTitleKey),
+      );
 }
 
 class SampleItemDetailsViewPageObject extends PageObject {
@@ -83,6 +83,9 @@ class SettingsViewPageObject extends PageObject {
 
   Finder get appbarTitle =>
       find.descendant(of: this, matching: find.byKey(SettingsView.titleKey));
+
+  Finder get dropDownButton =>
+      find.descendant(of: this, matching: find.byType(DropdownButton));
 
   Finder get dropButtonSystemTheme => find.descendant(
         of: this,

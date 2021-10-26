@@ -9,16 +9,20 @@ import 'package:golden_toolkit/golden_toolkit.dart';
 
 import 'package:gtdd_five/src/domain/app_vars.dart';
 import 'package:gtdd_five/src/my_app.dart';
-import 'package:gtdd_five/src/presentation/features/home/ui/sample_item_details_view.dart';
+
 
 import 'package:gtdd_five/src/presentation/features/home/ui/sample_item_list_view.dart';
 
 import 'package:gtdd_five/src/presentation/features/settings/ui/settings_view.dart';
 
-import 'golden_custom_matchers.dart';
+import 'golden_appbar_test_support.dart';
+
+import 'golden_detailscreen_text_test_support.dart';
 import 'golden_device_definitions.dart';
 
-import 'golden_page_objects.dart';
+import 'golden_dropbutton_test_support.dart';
+import 'golden_listtile_test_support.dart';
+
 import 'golden_wrapper.dart';
 
 // Golden Test Driven Development Notes:
@@ -153,116 +157,51 @@ void main() {
   // need to insert a root widget test fixture at top of
   // widget tree for page object to work.
   group('Widget Unit Tests using page object', () {
-    testGoldens(
-      "Home screen has an app var, title, and list items",
-      (WidgetTester tester) async {
-        final builder = DeviceBuilder()
-          ..overrideDevicesForAllScenarios(
-            devices: [
-              Device.phone,
-            ],
-          )
-          ..addScenario(
-            widget: const SampleItemListView(),
-            name: 'Sample Item List View Home Base',
-          );
-        await tester.runAsync<dynamic>(() async {
-          await tester.pumpDeviceBuilder(
-            builder,
-            wrapper: myModifiedRootWidgetWrapper(),
-          );
-          await tester.pumpAndSettle();
-        });
-        final app = MyAppPageObject();
+    // just checking to see if UI components are there,
+    // notice that it reads as a straight English style use case.
+    testWidgets(
+      'AppBar Title is there',
+      appbarHarness((given, when, then) async {
+        await given.myAppExistsSampleScreen();
+        await then.appBarTitleIsSampleScreen();
 
-        expect(
-          app.homeScreen.appbarTitle,
-          allOf(findsOneWidget, HasText('Sample Items')),
-        );
-        
-
-        expect(app.homeScreen.listTileTitle, findsNWidgets(3));
-        
-      },
+        await given.myAppExistsDetailsScreen();
+        await then.appBarTitleIsDetailScreen();
+      }),
     );
 
-    testGoldens(
-      "Details Screen has an appbar, title and description message",
-      (WidgetTester tester) async {
-        final builder = DeviceBuilder()
-          ..overrideDevicesForAllScenarios(
-            devices: [
-              Device.phone,
-            ],
-          )
-          ..addScenario(
-            widget: const SampleItemDetailsView(),
-            name: 'Sample Item Detail ',
-          );
-        await tester.runAsync<dynamic>(() async {
-          await tester.pumpDeviceBuilder(
-            builder,
-            wrapper: myModifiedRootWidgetWrapper(),
-          );
-          await tester.pumpAndSettle();
-        });
-        final app = MyAppPageObject();
-
-        expect(
-          app.sampleDetailsScreen.appbarTitle,
-          allOf(findsOneWidget, HasText("Item Details")),
-        );
-
-        expect(
-          app.sampleDetailsScreen.textDetail,
-          allOf(findsOneWidget, HasText("More Information Here")),
-        );
-      },
+    testWidgets(
+      'List Tile is in home and has a title',
+      listTileHarness((given, when, then) async {
+        await given.myAppExistsSampleItem();
+        await when.listTileFoundSampleScreen();
+        await then.listTileTitleHasOne();
+        await then.listTileTitleHasTwo();
+        await then.listTileTitleHasThree();
+      }),
     );
 
-    testGoldens(
-      "Settings screen has appbar, title, and drop down items",
-      (WidgetTester tester) async {
-        final builder = DeviceBuilder()
-          ..overrideDevicesForAllScenarios(
-            devices: [
-              Device.phone,
-            ],
-          )
-          ..addScenario(
-            widget: SettingsView(controller: settingsController),
-            name: 'Settings ',
-          );
-        await tester.runAsync<dynamic>(() async {
-          await tester.pumpDeviceBuilder(
-            builder,
-            wrapper: myModifiedRootWidgetWrapper(),
-          );
-          await tester.pumpAndSettle();
-        });
-        final app = MyAppPageObject();
-
-        expect(
-          app.settingsScreen.appbarTitle,
-          allOf(findsOneWidget, HasText("Settings")),
-        );
-
-        expect(
-          app.settingsScreen.dropButtonDarkTheme,
-          allOf(findsOneWidget, HasText("Dark Theme")),
-        );
-
-        expect(
-          app.settingsScreen.dropButtonSystemTheme,
-          allOf(findsOneWidget, HasText("System Theme")),
-        );
-
-        expect(
-          app.settingsScreen.dropButtonLightTheme,
-          allOf(findsOneWidget, HasText("Light Theme")),
-        );
-      },
+    testWidgets(
+      'Detail Screen has appbar title and description',
+      detailTextHarness((given, when, then) async {
+        await given.myAppExistsSampleDetailsScreen();
+        await then.appBarTitleIsSampleItemDetailScreen();
+        await then.textIsSampleItemDetailScreen();
+      }),
     );
+
+    testWidgets(
+      'Settings Screen has appbar title and 3 dropdown item buttons',
+      dropButtonHarness((given, when, then) async {
+        await given.myAppExistsSettingsScreen();
+        await when.dropDownFound();
+        await then.dropDownButtonTextSystemTheme();
+        await then.dropDownButtonTextLightTheme();
+        await then.dropDownButtonTextDarkTheme();
+      }),
+    );
+
+    
   });
 
   // It's not in the docs but to unit test widgets on the non-instrumented
