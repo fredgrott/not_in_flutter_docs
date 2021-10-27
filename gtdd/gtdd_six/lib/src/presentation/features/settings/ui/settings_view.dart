@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'settings_controller.dart';
+import '../viewcontrollers/settings_controller.dart';
 
 /// Displays the various settings that can be customized by the user.
 ///
@@ -13,11 +13,33 @@ class SettingsView extends StatelessWidget {
 
   final SettingsController controller;
 
+  static String title = 'Settings';
+
+  static Key titleKey = const Key('SettingsView.title');
+
+  static String dropMenuSystemThemeTitle = 'System Theme';
+
+  static Key dropMenuSystemThemeTitleKey =
+      const Key('SettingsView.dropMenuSystemThemeTitle');
+
+  static String dropMenuLightThemeTitle = 'Light Theme';
+
+  static Key dropMenuLightThemeTitleKey =
+      const Key('SettingsView.dropMenuLightThemeTitle');
+
+  static String dropMenuDarkThemeTitle = 'Dark Theme';
+
+  static Key dropMenuDarkThemeTitleKey =
+      const Key('SettingsView.dropMenuDarkThemeTitle');
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: Text(
+          title,
+          key: titleKey,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
@@ -26,23 +48,36 @@ class SettingsView extends StatelessWidget {
         // When a user selects a theme from the dropdown list, the
         // SettingsController is updated, which rebuilds the MaterialApp.
         child: DropdownButton<ThemeMode>(
+          key: const Key('OurThemeMode'),
           // Read the selected themeMode from the controller
           value: controller.themeMode,
           // Call the updateThemeMode method any time the user selects a theme.
           onChanged: controller.updateThemeMode,
-          items: const [
+          items: [
             DropdownMenuItem(
+              key: const ValueKey<ThemeMode>(ThemeMode.system),
               value: ThemeMode.system,
-              child: Text('System Theme'),
+              child: Text(
+                dropMenuSystemThemeTitle,
+                key: dropMenuSystemThemeTitleKey,
+              ),
             ),
             DropdownMenuItem(
+              key: const ValueKey<ThemeMode>(ThemeMode.light),
               value: ThemeMode.light,
-              child: Text('Light Theme'),
+              child: Text(
+                dropMenuLightThemeTitle,
+                key: dropMenuLightThemeTitleKey,
+              ),
             ),
             DropdownMenuItem(
+              key: const ValueKey<ThemeMode>(ThemeMode.dark),
               value: ThemeMode.dark,
-              child: Text('Dark Theme'),
-            )
+              child: Text(
+                dropMenuDarkThemeTitle,
+                key: dropMenuDarkThemeTitleKey,
+              ),
+            ),
           ],
         ),
       ),

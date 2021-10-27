@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gtdd_six/src/domain/data/entities/sample_item.dart';
 
-import '../settings/settings_view.dart';
-import 'sample_item.dart';
+
+import '../../settings/ui/settings_view.dart';
 import 'sample_item_details_view.dart';
 
 /// Displays a list of SampleItems.
@@ -15,11 +16,24 @@ class SampleItemListView extends StatelessWidget {
 
   final List<SampleItem> items;
 
+  static String title = 'Sample Items';
+
+  static Key titleKey = const Key('SampleItemListView.title');
+
+  static Key listTileTitleKey = const Key('ListTileKey');
+
+  
+  
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample Items'),
+        title: Text(
+          title,
+          key: titleKey,
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -40,16 +54,24 @@ class SampleItemListView extends StatelessWidget {
       // building all Widgets up front, the ListView.builder constructor lazily
       // builds Widgets as they’re scrolled into view.
       body: ListView.builder(
+        key: const Key('ListView'),
         // Providing a restorationId allows the ListView to restore the
         // scroll position when a user leaves and returns to the app after it
         // has been killed while running in the background.
         restorationId: 'sampleItemListView',
         itemCount: items.length,
+        //need this or enclose in container to constrain size as getting render box errors
+        // during goldens testing
+        shrinkWrap: true,
         itemBuilder: (BuildContext context, int index) {
           final item = items[index];
 
           return ListTile(
-            title: Text('SampleItem ${item.id}'),
+            title: Text(
+              'SampleItem ${item.id}',
+              
+              key: ValueKey<int>(item.id),
+            ),
             leading: const CircleAvatar(
               // Display the Flutter Logo image asset.
               foregroundImage: AssetImage('assets/images/flutter_logo.png'),
@@ -62,7 +84,7 @@ class SampleItemListView extends StatelessWidget {
                 context,
                 SampleItemDetailsView.routeName,
               );
-            }
+            },
           );
         },
       ),
