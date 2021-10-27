@@ -53,6 +53,8 @@ class SampleItemListViewPageObject extends PageObject {
         of: this,
         matching: find.byKey(SampleItemListView.listTileTitleKey),
       );
+
+  
 }
 
 class SampleItemDetailsViewPageObject extends PageObject {
@@ -83,9 +85,6 @@ class SettingsViewPageObject extends PageObject {
 
   Finder get appbarTitle =>
       find.descendant(of: this, matching: find.byKey(SettingsView.titleKey));
-
-  Finder get dropDownButton =>
-      find.descendant(of: this, matching: find.byType(DropdownButton));
 
   Finder get dropButtonSystemTheme => find.descendant(
         of: this,

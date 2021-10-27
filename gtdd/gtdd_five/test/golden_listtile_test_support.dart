@@ -47,43 +47,5 @@ extension SampleScreenWhen on WidgetTestWhen<_WidgetTestHarness> {
   }
 }
 
-extension SampleScreenListTileTitleOneThen on WidgetTestThen<_WidgetTestHarness> {
-  Future<void> listTileTitleHasOne() async {
-    await tester.runAsync<dynamic>(() async {
-      await tester.pumpWidgetBuilder(
-        const SampleItemListView(),
-        wrapper: myModifiedRootWidgetWrapper(),
-      );
-    });
-    final app = MyAppPageObject();
-    expect(app.homeScreen.listTileTitle, containsSubstringNoCase('1'));
-  }
-}
 
-extension SampleScreenListTileTitleTwoThen
-    on WidgetTestThen<_WidgetTestHarness> {
-  Future<void> listTileTitleHasTwo() async {
-    await tester.runAsync<dynamic>(() async {
-      await tester.pumpWidgetBuilder(
-        const SampleItemListView(),
-        wrapper: myModifiedRootWidgetWrapper(),
-      );
-    });
-    final app = MyAppPageObject();
-    expect(app.homeScreen.listTileTitle, containsSubstringNoCase('2'));
-  }
-}
 
-extension SampleScreenListTileTitleThreeThen
-    on WidgetTestThen<_WidgetTestHarness> {
-  Future<void> listTileTitleHasThree() async {
-    await tester.runAsync<dynamic>(() async {
-      await tester.pumpWidgetBuilder(
-        const SampleItemListView(),
-        wrapper: myModifiedRootWidgetWrapper(),
-      );
-    });
-    final app = MyAppPageObject();
-    expect(app.homeScreen.listTileTitle, containsSubstringNoCase('3'));
-  }
-}

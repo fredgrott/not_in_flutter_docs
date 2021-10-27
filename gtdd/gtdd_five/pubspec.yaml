@@ -30,7 +30,7 @@ dev_dependencies:
   # project workflow automation
   build_runner: ^2.1.2
   # goldens
-  golden_toolkit: ^0.11.0
+  golden_toolkit: ^0.10.0
   # mocking
   mocktail: ^0.2.0
   # mocking navigation

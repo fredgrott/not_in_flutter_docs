@@ -38,19 +38,7 @@ extension SettingsScreenGiven on WidgetTestGiven<_WidgetTestHarness> {
   }
 }
 
-extension SettingsScreenWhen on WidgetTestWhen<_WidgetTestHarness> {
-  Future<void> dropDownFound() async {
-    await tester.runAsync<dynamic>(() async {
-      await tester.pumpWidgetBuilder(
-        SettingsView(controller: settingsController),
-        wrapper: myModifiedRootWidgetWrapper(),
-      );
-    });
 
-    final app = MyAppPageObject();
-    expect(app.settingsScreen.dropDownButton, findsNWidgets(3));
-  }
-}
 
 extension SettingsScreenThenSystemTheme on WidgetTestThen<_WidgetTestHarness> {
   Future<void> dropDownButtonTextSystemTheme() async {

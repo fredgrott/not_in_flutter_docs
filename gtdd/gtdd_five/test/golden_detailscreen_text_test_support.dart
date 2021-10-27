@@ -59,6 +59,6 @@ extension SampleItemDetailsTextThen
       );
     });
     final app = MyAppPageObject();
-    expect(app.sampleDetailsScreen.textDetail, HasText('More Information'));
+    expect(app.sampleDetailsScreen.textDetail, HasText('More Information Here'));
   }
 }

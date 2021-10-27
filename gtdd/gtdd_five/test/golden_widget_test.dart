@@ -10,7 +10,6 @@ import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:gtdd_five/src/domain/app_vars.dart';
 import 'package:gtdd_five/src/my_app.dart';
 
-
 import 'package:gtdd_five/src/presentation/features/home/ui/sample_item_list_view.dart';
 
 import 'package:gtdd_five/src/presentation/features/settings/ui/settings_view.dart';
@@ -167,6 +166,9 @@ void main() {
 
         await given.myAppExistsDetailsScreen();
         await then.appBarTitleIsDetailScreen();
+
+        await given.myAppExistsSettingsScreen();
+        await then.appBarTitleIsSettingsScreen();
       }),
     );
 
@@ -175,9 +177,7 @@ void main() {
       listTileHarness((given, when, then) async {
         await given.myAppExistsSampleItem();
         await when.listTileFoundSampleScreen();
-        await then.listTileTitleHasOne();
-        await then.listTileTitleHasTwo();
-        await then.listTileTitleHasThree();
+        
       }),
     );
 
@@ -194,14 +194,12 @@ void main() {
       'Settings Screen has appbar title and 3 dropdown item buttons',
       dropButtonHarness((given, when, then) async {
         await given.myAppExistsSettingsScreen();
-        await when.dropDownFound();
+
         await then.dropDownButtonTextSystemTheme();
         await then.dropDownButtonTextLightTheme();
         await then.dropDownButtonTextDarkTheme();
       }),
     );
-
-    
   });
 
   // It's not in the docs but to unit test widgets on the non-instrumented
