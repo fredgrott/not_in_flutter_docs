@@ -200,18 +200,14 @@ void main() {
       }),
     );
 
-    
-
     testWidgets(
       'Settings Screen, user can choose system theme',
       dropButtonHarness((given, when, then) async {
         await given.myAppExists();
 
-        await when.dropDownExists();
+        await given.dropDownExists();
 
-        await when.tapDropDown();
-
-        await then.userChoosesSystemTheme();
+        await then.userChoosesSystemThemeAndItChanges();
       }),
     );
 
@@ -220,11 +216,9 @@ void main() {
       dropButtonHarness((given, when, then) async {
         await given.myAppExists();
 
-        await when.dropDownExists();
+        await given.dropDownExists();
 
-        await when.tapDropDown();
-
-        await then.userChoosesDarkTheme();
+        await then.userChoosesDarkThemeAndItChanges();
       }),
     );
 
@@ -233,11 +227,9 @@ void main() {
       dropButtonHarness((given, when, then) async {
         await given.myAppExists();
 
-        await when.dropDownExists();
+        await given.dropDownExists();
 
-        await when.tapDropDown();
-
-        await then.userChoosesLightTheme();
+        await then.userChoosesLightThemeAndItChanges();
       }),
     );
   });

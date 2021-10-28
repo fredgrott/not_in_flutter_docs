@@ -107,9 +107,14 @@ class SettingsViewPageObject extends PageObject {
   Finder get appbarTitle =>
       find.descendant(of: this, matching: find.byKey(SettingsView.titleKey));
 
+
+  // DropDown Button items are often dynamically created so we 
+  // need to use a use case of tap dropdown, then tap test object 
+  // wanted(item choice) so the sequence is find key on dropdownbutton
+  // then find the text key of menu item.
   Finder get dropDownButton => find.descendant(
         of: this,
-        matching: find.byKey(const Key('OurThemeMode')),
+        matching: find.byKey(const Key('OurThemeMode'), skipOffstage: false),
       );
 
   
@@ -117,16 +122,16 @@ class SettingsViewPageObject extends PageObject {
   // and the menuitem one so we have to ask for the last one
   Finder get dropDownButtonSystem => find.descendant(
         of: this,
-        matching: find.byKey(const ValueKey(ThemeMode.system)).last,
+        matching: find.byKey(const Key('MySystem'), skipOffstage: false),
       );
 
   Finder get dropDownButtonLight => find.descendant(
         of: this,
-        matching: find.byKey(const ValueKey(ThemeMode.light)).last,
+        matching: find.byKey(const Key('MyLight'), skipOffstage: false),
       );
 
   Finder get dropDownButtonDark => find.descendant(
         of: this,
-        matching: find.byKey(const ValueKey(ThemeMode.dark)).last,
+        matching: find.byKey(const Key('MyDark'), skipOffstage: false),
       );
 }

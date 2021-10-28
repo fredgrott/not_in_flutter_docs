@@ -7,7 +7,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:gtdd_six/src/localization_gen/l10n.dart';
 
 import 'package:gtdd_six/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
-import 'package:gtdd_six/src/presentation/themes/my_app_themedata.dart';
+
 
 class MyAppRootWidget extends StatelessWidget {
   const MyAppRootWidget({

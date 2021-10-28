@@ -47,6 +47,11 @@ class SettingsView extends StatelessWidget {
         //
         // When a user selects a theme from the dropdown list, the
         // SettingsController is updated, which rebuilds the MaterialApp.
+        //
+        // all stackoverflow answers have this wrong.
+        // its not keys that become the same but values where
+        // the parent assumes value of child when an item choice is
+        // made by the user.
         child: DropdownButton<ThemeMode>(
           key: const Key('OurThemeMode'),
           // Read the selected themeMode from the controller
@@ -55,27 +60,27 @@ class SettingsView extends StatelessWidget {
           onChanged: controller.updateThemeMode,
           items: [
             DropdownMenuItem(
-              key: const ValueKey<ThemeMode>(ThemeMode.system),
+              
               value: ThemeMode.system,
               child: Text(
                 dropMenuSystemThemeTitle,
-                key: dropMenuSystemThemeTitleKey,
+                key: const Key('MySystem'),
               ),
             ),
             DropdownMenuItem(
-              key: const ValueKey<ThemeMode>(ThemeMode.light),
+              
               value: ThemeMode.light,
               child: Text(
                 dropMenuLightThemeTitle,
-                key: dropMenuLightThemeTitleKey,
+                key: const Key('MyLight'),
               ),
             ),
             DropdownMenuItem(
-              key: const ValueKey<ThemeMode>(ThemeMode.dark),
+              
               value: ThemeMode.dark,
               child: Text(
                 dropMenuDarkThemeTitle,
-                key: dropMenuDarkThemeTitleKey,
+                key: const Key('MyDark'),
               ),
             ),
           ],
