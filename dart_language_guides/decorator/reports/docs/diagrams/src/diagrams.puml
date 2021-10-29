@@ -1,0 +1,33 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::Beverage" {
+  +double cost
+  +String? ingredients
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::Ingredient" {
+  +double cost
+  +String name
+  +String toString()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::Coffee" {
+  -Set<Ingredient> _ingredients
+  +double cost
+  +String? ingredients
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::Beverage" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::Coffee"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::StarbucksCoffeeDecorator" {
+  -Beverage _coffee
+  +double cost
+  +String? ingredients
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::StarbucksCoffeeDecorator" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::Beverage"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::Beverage" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::decorator::bin::decorator.dart::StarbucksCoffeeDecorator"
+
+
+@enduml

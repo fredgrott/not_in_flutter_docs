@@ -1,0 +1,37 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::Drinkable" {
+  +void pour()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::Beer" {
+  +void pour()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::Drinkable" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::Beer"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::Coffee" {
+  +void pour()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::Drinkable" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::Coffee"
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::DrinkFactory" {
+  +Drinkable createDrink()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::Pub" {
+  +Drinkable createDrink()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::DrinkFactory" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::Pub"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::CoffeeShop" {
+  +Drinkable createDrink()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::DrinkFactory" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::abstract_factory::bin::abstract_factory.dart::CoffeeShop"
+
+
+@enduml

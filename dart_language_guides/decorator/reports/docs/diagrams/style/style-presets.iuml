@@ -1,0 +1,30 @@
+# Style Presets
+@startuml
+
+' Preset Styles by Jeriel Jan
+
+' Preset: Monochrome
+!define STYLE_DEFAULT_ACCENT #000
+!define STYLE_DEFAULT_BGC #FFF
+!define STYLE_DEFAULT_FGC #000
+
+' Preset: Material Light Blue (200)
+!define STYLE_LIGHT_ACCENT #81D4FA
+!define STYLE_LIGHT_BGC #FFF
+!define STYLE_LIGHT_FGC #000
+
+' Preset: Material Light Blue (800)
+!define STYLE_DARK_ACCENT #0277BD
+!define STYLE_DARK_BGC #FFF
+!define STYLE_DARK_FGC #000
+
+' Preset: Material Light Blue (800)
+!define STYLE_MIDNIGHT_ACCENT #0277BD
+!define STYLE_MIDNIGHT_BGC #000
+!define STYLE_MIDNIGHT_FGC #FFF
+
+skinparam {
+    ' This field left intentionally blank.
+}
+
+@enduml

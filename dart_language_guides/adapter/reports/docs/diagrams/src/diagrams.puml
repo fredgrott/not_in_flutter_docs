@@ -1,0 +1,19 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::adapter::bin::adapter.dart::Adaptee" {
+  +String method()
+}
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::adapter::bin::adapter.dart::Target" {
+  +String call()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::adapter::bin::adapter.dart::Adapter" {
+  +String call()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::adapter::bin::adapter.dart::Target" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::adapter::bin::adapter.dart::Adapter"
+
+
+@enduml

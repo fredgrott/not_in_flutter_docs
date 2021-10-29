@@ -1,0 +1,36 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::Loudspeaker" {
+  +void announce()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::LoudspeakerWithMuzak" {
+  +void announce()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::Loudspeaker" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::LoudspeakerWithMuzak"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::LoudspeakerWithAlarm" {
+  +void announce()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::Loudspeaker" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::LoudspeakerWithAlarm"
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::Factory" {
+  +Loudspeaker loudspeaker
+  +void announce()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::Factory" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::Loudspeaker"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::CoffeeRoaster" {
+  -int _temp
+  +bool isTooHot
+  +void turnGasValve()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::Factory" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::bridge::bin::bridge.dart::CoffeeRoaster"
+
+
+@enduml

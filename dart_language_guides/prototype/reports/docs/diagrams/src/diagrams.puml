@@ -1,0 +1,26 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::prototype::bin::prototype.dart::Shape" {
+  +int x
+  +int y
+  +Shape clone()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::prototype::bin::prototype.dart::Rectangle" {
+  +int height
+  +int width
+  +int x
+  +int y
+  -int _hashCode
+  +bool isClone
+  +String cloneStatus
+  +int hashCode
+  +Rectangle clone()
+  +bool ==()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::prototype::bin::prototype.dart::Shape" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::prototype::bin::prototype.dart::Rectangle"
+
+
+@enduml

@@ -1,0 +1,32 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::State" {
+  +void handler()
+  +String toString()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::StatusOn" {
+  +void handler()
+  +String toString()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::State" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::StatusOn"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::StatusOff" {
+  +void handler()
+  +String toString()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::State" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::StatusOff"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::Stateful" {
+  -State _state
+  +State state
+  +void touch()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::Stateful" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::state::bin::state.dart::State"
+
+
+@enduml

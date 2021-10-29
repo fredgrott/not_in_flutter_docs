@@ -1,0 +1,26 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::proxy::bin::proxy.dart::Subject" {
+  +void someMethod()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::proxy::bin::proxy.dart::ExpensiveClass" {
+  +String name
+  +void someMethod()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::proxy::bin::proxy.dart::Subject" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::proxy::bin::proxy.dart::ExpensiveClass"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::proxy::bin::proxy.dart::Proxy" {
+  -String _name
+  -ExpensiveClass _sub
+  +void someMethod()
+  -ExpensiveClass _subject()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::proxy::bin::proxy.dart::Proxy" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::proxy::bin::proxy.dart::ExpensiveClass"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::proxy::bin::proxy.dart::Subject" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::proxy::bin::proxy.dart::Proxy"
+
+
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::memento::bin::memento.dart::Memento" {
+  -String _state
+  +String state
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::memento::bin::memento.dart::Originator" {
+  -String _state
+  +String state
+  +Memento saveToMemento()
+  +void restoreFromMemento()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::memento::bin::memento.dart::CareTaker" {
+  +Memento memento
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::memento::bin::memento.dart::CareTaker" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::memento::bin::memento.dart::Memento"
+
+
+@enduml

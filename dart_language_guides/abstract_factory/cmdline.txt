@@ -1,0 +1,1 @@
+flutter pub global run dcdg -s bin -o reports\docs\diagrams\src\diagrams.puml

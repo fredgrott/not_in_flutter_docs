@@ -1,0 +1,24 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::template_method::bin::template_method.dart::Abstract" {
+  +String abstractMethod()
+  +String hookMethod()
+  +void templateMethod()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::template_method::bin::template_method.dart::Concrete" {
+  +String abstractMethod()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::template_method::bin::template_method.dart::Abstract" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::template_method::bin::template_method.dart::Concrete"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::template_method::bin::template_method.dart::ConcreteOverridingHook" {
+  +String abstractMethod()
+  +String hookMethod()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::template_method::bin::template_method.dart::Abstract" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::template_method::bin::template_method.dart::ConcreteOverridingHook"
+
+
+@enduml

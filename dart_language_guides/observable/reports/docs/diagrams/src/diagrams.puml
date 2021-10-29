@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::observable::bin::observable.dart::Notification" {
+  +String message
+  +DateTime timestamp
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::observable::bin::observable.dart::Observable" {
+  -List<Observer> _observers
+  +void registerObserver()
+  +void notifyObservers()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::observable::bin::observable.dart::Observer" {
+  +String name
+  +void notify()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::observable::bin::observable.dart::CoffeeMaker" {
+  +void brew()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::observable::bin::observable.dart::Observable" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::observable::bin::observable.dart::CoffeeMaker"
+
+
+@enduml

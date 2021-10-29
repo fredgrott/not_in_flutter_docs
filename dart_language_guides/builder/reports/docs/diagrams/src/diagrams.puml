@@ -1,0 +1,27 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::builder::bin::builder.dart::PizzaBuilder" {
+  -String? _crust
+  -int? _diameter
+  -Set<String>? _toppings
+  +String? crust
+  +int? diameter
+  +Set<String>? toppings
+  -void _ensureCheese()
+  +Pizza build()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::builder::bin::builder.dart::Pizza" {
+  -String? _crust
+  -int? _diameter
+  -Set<String>? _toppings
+  +String? crust
+  +int? diameter
+  +String toppings
+  -String _stringifiedToppings()
+  +String toString()
+}
+
+
+@enduml

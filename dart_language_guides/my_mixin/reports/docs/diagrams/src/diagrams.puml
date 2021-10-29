@@ -1,0 +1,25 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::A" {
+  +void printMessage()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::D" {
+  +void printMessage()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::A" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::D"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::C" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::D"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::B" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::D"
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::B" {
+  +void printMessage()
+}
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::my_mixin::bin::my_mixin.dart::C" {
+  +void printMessage()
+}
+
+
+@enduml

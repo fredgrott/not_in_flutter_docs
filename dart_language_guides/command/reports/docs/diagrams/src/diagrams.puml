@@ -1,0 +1,56 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Receiver" {
+  +Set<String> actions
+}
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Command" {
+  +Receiver? receiver
+  +String name
+  +String toString()
+  +void execute()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Command" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Receiver"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Invoker" {
+  +List<String> history
+  +void execute()
+  +String toString()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::TurnOffCommand" {
+  +String name
+  +void execute()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Command" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::TurnOffCommand"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::TurnOnCommand" {
+  +String name
+  +void execute()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Command" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::TurnOnCommand"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Light" {
+  +Set<String> actions
+  +void turnOff()
+  +void turnOn()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Receiver" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Light"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::LightSwitch" {
+  -Invoker _switch
+  +Light light
+  +String history
+  +void perform()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::LightSwitch" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Invoker"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::LightSwitch" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::command::bin::command.dart::Light"
+
+
+@enduml

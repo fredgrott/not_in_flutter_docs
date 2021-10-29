@@ -1,0 +1,32 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Expression" {
+  +Number number
+  +void interpret()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Expression" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Number"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Add" {
+  +Number number
+  +void interpret()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Add" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Number"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Expression" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Add"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Subtract" {
+  +Number number
+  +void interpret()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Subtract" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Number"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Expression" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Subtract"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::interpreter::bin::interpreter.dart::Number" {
+  +int value
+}
+
+
+@enduml

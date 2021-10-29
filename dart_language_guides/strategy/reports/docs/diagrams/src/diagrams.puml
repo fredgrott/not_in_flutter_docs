@@ -1,0 +1,34 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::CoffeeStrategy" {
+  +String announce()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::AmericanoStrategy" {
+  +String announce()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::CoffeeStrategy" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::AmericanoStrategy"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::DripStrategy" {
+  +String announce()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::CoffeeStrategy" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::DripStrategy"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::MochaFrappuccinoStrategy" {
+  +String announce()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::CoffeeStrategy" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::MochaFrappuccinoStrategy"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::CoffeeDrinker" {
+  +CoffeeStrategy preferredDrink
+  +String name
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::CoffeeDrinker" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::strategy::bin::strategy.dart::CoffeeStrategy"
+
+
+@enduml

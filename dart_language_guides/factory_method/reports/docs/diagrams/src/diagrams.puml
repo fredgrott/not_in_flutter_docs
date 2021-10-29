@@ -1,0 +1,50 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Volume" {
+  +int quantity
+  +String unit
+  +String toString()
+}
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Vessel" {
+  +Volume volume
+  +String liquid
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Vessel" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Volume"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Bucket" {
+  +Volume volume
+  +String toString()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Bucket" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Volume"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Vessel" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Bucket"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Cup" {
+  +Volume volume
+  +String toString()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Cup" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Volume"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Vessel" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Cup"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::CoffeeVesselFactory" {
+  {static} +Vessel vesselFor()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Tiredness" {
+  +int index
+  {static} +List<Tiredness> values
+  {static} +Tiredness rested
+  {static} +Tiredness sleepy
+  {static} +Tiredness barelyAlive
+  {static} +Tiredness hasChildren
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Tiredness" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Tiredness"
+"dart::core::Enum" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::factory_method::bin::factory_method.dart::Tiredness"
+
+
+@enduml

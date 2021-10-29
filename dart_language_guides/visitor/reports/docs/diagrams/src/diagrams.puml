@@ -1,0 +1,53 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPart" {
+  +String name
+  +void accept()
+}
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPartVisitor" {
+  +void visit()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::Face" {
+  +String name
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPart" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::Face"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::Finger" {
+  +String name
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPart" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::Finger"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::Foot" {
+  +String name
+  +String toString()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPart" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::Foot"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::Body" {
+  +String name
+  +List<BodyPart> bodyParts
+  +void accept()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPart" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::Body"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPartStitchVisitor" {
+  +void visit()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPartVisitor" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPartStitchVisitor"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPartProdVisitor" {
+  +void visit()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPartVisitor" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::visitor::bin::visitor.dart::BodyPartProdVisitor"
+
+
+@enduml

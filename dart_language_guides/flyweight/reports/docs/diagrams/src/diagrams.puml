@@ -1,0 +1,36 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::flyweight::bin::flyweight.dart::Letter" {
+  +String letter
+  +String toString()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::flyweight::bin::flyweight.dart::Sentence" {
+  +List<Letter> letters
+  +void addLetter()
+  +String toString()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::flyweight::bin::flyweight.dart::LetterFactory" {
+  +Map<String, Letter> letters
+  +int lettersCreated
+  +Letter? fetchLetter()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::flyweight::bin::flyweight.dart::Document" {
+  +LetterFactory letterFactory
+  +int lettersWritten
+  +SplayTreeMap<int, Sentence> sentences
+  +int lettersCreated
+  +int hashCode
+  +void export()
+  +void write()
+  +bool ==()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::flyweight::bin::flyweight.dart::Document" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::flyweight::bin::flyweight.dart::LetterFactory"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::flyweight::bin::flyweight.dart::Document" o-- "dart::collection::SplayTreeMap<int, Sentence>"
+
+
+@enduml

@@ -1,0 +1,50 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::Logger" {
+  +Set<LogLevel> levels
+  -Logger? _next
+  +bool universal
+  +Logger next
+  +void addLevel()
+  +void log()
+  +void writeMessage()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::Logger" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::Logger"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::ConsoleLogger" {
+  +void writeMessage()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::Logger" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::ConsoleLogger"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::EmailLogger" {
+  +void writeMessage()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::Logger" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::EmailLogger"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::FileLogger" {
+  +void writeMessage()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::Logger" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::FileLogger"
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::LogLevel" {
+  +int index
+  {static} +List<LogLevel> values
+  {static} +LogLevel none
+  {static} +LogLevel info
+  {static} +LogLevel debug
+  {static} +LogLevel warning
+  {static} +LogLevel error
+  {static} +LogLevel functionalMessage
+  {static} +LogLevel functionalError
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::LogLevel" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::LogLevel"
+"dart::core::Enum" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::chain_of_responsibility::bin::chain_of_responsibility.dart::LogLevel"
+
+
+@enduml

@@ -1,0 +1,21 @@
+@startuml
+set namespaceSeparator ::
+
+abstract class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::mediator::bin::mediator.dart::Stateful" {
+  -String _state
+  +String state
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::mediator::bin::mediator.dart::Mediator" {
+  -List<Stateful> _parties
+  +void update()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::mediator::bin::mediator.dart::Attendee" {
+  +String name
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::mediator::bin::mediator.dart::Stateful" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::mediator::bin::mediator.dart::Attendee"
+
+
+@enduml

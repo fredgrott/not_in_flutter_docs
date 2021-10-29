@@ -1,0 +1,14 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::singleton::bin::singleton.dart::Me" {
+  {static} -Me _singleton
+  {static} -String _name
+  {static} +String name
+  +String toString()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::singleton::bin::singleton.dart::Me" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::singleton::bin::singleton.dart::Me"
+
+
+@enduml

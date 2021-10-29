@@ -1,0 +1,34 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::Grinder" {
+  -String _type
+  +void grind()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::Maker" {
+  -String _type
+  +void fill()
+  +void retrieve()
+  +void start()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::Imbiber" {
+  -String _beverage
+  +void drink()
+}
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::MorningFacade" {
+  -Imbiber _coffeeDrinker
+  -Grinder _coffeeGrinder
+  -Maker _coffeeMaker
+  +void prepareCoffee()
+  +void drinkCoffee()
+}
+
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::MorningFacade" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::Imbiber"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::MorningFacade" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::Grinder"
+"file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::MorningFacade" o-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::facade::bin::facade.dart::Maker"
+
+
+@enduml

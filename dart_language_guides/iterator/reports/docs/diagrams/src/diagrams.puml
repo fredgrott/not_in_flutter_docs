@@ -1,0 +1,14 @@
+@startuml
+set namespaceSeparator ::
+
+class "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::iterator::bin::iterator.dart::RainbowIterator" {
+  -List<String> _colors
+  -int _index
+  +String current
+  +bool moveNext()
+}
+
+"dart::core::Iterator" <|-- "file:::::::D:::fredgrttsstuff::GithubProjects::not_in_flutter_docs::dart_language_guides::iterator::bin::iterator.dart::RainbowIterator"
+
+
+@enduml
