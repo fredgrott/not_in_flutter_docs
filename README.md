@@ -13,6 +13,8 @@ is under commerical copyright by Fredrick Allan Grott.
 
 Flutter Basics
 
+[Why Do We Need Flutter Lints](https://medium.com/p/why-do-we-need-flutter-lints-a4780a04179a)
+
 
 DevOPS
 
