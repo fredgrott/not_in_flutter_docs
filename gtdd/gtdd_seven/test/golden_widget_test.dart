@@ -12,12 +12,12 @@ import 'package:gtdd_seven/src/my_app.dart';
 import 'package:gtdd_seven/src/presentation/features/home/ui/sample_item_list_view.dart';
 import 'package:gtdd_seven/src/presentation/features/settings/ui/settings_view.dart';
 import 'package:gtdd_seven/src/presentation/themes/my_app_themedata.dart';
-import 'package:mocktail/mocktail.dart' as mocktail;
 
 import 'golden_appbar_test_support.dart';
 import 'golden_detailscreen_text_test_support.dart';
 import 'golden_device_definitions.dart';
-import 'golden_dropbutton_test_support.dart';
+
+import 'golden_dropdown_button_test_support.dart';
 import 'golden_listtile_test_support.dart';
 import 'golden_mocks.dart';
 import 'golden_wrapper.dart';
@@ -47,8 +47,6 @@ import 'golden_wrapper.dart';
 void main() {
   // our var for our mocked dep
 
-  
-
   setUpAll(() async {
     // This Flutter Engine is running binding turns off
     // http and  https access which is why we use mocks
@@ -70,189 +68,237 @@ void main() {
   tearDownAll(() async {});
 
   // group all tests in this unit of the test suite together
-  group('Basic Golden Tests ', () {
-    // Flutter golden pumpWidget only pumps a widget,since we do not have
-    // a widget defined in home slot of MyApp if we try to pump MyApp we
-    // will get a blank screen. So we have to specify the
-    // widget of the default home navigation route.
-    // But doing will produce a red screen of death as we did not
-    // insert a Root WidgetApp Widget that has MediaQuery.
+  group(
+    'Basic Golden Tests ',
+    () {
+      // Flutter golden pumpWidget only pumps a widget,since we do not have
+      // a widget defined in home slot of MyApp if we try to pump MyApp we
+      // will get a blank screen. So we have to specify the
+      // widget of the default home navigation route.
+      // But doing will produce a red screen of death as we did not
+      // insert a Root WidgetApp Widget that has MediaQuery.
 
-    testWidgets('Golden test', (WidgetTester tester) async {
-      await tester.runAsync<dynamic>(() async {
-        await tester.pumpWidget(
-          MyApp(
-            settingsController: settingsController,
-          ),
-        );
-        await tester.pumpAndSettle();
-      });
-      await expectLater(find.byType(MyApp), matchesGoldenFile('main.png'),);
-    },);
-
-    testGoldens('DeviceBuilder-Home-base', (WidgetTester tester) async {
-      final builder = DeviceBuilder()
-        ..overrideDevicesForAllScenarios(
-          devices: [
-            Device.phone,
-            Device.iphone11,
-            Device.tabletPortrait,
-            Device.tabletLandscape,
-            samsungEightAndroid,
-            samsungNineAndroid,
-            iphonetwelvepromaxIOS,
-          ],
-        )
-        ..addScenario(
-          widget: const SampleItemListView(),
-          name: 'Sample Item List View Home Base',
-        );
-      //since I have builders in stateless widgets I need to run it this way
-      await tester.runAsync<dynamic>(() async {
-        await tester.pumpDeviceBuilder(
-          builder,
-          wrapper: myModifiedRootWidgetWrapper(
-            ourLightTheme: myLightThemeData,
-            ourDarkTheme: myDarkThemeData,
-            // ignore: cast_nullable_to_non_nullable
-            ourThemeMode: settingsController.themeMode as ThemeMode,
-          ),
-        );
-        await tester.pumpAndSettle();
-      });
-      await screenMatchesGolden(tester, "sample item list multiple screens",);
-    },);
-
-    testGoldens('DeviceBuilder-Settings View ', (WidgetTester tester) async {
-      // In a real app one would supply the other parameters to the
-      // app wrapper of the RootWidget as when it's blank
-      // everything resolves to a default.
-      final builder = DeviceBuilder()
-        ..overrideDevicesForAllScenarios(
-          devices: [
-            Device.phone,
-            Device.iphone11,
-            Device.tabletPortrait,
-            Device.tabletLandscape,
-            samsungEightAndroid,
-            samsungNineAndroid,
-            iphonetwelvepromaxIOS,
-          ],
-        )
-        ..addScenario(
-          widget: SettingsView(
-            controller: settingsController,
-          ),
-          name: 'Settings View',
-        );
-      await tester.runAsync<dynamic>(() async {
-        await tester.pumpDeviceBuilder(
-          builder,
-          wrapper: myModifiedRootWidgetWrapper(
-            ourLightTheme: myLightThemeData,
-            ourDarkTheme: myDarkThemeData,
-            // ignore: cast_nullable_to_non_nullable
-            ourThemeMode: settingsController.themeMode as ThemeMode,
-          ),
-        );
-        await tester.pumpAndSettle();
-      });
-      await screenMatchesGolden(
-        tester,
-        "settings view page multiple screens",
+      testWidgets(
+        'Golden test',
+        (WidgetTester tester) async {
+          await tester.runAsync<dynamic>(() async {
+            await tester.pumpWidget(
+              MyApp(
+                settingsController: settingsController,
+              ),
+            );
+            await tester.pumpAndSettle();
+          });
+          await expectLater(
+            find.byType(MyApp),
+            matchesGoldenFile('main.png'),
+          );
+        },
       );
-    },);
-  },);
+
+      testGoldens(
+        'DeviceBuilder-Home-base',
+        (WidgetTester tester) async {
+          final builder = DeviceBuilder()
+            ..overrideDevicesForAllScenarios(
+              devices: [
+                Device.phone,
+                Device.iphone11,
+                Device.tabletPortrait,
+                Device.tabletLandscape,
+                samsungEightAndroid,
+                samsungNineAndroid,
+                iphonetwelvepromaxIOS,
+              ],
+            )
+            ..addScenario(
+              widget: const SampleItemListView(),
+              name: 'Sample Item List View Home Base',
+            );
+          //since I have builders in stateless widgets I need to run it this way
+          await tester.runAsync<dynamic>(() async {
+            await tester.pumpDeviceBuilder(
+              builder,
+              wrapper: myModifiedRootWidgetWrapper(
+                ourLightTheme: myLightThemeData,
+                ourDarkTheme: myDarkThemeData,
+                // ignore: cast_nullable_to_non_nullable
+                ourThemeMode: settingsController.themeMode as ThemeMode,
+              ),
+            );
+            await tester.pumpAndSettle();
+          });
+          await screenMatchesGolden(
+            tester,
+            "sample item list multiple screens",
+          );
+        },
+      );
+
+      testGoldens(
+        'DeviceBuilder-Settings View ',
+        (WidgetTester tester) async {
+          // In a real app one would supply the other parameters to the
+          // app wrapper of the RootWidget as when it's blank
+          // everything resolves to a default.
+          final builder = DeviceBuilder()
+            ..overrideDevicesForAllScenarios(
+              devices: [
+                Device.phone,
+                Device.iphone11,
+                Device.tabletPortrait,
+                Device.tabletLandscape,
+                samsungEightAndroid,
+                samsungNineAndroid,
+                iphonetwelvepromaxIOS,
+              ],
+            )
+            ..addScenario(
+              widget: SettingsView(
+                controller: settingsController,
+              ),
+              name: 'Settings View',
+            );
+          await tester.runAsync<dynamic>(() async {
+            await tester.pumpDeviceBuilder(
+              builder,
+              wrapper: myModifiedRootWidgetWrapper(
+                ourLightTheme: myLightThemeData,
+                ourDarkTheme: myDarkThemeData,
+                // ignore: cast_nullable_to_non_nullable
+                ourThemeMode: settingsController.themeMode as ThemeMode,
+              ),
+            );
+            await tester.pumpAndSettle();
+          });
+          await screenMatchesGolden(
+            tester,
+            "settings view page multiple screens",
+          );
+        },
+      );
+    },
+  );
 
   // routing through using golden toolkit infrastructure as we
   // need to insert a root widget test fixture at top of
   // widget tree for page object to work.
-  group('Widget Unit Tests using page object', () {
-    // just checking to see if UI components are there,
-    // notice that it reads as a straight English style use case.
-    testWidgets(
-      'AppBar Title is there',
-      appbarHarness((given, when, then,) async {
-        await given.myAppExistsSampleScreen();
-        await then.appBarTitleIsSampleScreen();
+  group(
+    'Widget Unit Tests using page object',
+    () {
+      // just checking to see if UI components are there,
+      // notice that it reads as a straight English style use case.
+      testWidgets(
+        'AppBar Title is there',
+        appbarHarness((
+          given,
+          when,
+          then,
+        ) async {
+          await given.myAppExistsSampleScreen();
+          await then.appBarTitleIsSampleScreen();
 
-        await given.myAppExistsDetailsScreen();
-        await then.appBarTitleIsDetailScreen();
+          await given.myAppExistsDetailsScreen();
+          await then.appBarTitleIsDetailScreen();
 
-        await given.myAppExistsSettingsScreen();
-        await then.appBarTitleIsSettingsScreen();
-      }),
-    );
+          await given.myAppExistsSettingsScreen();
+          await then.appBarTitleIsSettingsScreen();
+        }),
+      );
 
-    testWidgets(
-      'List Tile is in home and has a title',
-      listTileHarness((given, when, then,) async {
-        await given.myAppExists();
-        await when.listViewFound();
-        await then.threeListTilesFound();
-        await then.listTileOneFound();
-        await then.listTileTwoFound();
-        await then.listTileThreeFound();
-      }),
-    );
+      testWidgets(
+        'List Tile is in home and has a title',
+        listTileHarness((
+          given,
+          when,
+          then,
+        ) async {
+          await given.myAppExists();
+          await when.listViewFound();
+          await then.threeListTilesFound();
+          await then.listTileOneFound();
+          await then.listTileTwoFound();
+          await then.listTileThreeFound();
+        }),
+      );
 
-    testWidgets(
-      'Detail Screen has appbar title and description',
-      detailTextHarness((given, when, then,) async {
-        await given.myAppExists();
-        await then.appBarTitleIs();
-        await then.textIsSampleItemDetailScreen();
-      }),
-    );
+      testWidgets(
+        'Detail Screen has appbar title and description',
+        detailTextHarness((
+          given,
+          when,
+          then,
+        ) async {
+          await given.myAppExists();
+          await then.appBarTitleIs();
+          await then.textIsSampleItemDetailScreen();
+        }),
+      );
+    },
+  );
 
-    testWidgets(
-      'Settings Screen, user can choose system theme',
-      dropButtonHarness((given, when, then,) async {
-        await given.myAppExists();
+  // The gist is that the harness sets up the root widget to pump and the
+  // widget under test so that we can run it through test goldens and get
+  // visual proof of the test and at the same time being able to really
+  // mock user behavior and UI behavior.
+  //
+  // eBay has no direct mention of this in the docs of golden toolkit but
+  // it is somewhat implied.
+  //
+  //  Given bloc will be asserting that we have an app and the settings screen
+  //  When bloc will be asserting that User was able to choose a theme
+  //  Then bloc will then assert that user got settings screen with new theme
+  //  choice applied.
+  group(
+    'BDD Testing Use Cases',
+    () {
+      // Theme Choice BDD use cases
+      testGoldens(
+        'User Choses System Theme',
+        dropButtonHarness((
+          given,
+          when,
+          then,
+        ) async {
+          await given.myAppExistsSettingsScreenVisible();
+          await when.myUserChosesSystemTheme();
+          await then.myUserSeesSystemThemeVisible();
+        }),
+      );
 
-        await given.dropDownExists();
+      testGoldens(
+        'User Choses A Dark Theme',
+        dropButtonHarness(
+          (
+            given,
+            when,
+            then,
+          ) async {
+            await given.myAppExistsSettingsScreenVisible();
+            await when.myUserChosesDarkTheme();
+            await then.myUserSeesDarkThemeVisible();
+          },
+        ),
+      );
 
+      testGoldens(
+        'User Choses A Light Theme',
+        dropButtonHarness(
+          (
+            given,
+            when,
+            then,
+          ) async {
+            await given.myAppExistsSettingsScreenVisible();
+            await when.myUserChosesLightTheme();
+            await then.myUserSeesLightThemeVisible();
+          },
+        ),
+      );
 
-        mocktail.when(() => mySettingsController?.updateThemeMode(ThemeMode.system)).thenReturn(ThemeMode.system);
-        mocktail.when<dynamic>(() => mySettingsController?.themeMode).thenReturn(ThemeMode.system);
-
-        await then.userChoosesSystemThemeAndItChanges();
-      },),
-    );
-
-    testWidgets(
-      'Settings Screen, user can choose dark theme',
-      dropButtonHarness((given, when, then,) async {
-        await given.myAppExists();
-
-        await given.dropDownExists();
-
-
-        mocktail.when(
-            () => mySettingsController?.updateThemeMode(ThemeMode.dark),).thenReturn(ThemeMode.dark);
-        mocktail.when<dynamic>(() => mySettingsController?.themeMode).thenReturn(ThemeMode.dark);
-
-        await then.userChoosesDarkThemeAndItChanges();
-      }),
-    );
-
-    testWidgets(
-      'Settings Screen, user can choose light theme',
-      dropButtonHarness((given, when, then,) async {
-        await given.myAppExists();
-
-        await given.dropDownExists();
-
-
-        mocktail.when(
-            // ignore: void_checks
-            () => mySettingsController?.updateThemeMode(ThemeMode.light),).thenReturn(ThemeMode.light);
-        mocktail.when<dynamic>(() => mySettingsController?.themeMode).thenReturn(ThemeMode.light);
-
-        await then.userChoosesLightThemeAndItChanges();
-      }),
-    );
-  },);
+      // navigation BDD goes here
+    },
+  );
 
   // It's not in the docs but to unit test widgets on the non-instrumented
   // test side due to us only pumping a widget to get a frame we need to

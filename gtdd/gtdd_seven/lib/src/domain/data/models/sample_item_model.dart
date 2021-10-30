@@ -6,18 +6,30 @@ import 'package:equatable/equatable.dart';
 
 // In clean arch entities and models are the same
 class SampleItemModel extends Equatable {
-  const SampleItemModel({
-    required this.sampleItemId,
-  });
+  final int sampleItemId;
+
+  int get id => sampleItemId;
+
 
   @override
   List<Object?> get props => [sampleItemId];
 
-  final int sampleItemId;
+  
 
   set id(int _id) {
     id = _id;
   }
 
-  int get id => sampleItemId;
+  
+
+  
+
+
+  const SampleItemModel({
+    required this.sampleItemId,
+  });
+
+  
+
+  
 }

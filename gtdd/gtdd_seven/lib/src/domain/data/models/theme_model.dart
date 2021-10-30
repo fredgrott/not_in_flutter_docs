@@ -9,11 +9,9 @@ class ThemeModel extends Equatable implements SampleItem {
   late final int _id;
 
   @override
-  // TODO: implement id
   int get id => _id;
 
   @override
-  // TODO: implement props
   List<Object?> get props => [_id];
 
   set id(int _id) {

@@ -21,6 +21,7 @@ analyzer:
   # analyzer as a dependency.
   exclude: 
     - lib/src/localization_gen/**
+    - test/**
   # my modified settings for language and strong-mode and errors
   language: 
     strict-raw-types: true

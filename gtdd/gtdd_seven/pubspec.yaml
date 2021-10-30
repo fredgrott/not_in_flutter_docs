@@ -41,6 +41,8 @@ dev_dependencies:
   page_object: ^0.2.0
   # bdd harness and fixtures  testing
   given_when_then: ^0.2.0
+  # property tester
+  glados: ^1.1.1
 
 dependency_overrides:
   mocktail: ^0.2.0
