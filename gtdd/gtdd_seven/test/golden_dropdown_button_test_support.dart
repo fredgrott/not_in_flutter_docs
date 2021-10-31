@@ -11,7 +11,7 @@ import 'package:gtdd_seven/src/presentation/features/settings/ui/settings_view.d
 import 'package:gtdd_seven/src/presentation/themes/my_app_themedata.dart';
 import 'package:mocktail/mocktail.dart' as mocktail;
 
-import 'golden_mocks.dart';
+
 import 'golden_page_objects.dart';
 import 'golden_wrapper.dart';
 
@@ -63,13 +63,7 @@ extension SettingsScreenUserSelectsSystemThemeWhen on WidgetTestWhen<_WidgetTest
       );
     });
 
-    // stub
-    mocktail
-        .when(() => mySettingsController?.updateThemeMode(ThemeMode.system));
-
-    mocktail
-        .when<dynamic>(() => mySettingsController?.themeMode)
-        .thenReturn(ThemeMode.system);
+    
 
     // when user taps and choose dark theme
 
@@ -100,7 +94,7 @@ extension SettingsScreenSystemThemeVisibleThen
     });
     await screenMatchesGolden(
       tester,
-      "system theme visible",
+      "system theme visible after choosing system",
     );
   }
 }
@@ -120,13 +114,7 @@ extension SettingsScreenUserSelectsDarkThemeWhen
       );
     });
 
-    // stub
-    mocktail
-        .when(() => mySettingsController?.updateThemeMode(ThemeMode.system));
-
-    mocktail
-        .when<dynamic>(() => mySettingsController?.themeMode)
-        .thenReturn(ThemeMode.system);
+   
 
     // when user taps and choose dark theme
 
@@ -155,16 +143,7 @@ extension SettingsScreenUserHasChosenDarkThemeThen
         ),
       );
     });
-    //stub
-    mocktail.when(() => mySettingsController?.updateThemeMode(ThemeMode.dark));
-    //stub
-    mocktail
-        .when<dynamic>(() => mySettingsController?.themeMode)
-        .thenReturn(ThemeMode.dark);
-    // interact
-    mySettingsController?.themeMode;
-    // verify
-    mocktail.verify(() => mySettingsController?.themeMode);
+    
 
     // now get our visual proof of the mocked simulation
     await screenMatchesGolden(
@@ -188,14 +167,7 @@ extension SettingsScreenUserSelectsLightThemeWhen on WidgetTestWhen<_WidgetTestH
       );
     });
 
-    // stub
-    mocktail
-        .when(() => mySettingsController?.updateThemeMode(ThemeMode.system));
-
-    mocktail
-        .when<dynamic>(() => mySettingsController?.themeMode)
-        .thenReturn(ThemeMode.system);
-
+    
     // when user taps and choose dark theme
 
     final app = MyAppPageObject();
@@ -223,21 +195,12 @@ extension SettingsScreenUserHasChosenLightTheme on WidgetTestThen<_WidgetTestHar
         ),
       );
     });
-    //stub
-    mocktail.when(() => mySettingsController?.updateThemeMode(ThemeMode.light));
-    //stub
-    mocktail
-        .when<dynamic>(() => mySettingsController?.themeMode)
-        .thenReturn(ThemeMode.light);
-    // interact
-    mySettingsController?.themeMode;
-    // verify
-    mocktail.verify(() => mySettingsController?.themeMode);
+    
 
     // now get our visual proof of the mocked simulation
     await screenMatchesGolden(
       tester,
-      "dark theme visible after user choses light",
+      "light theme visible after user choses light",
     );
   }
 }

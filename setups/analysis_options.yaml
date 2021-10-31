@@ -50,8 +50,6 @@ dart_code_metrics:
    rules:
      - always-remove-listener:
          severity:  warning
-     - avoid-late-keyword:
-         severity:  warning
      - avoid-nested-conditional-expressions:
          severity:  style
      - avoid-non-null-assertion:

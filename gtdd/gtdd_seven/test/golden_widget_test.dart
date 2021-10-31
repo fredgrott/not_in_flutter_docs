@@ -12,6 +12,7 @@ import 'package:gtdd_seven/src/my_app.dart';
 import 'package:gtdd_seven/src/presentation/features/home/ui/sample_item_list_view.dart';
 import 'package:gtdd_seven/src/presentation/features/settings/ui/settings_view.dart';
 import 'package:gtdd_seven/src/presentation/themes/my_app_themedata.dart';
+import 'package:mocktail/mocktail.dart' as mocktail;
 
 import 'golden_appbar_test_support.dart';
 import 'golden_detailscreen_text_test_support.dart';
@@ -19,7 +20,7 @@ import 'golden_device_definitions.dart';
 
 import 'golden_dropdown_button_test_support.dart';
 import 'golden_listtile_test_support.dart';
-import 'golden_mocks.dart';
+
 import 'golden_wrapper.dart';
 
 // Golden Test Driven Development Notes:
@@ -58,7 +59,7 @@ void main() {
 
     // setting up our mocked dep
 
-    mySettingsController = MockMySettingsController();
+   
 
     await settingsController.loadSettings();
   });
@@ -261,6 +262,11 @@ void main() {
           then,
         ) async {
           await given.myAppExistsSettingsScreenVisible();
+
+          
+
+         
+
           await when.myUserChosesSystemTheme();
           await then.myUserSeesSystemThemeVisible();
         }),
@@ -275,6 +281,11 @@ void main() {
             then,
           ) async {
             await given.myAppExistsSettingsScreenVisible();
+
+            
+
+            
+
             await when.myUserChosesDarkTheme();
             await then.myUserSeesDarkThemeVisible();
           },
@@ -290,6 +301,12 @@ void main() {
             then,
           ) async {
             await given.myAppExistsSettingsScreenVisible();
+
+            
+
+            // need to interact with the mock before the harness call
+           
+
             await when.myUserChosesLightTheme();
             await then.myUserSeesLightThemeVisible();
           },
