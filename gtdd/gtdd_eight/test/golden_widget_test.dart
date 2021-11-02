@@ -7,7 +7,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
-import 'package:gtdd_eight/src/domain/app_vars.dart';
+import 'package:gtdd_eight/src/infrastructure/app_vars.dart';
+
 import 'package:gtdd_eight/src/my_app.dart';
 import 'package:gtdd_eight/src/presentation/features/home/ui/sample_item_list_view.dart';
 import 'package:gtdd_eight/src/presentation/features/settings/ui/settings_view.dart';

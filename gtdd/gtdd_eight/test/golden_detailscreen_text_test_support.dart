@@ -7,7 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:given_when_then/given_when_then.dart';
 import 'package:golden_toolkit/src/testing_tools.dart';
-import 'package:gtdd_eight/src/domain/app_vars.dart';
+import 'package:gtdd_eight/src/infrastructure/app_vars.dart';
+
 import 'package:gtdd_eight/src/presentation/features/home/ui/sample_item_details_view.dart';
 import 'package:gtdd_eight/src/presentation/themes/my_app_themedata.dart';
 

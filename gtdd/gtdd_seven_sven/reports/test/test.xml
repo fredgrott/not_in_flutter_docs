@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite errors="0" failures="0" tests="9" skipped="0" name="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" timestamp="2021-11-02T20:26:13">
+    <properties>
+      <property name="platform" value="vm"/>
+    </properties>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" name="Basic Golden Tests  Golden test" time="2.243"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" name="Basic Golden Tests  DeviceBuilder-Home-base" time="2.463"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" name="Basic Golden Tests  DeviceBuilder-Settings View " time="2.319"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" name="Widget Unit Tests using page object AppBar Title is there" time="0.547"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" name="Widget Unit Tests using page object List Tile is in home and has a title" time="0.796"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" name="Widget Unit Tests using page object Detail Screen has appbar title and description" time="0.103"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" name="BDD Testing Use Cases User Choses System Theme" time="0.338"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" name="BDD Testing Use Cases User Choses A Dark Theme" time="0.24"/>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.golden_widget" name="BDD Testing Use Cases User Choses A Light Theme" time="0.177"/>
+  </testsuite>
+  <testsuite errors="0" failures="0" tests="1" skipped="0" name="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.unit" timestamp="2021-11-02T20:26:13">
+    <properties>
+      <property name="platform" value="vm"/>
+    </properties>
+    <testcase classname="D:.fredgrttsstuff.GithubProjects.not_in_flutter_docs.gtdd.gtdd_seven_sven.test.unit" name="Sample Item Sample Item" time="0.011"/>
+  </testsuite>
+</testsuites>

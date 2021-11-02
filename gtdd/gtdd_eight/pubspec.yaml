@@ -7,7 +7,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.15.0-178.1.beta <3.0.0"
 
 dependencies:
   flutter:
@@ -22,15 +22,17 @@ dependencies:
   google_fonts: ^2.1.0
   equatable: ^2.0.3
   dartz: ^0.10.0
-  
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # workflow automation
+  build_runner: ^2.1.4
+  # workflow automation
+  derry: ^1.4.3
+  # code metrics
   dart_code_metrics: ^4.5.0
-  # project workflow automation
-  build_runner: ^2.1.2
   # goldens
   golden_toolkit: ^0.10.0
   # mocking
@@ -44,11 +46,13 @@ dev_dependencies:
   # property tester
   glados: ^1.1.1
 
-dependency_overrides:
-  mocktail: ^0.2.0
 
 
   flutter_lints: ^1.0.0
+
+dependency_overrides:
+  mocktail: ^0.2.0
+
 
 flutter:
   uses-material-design: true
@@ -70,3 +74,4 @@ flutter_intl:
   output_dir: lib/src/localization_gen
   use_deferred_loading: false
 
+scripts: derry.yaml

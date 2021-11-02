@@ -1,0 +1,150 @@
+@startuml
+set namespaceSeparator ::
+
+class "gtdd_seven_sven::src::domain::data::entities::sample_item.dart::SampleItem" {
+  +int id
+}
+
+class "gtdd_seven_sven::src::domain::data::models::sample_item_model.dart::SampleItemModel" {
+  +int sampleItemId
+  +int id
+  +List<Object?> props
+}
+
+"equatable::src::equatable.dart::Equatable" <|-- "gtdd_seven_sven::src::domain::data::models::sample_item_model.dart::SampleItemModel"
+
+class "gtdd_seven_sven::src::domain::data::models::theme_model.dart::ThemeModel" {
+  -int _id
+  +int id
+  +List<Object?> props
+}
+
+"equatable::src::equatable.dart::Equatable" <|-- "gtdd_seven_sven::src::domain::data::models::theme_model.dart::ThemeModel"
+"gtdd_seven_sven::src::domain::data::entities::sample_item.dart::SampleItem" <|-- "gtdd_seven_sven::src::domain::data::models::theme_model.dart::ThemeModel"
+
+abstract class "gtdd_seven_sven::src::domain::data::repositories::sampleitem_repository.dart::SampleItemRepository" {
+  +Future<Either<Failure, SampleItemModel>> getSampleItem()
+}
+
+abstract class "gtdd_seven_sven::src::domain::data::use_cases::use_case.dart::UseCase" {
+  +Future<Either<Failure, Type>> call()
+}
+
+class "gtdd_seven_sven::src::domain::data::use_cases::use_case.dart::NoParams" {
+  +List<Object> props
+}
+
+"equatable::src::equatable.dart::Equatable" <|-- "gtdd_seven_sven::src::domain::data::use_cases::use_case.dart::NoParams"
+
+class "gtdd_seven_sven::src::infrastructure::exceptions::exception.dart::CacheException" {
+}
+
+"dart::core::Exception" <|-- "gtdd_seven_sven::src::infrastructure::exceptions::exception.dart::CacheException"
+
+abstract class "gtdd_seven_sven::src::infrastructure::exceptions::failure.dart::Failure" {
+  +List<Object> props
+}
+
+"equatable::src::equatable.dart::Equatable" <|-- "gtdd_seven_sven::src::infrastructure::exceptions::failure.dart::Failure"
+
+class "gtdd_seven_sven::src::localization_gen::intl::messages_en.dart::MessageLookup" {
+  +Map<String, dynamic> messages
+  +String localeName
+  {static} -Map<String, Function> _notInlinedMessages()
+}
+
+"intl::message_lookup_by_library.dart::MessageLookupByLibrary" <|-- "gtdd_seven_sven::src::localization_gen::intl::messages_en.dart::MessageLookup"
+
+class "gtdd_seven_sven::src::localization_gen::l10n.dart::S" {
+  {static} -S? _current
+  {static} +AppLocalizationDelegate delegate
+  {static} +S current
+  +String appTitle
+  {static} +Future<S> load()
+  {static} +S of()
+  {static} +S? maybeOf()
+}
+
+"gtdd_seven_sven::src::localization_gen::l10n.dart::S" o-- "gtdd_seven_sven::src::localization_gen::l10n.dart::S"
+"gtdd_seven_sven::src::localization_gen::l10n.dart::S" o-- "gtdd_seven_sven::src::localization_gen::l10n.dart::AppLocalizationDelegate"
+
+class "gtdd_seven_sven::src::localization_gen::l10n.dart::AppLocalizationDelegate" {
+  +List<Locale> supportedLocales
+  +bool isSupported()
+  +Future<S> load()
+  +bool shouldReload()
+  -bool _isSupported()
+}
+
+"flutter::src::widgets::localizations.dart::LocalizationsDelegate" <|-- "gtdd_seven_sven::src::localization_gen::l10n.dart::AppLocalizationDelegate"
+
+class "gtdd_seven_sven::src::my_app.dart::MyApp" {
+  +SettingsController settingsController
+  {static} +String? myRestoreAppId
+  +Widget build()
+}
+
+"gtdd_seven_sven::src::my_app.dart::MyApp" o-- "gtdd_seven_sven::src::presentation::features::settings::viewcontrollers::settings_controller.dart::SettingsController"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "gtdd_seven_sven::src::my_app.dart::MyApp"
+
+class "gtdd_seven_sven::src::presentation::features::home::ui::sample_item_details_view.dart::SampleItemDetailsView" {
+  {static} +String routeName
+  {static} +String title
+  {static} +Key titleKey
+  {static} +String detail
+  {static} +Key detailKey
+  +Widget build()
+}
+
+"gtdd_seven_sven::src::presentation::features::home::ui::sample_item_details_view.dart::SampleItemDetailsView" o-- "flutter::src::foundation::key.dart::Key"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "gtdd_seven_sven::src::presentation::features::home::ui::sample_item_details_view.dart::SampleItemDetailsView"
+
+class "gtdd_seven_sven::src::presentation::features::home::ui::sample_item_list_view.dart::SampleItemListView" {
+  {static} +String routeName
+  +List<SampleItem> items
+  {static} +String title
+  {static} +Key titleKey
+  {static} +Key listTileTitleKey
+  +Widget build()
+}
+
+"gtdd_seven_sven::src::presentation::features::home::ui::sample_item_list_view.dart::SampleItemListView" o-- "flutter::src::foundation::key.dart::Key"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "gtdd_seven_sven::src::presentation::features::home::ui::sample_item_list_view.dart::SampleItemListView"
+
+class "gtdd_seven_sven::src::presentation::features::settings::services::settings_service.dart::SettingsService" {
+  +Future<ThemeMode> themeMode()
+  +Future<void> updateThemeMode()
+}
+
+class "gtdd_seven_sven::src::presentation::features::settings::ui::settings_view.dart::SettingsView" {
+  {static} +String routeName
+  +SettingsController controller
+  {static} +String title
+  {static} +Key titleKey
+  {static} +String dropMenuSystemThemeTitle
+  {static} +Key dropMenuSystemThemeTitleKey
+  {static} +String dropMenuLightThemeTitle
+  {static} +Key dropMenuLightThemeTitleKey
+  {static} +String dropMenuDarkThemeTitle
+  {static} +Key dropMenuDarkThemeTitleKey
+  +Widget build()
+}
+
+"gtdd_seven_sven::src::presentation::features::settings::ui::settings_view.dart::SettingsView" o-- "gtdd_seven_sven::src::presentation::features::settings::viewcontrollers::settings_controller.dart::SettingsController"
+"gtdd_seven_sven::src::presentation::features::settings::ui::settings_view.dart::SettingsView" o-- "flutter::src::foundation::key.dart::Key"
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "gtdd_seven_sven::src::presentation::features::settings::ui::settings_view.dart::SettingsView"
+
+class "gtdd_seven_sven::src::presentation::features::settings::viewcontrollers::settings_controller.dart::SettingsController" {
+  -SettingsService _settingsService
+  -ThemeMode? _themeMode
+  +ThemeMode? themeMode
+  +Future<void> loadSettings()
+  +Future<void> updateThemeMode()
+}
+
+"gtdd_seven_sven::src::presentation::features::settings::viewcontrollers::settings_controller.dart::SettingsController" o-- "gtdd_seven_sven::src::presentation::features::settings::services::settings_service.dart::SettingsService"
+"gtdd_seven_sven::src::presentation::features::settings::viewcontrollers::settings_controller.dart::SettingsController" o-- "flutter::src::material::app.dart::ThemeMode"
+"flutter::src::foundation::change_notifier.dart::ChangeNotifier" <|-- "gtdd_seven_sven::src::presentation::features::settings::viewcontrollers::settings_controller.dart::SettingsController"
+
+
+@enduml

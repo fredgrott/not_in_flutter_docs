@@ -30,7 +30,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:golden_toolkit/golden_toolkit.dart';
-import 'package:gtdd_eight/src/domain/app_vars.dart';
+import 'package:gtdd_eight/src/infrastructure/app_vars.dart';
+
 
 import 'golden_root_widget.dart';
 

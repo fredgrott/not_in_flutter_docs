@@ -1,0 +1,18 @@
+{
+  "languageToolLinter.languageTool.ignoredWordsInWorkspace": [
+    "androidsdk",
+    "chocolately",
+    "corretto",
+    "dartdoc",
+    "dcdg",
+    "dhttpd",
+    "envs",
+    "fvm",
+    "graphviz",
+    "junitreport",
+    "lcov",
+    "plantuml",
+    "pubviz",
+    "vscode"
+  ]
+}

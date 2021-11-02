@@ -1,0 +1,758 @@
+digraph pubviz {
+  graph [nodesep="0.2"];
+  edge [fontcolor=gray];
+
+  _fe_analyzer_shared [label="_fe_analyzer_shared
+30.0.0", shape=box, margin="0.25,0.15"];
+  _fe_analyzer_shared -> meta [label="^1.0.2"];
+
+  analyzer [label="analyzer
+2.7.0", shape=box, margin="0.25,0.15"];
+  analyzer -> _fe_analyzer_shared [label="^30.0.0"];
+  analyzer -> cli_util [label="^0.3.0"];
+  analyzer -> collection [label="^1.15.0"];
+  analyzer -> convert [label="^3.0.0"];
+  analyzer -> crypto [label="^3.0.0"];
+  analyzer -> glob [label="^2.0.0"];
+  analyzer -> meta [label="^1.7.0"];
+  analyzer -> package_config [label="^2.0.0"];
+  analyzer -> path [label="^1.8.0"];
+  analyzer -> pub_semver [label="^2.0.0"];
+  analyzer -> source_span [label="^1.8.0"];
+  analyzer -> watcher [label="^1.0.0"];
+  analyzer -> yaml [label="^3.0.0"];
+
+  analyzer_plugin [label="analyzer_plugin
+0.8.0"];
+  analyzer_plugin -> analyzer [label="^2.4.0", color=gray];
+  analyzer_plugin -> collection [label="^1.15.0", color=gray];
+  analyzer_plugin -> dart_style [label="^2.0.0", color=gray];
+  analyzer_plugin -> pub_semver [label="^2.0.0", color=gray];
+  analyzer_plugin -> yaml [label="^3.1.0", color=gray];
+
+  ansicolor [label="ansicolor
+2.0.1"];
+
+  archive [label="archive
+3.1.6", shape=box, margin="0.25,0.15"];
+  archive -> crypto [label="^3.0.0"];
+  archive -> path [label="^1.8.0"];
+
+  args [label="args
+2.3.0", shape=box, margin="0.25,0.15"];
+
+  async [label="async
+2.8.2", shape=box, margin="0.25,0.15"];
+  async -> collection [label="^1.15.0"];
+  async -> meta [label="^1.1.7"];
+
+  boolean_selector [label="boolean_selector
+2.1.0"];
+  boolean_selector -> source_span [label="^1.8.0", color=gray];
+  boolean_selector -> string_scanner [label="^1.1.0", color=gray];
+
+  build [label="build
+2.1.1"];
+  build -> analyzer [label=">=1.5.0 <3.0.0", color=gray];
+  build -> async [label="^2.5.0", color=gray];
+  build -> convert [label="^3.0.0", color=gray];
+  build -> crypto [label="^3.0.0", color=gray];
+  build -> glob [label="^2.0.0", color=gray];
+  build -> logging [label="^1.0.0", color=gray];
+  build -> meta [label="^1.3.0", color=gray];
+  build -> path [label="^1.8.0", color=gray];
+
+  build_config [label="build_config
+1.0.0"];
+  build_config -> checked_yaml [label="^2.0.0", color=gray];
+  build_config -> json_annotation [label="^4.0.0", color=gray];
+  build_config -> path [label="^1.8.0", color=gray];
+  build_config -> pubspec_parse [label="^1.0.0", color=gray];
+  build_config -> yaml [label="^3.0.0", color=gray];
+
+  build_daemon [label="build_daemon
+3.0.1"];
+  build_daemon -> built_collection [label="^5.0.0", color=gray];
+  build_daemon -> built_value [label="^8.0.0", color=gray];
+  build_daemon -> http_multi_server [label="^3.0.0", color=gray];
+  build_daemon -> logging [label="^1.0.0", color=gray];
+  build_daemon -> path [label="^1.8.0", color=gray];
+  build_daemon -> pool [label="^1.5.0", color=gray];
+  build_daemon -> shelf [label="^1.0.0", color=gray];
+  build_daemon -> shelf_web_socket [label="^1.0.0", color=gray];
+  build_daemon -> stream_transform [label="^2.0.0", color=gray];
+  build_daemon -> watcher [label="^1.0.0", color=gray];
+  build_daemon -> web_socket_channel [label="^2.0.0", color=gray];
+
+  build_resolvers [label="build_resolvers
+2.0.4"];
+  build_resolvers -> analyzer [label=">=1.5.0 <3.0.0", color=gray];
+  build_resolvers -> async [label="^2.5.0", color=gray];
+  build_resolvers -> build [label="^2.0.0", color=gray];
+  build_resolvers -> crypto [label="^3.0.0", color=gray];
+  build_resolvers -> graphs [label=">=1.0.0 <3.0.0", color=gray];
+  build_resolvers -> logging [label="^1.0.0", color=gray];
+  build_resolvers -> package_config [label="^2.0.0", color=gray];
+  build_resolvers -> path [label="^1.8.0", color=gray];
+  build_resolvers -> pool [label="^1.5.0", color=gray];
+  build_resolvers -> pub_semver [label="^2.0.0", color=gray];
+  build_resolvers -> stream_transform [label="^2.0.0", color=gray];
+  build_resolvers -> yaml [label="^3.0.0", color=gray];
+
+  build_runner [label="build_runner
+2.1.4", style=bold];
+  build_runner -> analyzer [label=">=1.4.0 <3.0.0", color=gray];
+  build_runner -> args [label="^2.0.0", color=gray];
+  build_runner -> async [label="^2.5.0", color=gray];
+  build_runner -> build [label=">=2.1.0 <2.2.0", color=gray];
+  build_runner -> build_config [label=">=1.0.0 <1.1.0", color=gray];
+  build_runner -> build_daemon [label="^3.0.0", color=gray];
+  build_runner -> build_resolvers [label="^2.0.0", color=gray];
+  build_runner -> build_runner_core [label="^7.2.0", color=gray];
+  build_runner -> code_builder [label="^4.0.0", color=gray];
+  build_runner -> collection [label="^1.15.0", color=gray];
+  build_runner -> crypto [label="^3.0.0", color=gray];
+  build_runner -> dart_style [label="^2.0.0", color=gray];
+  build_runner -> frontend_server_client [label="^2.1.0", color=gray];
+  build_runner -> glob [label="^2.0.0", color=gray];
+  build_runner -> graphs [label="^2.0.0", color=gray];
+  build_runner -> http_multi_server [label="^3.0.0", color=gray];
+  build_runner -> io [label="^1.0.0", color=gray];
+  build_runner -> js [label="^0.6.3", color=gray];
+  build_runner -> logging [label="^1.0.0", color=gray];
+  build_runner -> meta [label="^1.3.0", color=gray];
+  build_runner -> mime [label="^1.0.0", color=gray];
+  build_runner -> package_config [label="^2.0.0", color=gray];
+  build_runner -> path [label="^1.8.0", color=gray];
+  build_runner -> pool [label="^1.5.0", color=gray];
+  build_runner -> pub_semver [label="^2.0.0", color=gray];
+  build_runner -> pubspec_parse [label="^1.0.0", color=gray];
+  build_runner -> shelf [label="^1.0.0", color=gray];
+  build_runner -> shelf_web_socket [label="^1.0.0", color=gray];
+  build_runner -> stack_trace [label="^1.10.0", color=gray];
+  build_runner -> stream_transform [label="^2.0.0", color=gray];
+  build_runner -> timing [label="^1.0.0", color=gray];
+  build_runner -> watcher [label="^1.0.0", color=gray];
+  build_runner -> web_socket_channel [label="^2.0.0", color=gray];
+  build_runner -> yaml [label="^3.0.0", color=gray];
+
+  build_runner_core [label="build_runner_core
+7.2.2"];
+  build_runner_core -> async [label="^2.5.0", color=gray];
+  build_runner_core -> build [label="^2.1.0", color=gray];
+  build_runner_core -> build_config [label="^1.0.0", color=gray];
+  build_runner_core -> build_resolvers [label="^2.0.0", color=gray];
+  build_runner_core -> collection [label="^1.15.0", color=gray];
+  build_runner_core -> convert [label="^3.0.0", color=gray];
+  build_runner_core -> crypto [label="^3.0.0", color=gray];
+  build_runner_core -> glob [label="^2.0.0", color=gray];
+  build_runner_core -> graphs [label="^2.0.0", color=gray];
+  build_runner_core -> json_annotation [label="^4.0.0", color=gray];
+  build_runner_core -> logging [label="^1.0.0", color=gray];
+  build_runner_core -> meta [label="^1.3.0", color=gray];
+  build_runner_core -> package_config [label="^2.0.0", color=gray];
+  build_runner_core -> path [label="^1.8.0", color=gray];
+  build_runner_core -> pool [label="^1.5.0", color=gray];
+  build_runner_core -> timing [label="^1.0.0", color=gray];
+  build_runner_core -> watcher [label="^1.0.0", color=gray];
+  build_runner_core -> yaml [label="^3.0.0", color=gray];
+
+  built_collection [label="built_collection
+5.1.1"];
+
+  built_value [label="built_value
+8.1.3"];
+  built_value -> built_collection [label="^5.0.0", color=gray];
+  built_value -> collection [label="^1.15.0", color=gray];
+  built_value -> fixnum [label="^1.0.0", color=gray];
+  built_value -> meta [label="^1.3.0", color=gray];
+
+  characters [label="characters
+1.2.0", shape=box, margin="0.25,0.15"];
+
+  charcode [label="charcode
+1.3.1", shape=box, margin="0.25,0.15"];
+
+  checked_yaml [label="checked_yaml
+2.0.1"];
+  checked_yaml -> json_annotation [label="^4.0.0", color=gray];
+  checked_yaml -> source_span [label="^1.8.0", color=gray];
+  checked_yaml -> yaml [label="^3.0.0", color=gray];
+
+  cli_util [label="cli_util
+0.3.5", shape=box, margin="0.25,0.15"];
+  cli_util -> meta [label="^1.3.0"];
+  cli_util -> path [label="^1.8.0"];
+
+  clock [label="clock
+1.1.0", shape=box, margin="0.25,0.15"];
+
+  code_builder [label="code_builder
+4.1.0"];
+  code_builder -> built_collection [label="^5.0.0", color=gray];
+  code_builder -> built_value [label="^8.0.0", color=gray];
+  code_builder -> collection [label="^1.15.0", color=gray];
+  code_builder -> matcher [label="^0.12.10", color=gray];
+  code_builder -> meta [label="^1.3.0", color=gray];
+
+  collection [label="collection
+1.15.0", shape=box, margin="0.25,0.15"];
+
+  console [label="console
+4.1.0"];
+  console -> vector_math [label="^2.1.0", color=gray];
+
+  convert [label="convert
+3.0.1", shape=box, margin="0.25,0.15"];
+  convert -> typed_data [label="^1.3.0"];
+
+  coverage [label="coverage
+1.0.3"];
+  coverage -> args [label="^2.0.0", color=gray];
+  coverage -> logging [label="^1.0.0", color=gray];
+  coverage -> package_config [label="^2.0.0", color=gray];
+  coverage -> path [label="^1.8.0", color=gray];
+  coverage -> source_maps [label="^0.10.10", color=gray];
+  coverage -> stack_trace [label="^1.10.0", color=gray];
+  coverage -> vm_service [label=">=6.1.0 <8.0.0", color=gray];
+
+  crypto [label="crypto
+3.0.1", shape=box, margin="0.25,0.15"];
+  crypto -> collection [label="^1.15.0"];
+  crypto -> typed_data [label="^1.3.0"];
+
+  csslib [label="csslib
+0.17.1"];
+  csslib -> source_span [label="^1.8.0", color=gray];
+
+  dart_code_metrics [label="dart_code_metrics
+4.6.0", style=bold];
+  dart_code_metrics -> analyzer [label=">=2.4.0 <2.8.0", color=gray];
+  dart_code_metrics -> analyzer_plugin [label="^0.8.0", color=gray];
+  dart_code_metrics -> ansicolor [label="^2.0.1", color=gray];
+  dart_code_metrics -> args [label="^2.0.0", color=gray];
+  dart_code_metrics -> collection [label="^1.15.0", color=gray];
+  dart_code_metrics -> crypto [label="^3.0.0", color=gray];
+  dart_code_metrics -> file [label="^6.0.0", color=gray];
+  dart_code_metrics -> glob [label="^2.0.1", color=gray];
+  dart_code_metrics -> html [label=">=0.15.0 <1.0.0", color=gray];
+  dart_code_metrics -> meta [label="^1.3.0", color=gray];
+  dart_code_metrics -> path [label="^1.8.0", color=gray];
+  dart_code_metrics -> source_span [label="^1.8.0", color=gray];
+  dart_code_metrics -> yaml [label="^3.1.0", color=gray];
+
+  dart_style [label="dart_style
+2.2.0", shape=box, margin="0.25,0.15"];
+  dart_style -> analyzer [label=">=2.0.0 <3.0.0"];
+  dart_style -> args [label=">=1.0.0 <3.0.0"];
+  dart_style -> path [label="^1.0.0"];
+  dart_style -> pub_semver [label=">=1.4.4 <3.0.0"];
+  dart_style -> source_span [label="^1.4.0"];
+
+  dartz [label="dartz
+0.10.0", shape=box, margin="0.25,0.15", style=bold];
+
+  derry [label="derry
+1.4.3", style=bold];
+  derry -> args [label="^2.1.0", color=gray];
+  derry -> console [label="^4.1.0", color=gray];
+  derry -> equatable [label="^2.0.2", color=gray];
+  derry -> ffi [label="^1.0.0", color=gray];
+  derry -> path [label="^1.7.0", color=gray];
+  derry -> string_similarity [label="^2.0.0", color=gray];
+  derry -> yaml [label="^3.1.0", color=gray];
+
+  equatable [label="equatable
+2.0.3", shape=box, margin="0.25,0.15", style=bold];
+  equatable -> collection [label="^1.15.0"];
+  equatable -> meta [label="^1.3.0"];
+
+  fake_async [label="fake_async
+1.2.0"];
+  fake_async -> clock [label="^1.1.0", color=gray];
+  fake_async -> collection [label="^1.15.0", color=gray];
+
+  ffi [label="ffi
+1.1.2", shape=box, margin="0.25,0.15"];
+
+  file [label="file
+6.1.2", shape=box, margin="0.25,0.15"];
+  file -> meta [label="^1.3.0"];
+  file -> path [label="^1.8.0"];
+
+  fixnum [label="fixnum
+1.0.0"];
+
+  flutter [label="flutter
+0.0.0", shape=box, margin="0.25,0.15", style=bold];
+  flutter -> characters [label="1.2.0"];
+  flutter -> collection [label="1.15.0"];
+  flutter -> meta [label="1.7.0"];
+  flutter -> typed_data [label="1.3.0"];
+  flutter -> vector_math [label="2.1.1"];
+
+  flutter_lints [label="flutter_lints
+1.0.4", style=bold];
+  flutter_lints -> lints [label="^1.0.0", color=gray];
+
+  flutter_localizations [label="flutter_localizations
+0.0.0", shape=box, margin="0.25,0.15", style=bold];
+  flutter_localizations -> characters [label="1.2.0"];
+  flutter_localizations -> clock [label="1.1.0"];
+  flutter_localizations -> collection [label="1.15.0"];
+  flutter_localizations -> flutter;
+  flutter_localizations -> intl [label="0.17.0"];
+  flutter_localizations -> meta [label="1.7.0"];
+  flutter_localizations -> path [label="1.8.0"];
+  flutter_localizations -> typed_data [label="1.3.0"];
+  flutter_localizations -> vector_math [label="2.1.1"];
+
+  flutter_test [label="flutter_test
+0.0.0", style=bold];
+  flutter_test -> async [label="2.8.2", color=gray];
+  flutter_test -> boolean_selector [label="2.1.0", color=gray];
+  flutter_test -> characters [label="1.2.0", color=gray];
+  flutter_test -> charcode [label="1.3.1", color=gray];
+  flutter_test -> clock [label="1.1.0", color=gray];
+  flutter_test -> collection [label="1.15.0", color=gray];
+  flutter_test -> fake_async [label="1.2.0", color=gray];
+  flutter_test -> flutter [color=gray];
+  flutter_test -> matcher [label="0.12.11", color=gray];
+  flutter_test -> meta [label="1.7.0", color=gray];
+  flutter_test -> path [label="1.8.0", color=gray];
+  flutter_test -> source_span [label="1.8.1", color=gray];
+  flutter_test -> stack_trace [label="1.10.0", color=gray];
+  flutter_test -> stream_channel [label="2.1.0", color=gray];
+  flutter_test -> string_scanner [label="1.1.0", color=gray];
+  flutter_test -> term_glyph [label="1.2.0", color=gray];
+  flutter_test -> test_api [label="0.4.3", color=gray];
+  flutter_test -> typed_data [label="1.3.0", color=gray];
+  flutter_test -> vector_math [label="2.1.1", color=gray];
+
+  frontend_server_client [label="frontend_server_client
+2.1.2"];
+  frontend_server_client -> async [label="^2.5.0", color=gray];
+  frontend_server_client -> path [label="^1.8.0", color=gray];
+
+  given_when_then [label="given_when_then
+0.2.0", style=bold];
+  given_when_then -> flutter [color=gray];
+  given_when_then -> flutter_test [color=gray];
+
+  glados [label="glados
+1.1.1", style=bold];
+  glados -> analyzer [label="^2.3.0", color=gray];
+  glados -> build [label="^2.0.0", color=gray];
+  glados -> characters [label="^1.1.0", color=gray];
+  glados -> meta [label="^1.3.0", color=gray];
+  glados -> source_gen [label="^1.0.0", color=gray];
+  glados -> test [label="^1.16.0", color=gray];
+
+  glob [label="glob
+2.0.2", shape=box, margin="0.25,0.15"];
+  glob -> async [label="^2.5.0"];
+  glob -> collection [label="^1.15.0"];
+  glob -> file [label="^6.0.0"];
+  glob -> path [label="^1.8.0"];
+  glob -> string_scanner [label="^1.1.0"];
+
+  golden_toolkit [label="golden_toolkit
+0.10.0", style=bold];
+  golden_toolkit -> flutter [color=gray];
+  golden_toolkit -> flutter_test [color=gray];
+  golden_toolkit -> meta [label="^1.1.8", color=gray];
+
+  google_fonts [label="google_fonts
+2.1.0", shape=box, margin="0.25,0.15", style=bold];
+  google_fonts -> crypto [label="^3.0.0"];
+  google_fonts -> flutter;
+  google_fonts -> http [label="^0.13.0"];
+  google_fonts -> path_provider [label="^2.0.0"];
+
+  graphs [label="graphs
+2.1.0"];
+  graphs -> collection [label="^1.1.0", color=gray];
+
+  gtdd_seven_sven [label=gtdd_seven_sven, fontsize="18", style=bold, shape=box, margin="0.25,0.15"];
+  gtdd_seven_sven -> dartz [label="^0.10.0", penwidth="2"];
+  gtdd_seven_sven -> equatable [label="^2.0.3", penwidth="2"];
+  gtdd_seven_sven -> flutter [label="<empty>", penwidth="2"];
+  gtdd_seven_sven -> flutter_localizations [label="<empty>", penwidth="2"];
+  gtdd_seven_sven -> google_fonts [label="^2.1.0", penwidth="2"];
+  gtdd_seven_sven -> intl [label="^0.17.0", penwidth="2"];
+  gtdd_seven_sven -> intl_utils [label="^2.4.0", penwidth="2"];
+  gtdd_seven_sven -> build_runner [label="^2.1.4", penwidth="2", style=dashed];
+  gtdd_seven_sven -> dart_code_metrics [label="^4.5.0", penwidth="2", style=dashed];
+  gtdd_seven_sven -> derry [label="^1.4.3", penwidth="2", style=dashed];
+  gtdd_seven_sven -> flutter_lints [label="^1.0.0", penwidth="2", style=dashed];
+  gtdd_seven_sven -> flutter_test [label="<empty>", penwidth="2", style=dashed];
+  gtdd_seven_sven -> given_when_then [label="^0.2.0", penwidth="2", style=dashed];
+  gtdd_seven_sven -> glados [label="^1.1.1", penwidth="2", style=dashed];
+  gtdd_seven_sven -> golden_toolkit [label="^0.10.0", penwidth="2", style=dashed];
+  gtdd_seven_sven -> mockingjay [label="^0.1.1", penwidth="2", style=dashed];
+  gtdd_seven_sven -> mocktail [label="^0.2.0", penwidth="2", style=dashed];
+  gtdd_seven_sven -> page_object [label="^0.2.0", penwidth="2", style=dashed];
+
+  html [label="html
+0.15.0"];
+  html -> csslib [label="^0.17.0", color=gray];
+  html -> source_span [label="^1.8.0", color=gray];
+
+  http [label="http
+0.13.4", shape=box, margin="0.25,0.15"];
+  http -> async [label="^2.5.0"];
+  http -> http_parser [label="^4.0.0"];
+  http -> meta [label="^1.3.0"];
+  http -> path [label="^1.8.0"];
+
+  http_multi_server [label="http_multi_server
+3.0.1"];
+  http_multi_server -> async [label="^2.5.0", color=gray];
+
+  http_parser [label="http_parser
+4.0.0", shape=box, margin="0.25,0.15"];
+  http_parser -> charcode [label="^1.2.0"];
+  http_parser -> collection [label="^1.15.0"];
+  http_parser -> source_span [label="^1.8.0"];
+  http_parser -> string_scanner [label="^1.1.0"];
+  http_parser -> typed_data [label="^1.3.0"];
+
+  intl [label="intl
+0.17.0", shape=box, margin="0.25,0.15", style=bold];
+  intl -> clock [label="^1.1.0"];
+  intl -> path [label="^1.8.0"];
+
+  intl_utils [label="intl_utils
+2.4.1", shape=box, margin="0.25,0.15", style=bold];
+  intl_utils -> analyzer [label="^2.0.0"];
+  intl_utils -> archive [label="^3.0.0"];
+  intl_utils -> args [label="^2.0.0"];
+  intl_utils -> dart_style [label="^2.0.0"];
+  intl_utils -> http [label="^0.13.0"];
+  intl_utils -> intl [label="^0.17.0"];
+  intl_utils -> path [label="^1.8.0"];
+  intl_utils -> petitparser [label="^4.0.0"];
+  intl_utils -> yaml [label="^3.0.0"];
+
+  io [label="io
+1.0.3"];
+  io -> meta [label="^1.3.0", color=gray];
+  io -> path [label="^1.8.0", color=gray];
+  io -> string_scanner [label="^1.1.0", color=gray];
+
+  js [label="js
+0.6.3"];
+
+  json_annotation [label="json_annotation
+4.3.0"];
+  json_annotation -> meta [label="^1.4.0", color=gray];
+
+  lints [label="lints
+1.0.1"];
+
+  logging [label="logging
+1.0.2"];
+
+  matcher [label="matcher
+0.12.11"];
+  matcher -> stack_trace [label="^1.10.0", color=gray];
+
+  meta [label="meta
+1.7.0", shape=box, margin="0.25,0.15"];
+
+  mime [label="mime
+1.0.1"];
+
+  mockingjay [label="mockingjay
+0.1.1", style=bold];
+  mockingjay -> flutter [color=gray];
+  mockingjay -> mocktail [label="^0.1.4", color=gray];
+  mockingjay -> test [label="^1.16.8", color=gray];
+
+  mocktail [label="mocktail
+0.2.0", style=bold];
+  mocktail -> collection [label="^1.15.0", color=gray];
+  mocktail -> matcher [label="^0.12.10", color=gray];
+  mocktail -> test [label="^1.16.0", color=gray];
+
+  node_preamble [label="node_preamble
+2.0.1"];
+
+  package_config [label="package_config
+2.0.2", shape=box, margin="0.25,0.15"];
+  package_config -> path [label="^1.8.0"];
+
+  page_object [label="page_object
+0.2.0", style=bold];
+  page_object -> flutter [color=gray];
+  page_object -> flutter_test [color=gray];
+
+  path [label="path
+1.8.0", shape=box, margin="0.25,0.15"];
+
+  path_provider [label="path_provider
+2.0.6", shape=box, margin="0.25,0.15"];
+  path_provider -> flutter;
+  path_provider -> path_provider_linux [label="^2.0.0"];
+  path_provider -> path_provider_macos [label="^2.0.0"];
+  path_provider -> path_provider_platform_interface [label="^2.0.0"];
+  path_provider -> path_provider_windows [label="^2.0.0"];
+
+  path_provider_linux [label="path_provider_linux
+2.1.0", shape=box, margin="0.25,0.15"];
+  path_provider_linux -> flutter;
+  path_provider_linux -> path [label="^1.8.0"];
+  path_provider_linux -> path_provider_platform_interface [label="^2.0.0"];
+  path_provider_linux -> xdg_directories [label="^0.2.0"];
+
+  path_provider_macos [label="path_provider_macos
+2.0.2", shape=box, margin="0.25,0.15"];
+  path_provider_macos -> flutter;
+
+  path_provider_platform_interface [label="path_provider_platform_interface
+2.0.1", shape=box, margin="0.25,0.15"];
+  path_provider_platform_interface -> flutter;
+  path_provider_platform_interface -> meta [label="^1.3.0"];
+  path_provider_platform_interface -> platform [label="^3.0.0"];
+  path_provider_platform_interface -> plugin_platform_interface [label="^2.0.0"];
+
+  path_provider_windows [label="path_provider_windows
+2.0.3", shape=box, margin="0.25,0.15"];
+  path_provider_windows -> ffi [label="^1.0.0"];
+  path_provider_windows -> flutter;
+  path_provider_windows -> meta [label="^1.3.0"];
+  path_provider_windows -> path [label="^1.8.0"];
+  path_provider_windows -> path_provider_platform_interface [label="^2.0.0"];
+  path_provider_windows -> win32 [label="^2.0.0"];
+
+  pedantic [label="pedantic
+1.11.1"];
+
+  petitparser [label="petitparser
+4.4.0", shape=box, margin="0.25,0.15"];
+  petitparser -> meta [label="^1.7.0"];
+
+  platform [label="platform
+3.0.2", shape=box, margin="0.25,0.15"];
+
+  plugin_platform_interface [label="plugin_platform_interface
+2.0.2", shape=box, margin="0.25,0.15"];
+  plugin_platform_interface -> meta [label="^1.3.0"];
+
+  pool [label="pool
+1.5.0"];
+  pool -> async [label="^2.5.0", color=gray];
+  pool -> stack_trace [label="^1.10.0", color=gray];
+
+  process [label="process
+4.2.4", shape=box, margin="0.25,0.15"];
+  process -> file [label="^6.0.0"];
+  process -> path [label="^1.8.0"];
+  process -> platform [label="^3.0.0"];
+
+  pub_semver [label="pub_semver
+2.1.0", shape=box, margin="0.25,0.15"];
+  pub_semver -> collection [label="^1.15.0"];
+  pub_semver -> meta [label="^1.3.0"];
+
+  pubspec_parse [label="pubspec_parse
+1.1.0"];
+  pubspec_parse -> checked_yaml [label="^2.0.1", color=gray];
+  pubspec_parse -> collection [label="^1.15.0", color=gray];
+  pubspec_parse -> json_annotation [label="^4.1.0", color=gray];
+  pubspec_parse -> pub_semver [label="^2.0.0", color=gray];
+  pubspec_parse -> yaml [label="^3.0.0", color=gray];
+
+  shelf [label="shelf
+1.2.0"];
+  shelf -> async [label="^2.5.0", color=gray];
+  shelf -> collection [label="^1.15.0", color=gray];
+  shelf -> http_parser [label="^4.0.0", color=gray];
+  shelf -> path [label="^1.8.0", color=gray];
+  shelf -> stack_trace [label="^1.10.0", color=gray];
+  shelf -> stream_channel [label="^2.1.0", color=gray];
+
+  shelf_packages_handler [label="shelf_packages_handler
+3.0.0"];
+  shelf_packages_handler -> path [label="^1.8.0", color=gray];
+  shelf_packages_handler -> shelf [label="^1.0.0", color=gray];
+  shelf_packages_handler -> shelf_static [label="^1.0.0", color=gray];
+
+  shelf_static [label="shelf_static
+1.1.0"];
+  shelf_static -> convert [label="^3.0.0", color=gray];
+  shelf_static -> http_parser [label="^4.0.0", color=gray];
+  shelf_static -> mime [label="^1.0.0", color=gray];
+  shelf_static -> path [label="^1.8.0", color=gray];
+  shelf_static -> shelf [label="^1.1.2", color=gray];
+
+  shelf_web_socket [label="shelf_web_socket
+1.0.1"];
+  shelf_web_socket -> shelf [label="^1.1.0", color=gray];
+  shelf_web_socket -> stream_channel [label="^2.1.0", color=gray];
+  shelf_web_socket -> web_socket_channel [label="^2.0.0", color=gray];
+
+  source_gen [label="source_gen
+1.1.1"];
+  source_gen -> analyzer [label="^2.1.0", color=gray];
+  source_gen -> async [label="^2.5.0", color=gray];
+  source_gen -> build [label="^2.1.0", color=gray];
+  source_gen -> dart_style [label="^2.0.0", color=gray];
+  source_gen -> glob [label="^2.0.0", color=gray];
+  source_gen -> meta [label="^1.3.0", color=gray];
+  source_gen -> path [label="^1.8.0", color=gray];
+  source_gen -> source_span [label="^1.8.0", color=gray];
+  source_gen -> yaml [label="^3.0.0", color=gray];
+
+  source_map_stack_trace [label="source_map_stack_trace
+2.1.0"];
+  source_map_stack_trace -> path [label="^1.8.0", color=gray];
+  source_map_stack_trace -> source_maps [label="^0.10.10", color=gray];
+  source_map_stack_trace -> stack_trace [label="^1.10.0", color=gray];
+
+  source_maps [label="source_maps
+0.10.10"];
+  source_maps -> source_span [label="^1.8.0", color=gray];
+
+  source_span [label="source_span
+1.8.1", shape=box, margin="0.25,0.15"];
+  source_span -> collection [label="^1.15.0"];
+  source_span -> path [label="^1.8.0"];
+  source_span -> term_glyph [label="^1.2.0"];
+
+  stack_trace [label="stack_trace
+1.10.0"];
+  stack_trace -> path [label="^1.8.0", color=gray];
+
+  stream_channel [label="stream_channel
+2.1.0"];
+  stream_channel -> async [label="^2.5.0", color=gray];
+
+  stream_transform [label="stream_transform
+2.0.0"];
+
+  string_scanner [label="string_scanner
+1.1.0", shape=box, margin="0.25,0.15"];
+  string_scanner -> charcode [label="^1.2.0"];
+  string_scanner -> source_span [label="^1.8.0"];
+
+  string_similarity [label="string_similarity
+2.0.0"];
+
+  term_glyph [label="term_glyph
+1.2.0", shape=box, margin="0.25,0.15"];
+
+  test [label="test
+1.17.12"];
+  test -> analyzer [label=">=1.0.0 <3.0.0", color=gray];
+  test -> async [label="^2.5.0", color=gray];
+  test -> boolean_selector [label="^2.1.0", color=gray];
+  test -> collection [label="^1.15.0", color=gray];
+  test -> coverage [label="^1.0.1", color=gray];
+  test -> http_multi_server [label="^3.0.0", color=gray];
+  test -> io [label="^1.0.0", color=gray];
+  test -> js [label="^0.6.3", color=gray];
+  test -> node_preamble [label="^2.0.0", color=gray];
+  test -> package_config [label="^2.0.0", color=gray];
+  test -> path [label="^1.8.0", color=gray];
+  test -> pedantic [label="^1.10.0", color=gray];
+  test -> pool [label="^1.5.0", color=gray];
+  test -> shelf [label="^1.0.0", color=gray];
+  test -> shelf_packages_handler [label="^3.0.0", color=gray];
+  test -> shelf_static [label="^1.0.0", color=gray];
+  test -> shelf_web_socket [label="^1.0.0", color=gray];
+  test -> source_span [label="^1.8.0", color=gray];
+  test -> stack_trace [label="^1.10.0", color=gray];
+  test -> stream_channel [label="^2.1.0", color=gray];
+  test -> test_api [label="0.4.3", color=gray];
+  test -> test_core [label="0.4.2", color=gray];
+  test -> typed_data [label="^1.3.0", color=gray];
+  test -> web_socket_channel [label="^2.0.0", color=gray];
+  test -> webkit_inspection_protocol [label="^1.0.0", color=gray];
+  test -> yaml [label="^3.0.0", color=gray];
+
+  test_api [label="test_api
+0.4.3"];
+  test_api -> async [label="^2.5.0", color=gray];
+  test_api -> boolean_selector [label="^2.1.0", color=gray];
+  test_api -> collection [label="^1.15.0", color=gray];
+  test_api -> matcher [label=">=0.12.11 <0.12.12", color=gray];
+  test_api -> meta [label="^1.3.0", color=gray];
+  test_api -> source_span [label="^1.8.0", color=gray];
+  test_api -> stack_trace [label="^1.10.0", color=gray];
+  test_api -> stream_channel [label="^2.1.0", color=gray];
+  test_api -> string_scanner [label="^1.1.0", color=gray];
+  test_api -> term_glyph [label="^1.2.0", color=gray];
+
+  test_core [label="test_core
+0.4.2"];
+  test_core -> analyzer [label=">=1.0.0 <3.0.0", color=gray];
+  test_core -> args [label="^2.0.0", color=gray];
+  test_core -> async [label="^2.5.0", color=gray];
+  test_core -> boolean_selector [label="^2.1.0", color=gray];
+  test_core -> collection [label="^1.15.0", color=gray];
+  test_core -> coverage [label="^1.0.0", color=gray];
+  test_core -> frontend_server_client [label="^2.1.0", color=gray];
+  test_core -> glob [label="^2.0.0", color=gray];
+  test_core -> io [label="^1.0.0", color=gray];
+  test_core -> matcher [color=gray];
+  test_core -> meta [label="^1.3.0", color=gray];
+  test_core -> package_config [label="^2.0.0", color=gray];
+  test_core -> path [label="^1.8.0", color=gray];
+  test_core -> pedantic [label="^1.10.0", color=gray];
+  test_core -> pool [label="^1.5.0", color=gray];
+  test_core -> source_map_stack_trace [label="^2.1.0", color=gray];
+  test_core -> source_maps [label="^0.10.10", color=gray];
+  test_core -> source_span [label="^1.8.0", color=gray];
+  test_core -> stack_trace [label="^1.10.0", color=gray];
+  test_core -> stream_channel [label="^2.1.0", color=gray];
+  test_core -> test_api [label="0.4.3", color=gray];
+  test_core -> vm_service [label=">=6.0.0 <8.0.0", color=gray];
+  test_core -> yaml [label="^3.0.0", color=gray];
+
+  timing [label="timing
+1.0.0"];
+  timing -> json_annotation [label="^4.0.0", color=gray];
+
+  typed_data [label="typed_data
+1.3.0", shape=box, margin="0.25,0.15"];
+  typed_data -> collection [label="^1.15.0"];
+
+  vector_math [label="vector_math
+2.1.1", shape=box, margin="0.25,0.15"];
+
+  vm_service [label="vm_service
+7.3.0"];
+
+  watcher [label="watcher
+1.0.1", shape=box, margin="0.25,0.15"];
+  watcher -> async [label="^2.5.0"];
+  watcher -> path [label="^1.8.0"];
+
+  web_socket_channel [label="web_socket_channel
+2.1.0"];
+  web_socket_channel -> async [label="^2.5.0", color=gray];
+  web_socket_channel -> crypto [label="^3.0.0", color=gray];
+  web_socket_channel -> stream_channel [label="^2.1.0", color=gray];
+
+  webkit_inspection_protocol [label="webkit_inspection_protocol
+1.0.0"];
+  webkit_inspection_protocol -> logging [label="^1.0.0", color=gray];
+
+  win32 [label="win32
+2.2.10", shape=box, margin="0.25,0.15"];
+  win32 -> ffi [label="^1.0.0"];
+
+  xdg_directories [label="xdg_directories
+0.2.0", shape=box, margin="0.25,0.15"];
+  xdg_directories -> meta [label="^1.3.0"];
+  xdg_directories -> path [label="^1.8.0"];
+  xdg_directories -> process [label="^4.0.0"];
+
+  yaml [label="yaml
+3.1.0", shape=box, margin="0.25,0.15"];
+  yaml -> collection [label="^1.15.0"];
+  yaml -> source_span [label="^1.8.0"];
+  yaml -> string_scanner [label="^1.1.0"];
+}
+

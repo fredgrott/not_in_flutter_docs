@@ -5,7 +5,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:gtdd_eight/src/domain/app_vars.dart';
+import 'package:gtdd_eight/src/infrastructure/app_vars.dart';
+
 import 'package:gtdd_eight/src/my_app.dart';
 
 Future<void> main() async {

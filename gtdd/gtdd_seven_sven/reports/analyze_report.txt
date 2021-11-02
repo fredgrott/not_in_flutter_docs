@@ -1,0 +1,5 @@
+Analyzing gtdd_seven_sven...                                    
+
+   info - Sort pub dependencies - pubspec.yaml:22:3 - sort_pub_dependencies
+   info - Sort pub dependencies - pubspec.yaml:31:3 - sort_pub_dependencies
+
