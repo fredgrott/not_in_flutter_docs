@@ -12,7 +12,9 @@ import 'package:gtdd_eight/src/presentation/features/home/ui/sample_item_list_vi
 import 'package:gtdd_eight/src/presentation/features/settings/ui/settings_view.dart';
 import 'package:page_object/page_object.dart';
 
-import 'golden_root_widget.dart';
+import 'golden_base_root_widget.dart';
+
+
 
 // Should have as many getter as screens in the app.
 // We always use the inserted Root Widget test fixture
@@ -29,7 +31,7 @@ class MyAppPageObject extends PageObject {
 
   SettingsViewPageObject get settingsScreen => SettingsViewPageObject(this);
   // have to refer to using the top inserted root widget
-  MyAppPageObject() : super(find.byType(MyAppRootWidget));
+  MyAppPageObject() : super(find.byType(GoldenBaseRootWidget));
 }
 
 // The getter generally need to  find one or more specific

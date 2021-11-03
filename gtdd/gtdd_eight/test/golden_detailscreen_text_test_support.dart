@@ -12,9 +12,10 @@ import 'package:gtdd_eight/src/infrastructure/app_vars.dart';
 import 'package:gtdd_eight/src/presentation/features/home/ui/sample_item_details_view.dart';
 import 'package:gtdd_eight/src/presentation/themes/my_app_themedata.dart';
 
+import 'golden_base_root_widget_wrapper.dart';
 import 'golden_custom_matchers.dart';
 import 'golden_page_objects.dart';
-import 'golden_wrapper.dart';
+
 
 Future<void> Function(WidgetTester) detailTextHarness(
   WidgetTestHarnessCallback<_WidgetTestHarness> callback,
@@ -32,7 +33,7 @@ extension SampleItemDetailsViewScreenGiven on WidgetTestGiven<_WidgetTestHarness
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: myModifiedRootWidgetWrapper(
+        wrapper: goldenBaseRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -50,7 +51,7 @@ extension SampleItemDetailsAppBarTitleThen on WidgetTestThen<_WidgetTestHarness>
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: myModifiedRootWidgetWrapper(
+        wrapper: goldenBaseRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -69,7 +70,7 @@ extension SampleItemDetailsTextThen
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: myModifiedRootWidgetWrapper(
+        wrapper: goldenBaseRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable

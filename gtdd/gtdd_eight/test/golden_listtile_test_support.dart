@@ -11,8 +11,9 @@ import 'package:gtdd_eight/src/infrastructure/app_vars.dart';
 import 'package:gtdd_eight/src/presentation/features/home/ui/sample_item_list_view.dart';
 import 'package:gtdd_eight/src/presentation/themes/my_app_themedata.dart';
 
+import 'golden_base_root_widget_wrapper.dart';
 import 'golden_page_objects.dart';
-import 'golden_wrapper.dart';
+
 
 // Note: One does not have to name each method unique as only need to make
 //       sure that the extension names are unique and the harness method name.
@@ -33,7 +34,7 @@ extension SampleScreenGiven on WidgetTestGiven<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: myModifiedRootWidgetWrapper(
+        wrapper: goldenBaseRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -51,7 +52,7 @@ extension SampleScreenListViewWhen on WidgetTestWhen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: myModifiedRootWidgetWrapper(
+        wrapper: goldenBaseRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -69,7 +70,7 @@ extension SampleScreenListTileThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: myModifiedRootWidgetWrapper(
+        wrapper: goldenBaseRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -87,7 +88,7 @@ extension SampleScreenListTileOneThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: myModifiedRootWidgetWrapper(
+        wrapper: goldenBaseRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -107,7 +108,7 @@ extension SampleScreenListTileTwoThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: myModifiedRootWidgetWrapper(
+        wrapper: goldenBaseRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -128,7 +129,7 @@ extension SampleScreenListTileThreeThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: myModifiedRootWidgetWrapper(
+        wrapper: goldenBaseRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
