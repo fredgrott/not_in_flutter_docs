@@ -2,13 +2,15 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:gtdd_ten/src/domain/data/entities/sample_item.dart';
-import 'package:gtdd_ten/src/presentation/features/home/ui/sample_item_details_view.dart';
-import 'package:gtdd_ten/src/presentation/features/settings/ui/settings_view.dart';
+
+import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_detailsview.dart';
+import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
+
 
 class SampleItemListView extends StatelessWidget {
   static const routeName = '/';
@@ -48,8 +50,7 @@ class SampleItemListView extends StatelessWidget {
         trailingActions: <Widget>[
           PlatformIconButton(
             //I whenever possible adapt to target platform specifics.
-            materialIcon: const Icon(Icons.settings),
-            cupertinoIcon: const Icon(CupertinoIcons.settings),
+            icon: Icon(PlatformIcons(context).settings),
             onPressed: () {
               // Navigate to the settings page. If the user leaves and returns
               // to the app after it has been killed while running in the
@@ -65,12 +66,16 @@ class SampleItemListView extends StatelessWidget {
           _,
           __,
         ) =>
-            MaterialAppBarData(),
+            MaterialAppBarData(
+              centerTitle: true,
+            ),
         cupertino: (
           _,
           __,
         ) =>
-            CupertinoNavigationBarData(),
+            CupertinoNavigationBarData(
+              brightness: Brightness.light,
+            ),
       ),
       body: ListView.builder(
           key: const Key('ListView'),

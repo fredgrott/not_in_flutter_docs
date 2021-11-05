@@ -2,8 +2,12 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-import 'package:flutter/widgets.dart';
+
+import 'package:flutter/material.dart';
+
+
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
 
 class SampleItemDetailsView extends StatelessWidget {
   static const routeName = '/sample_item';
@@ -16,12 +20,33 @@ class SampleItemDetailsView extends StatelessWidget {
 
   static Key detailKey = const Key('SampleItemDetailsView.detail');
 
+  
+
   const SampleItemDetailsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return PlatformScaffold(
       appBar: PlatformAppBar(
+        leading: PlatformIconButton(
+          onPressed: () {
+            Navigator.restorablePushNamed(
+              context,
+              platformPageRoute<dynamic>(
+                settings: SampleItemListView.routeName as RouteSettings,
+                context: context,
+              ) as String,
+            );
+          },
+          icon: Icon(PlatformIcons(context).back),
+          padding: const EdgeInsets.all(1),
+          material: (_, __,)  => MaterialIconButtonData(
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          cupertino: (_, __,) => CupertinoIconButtonData(
+            pressedOpacity: 10,
+          ),
+        ),
         title: PlatformText(
           title,
           key: titleKey,
@@ -37,12 +62,17 @@ class SampleItemDetailsView extends StatelessWidget {
           _,
           __,
         ) =>
-            MaterialAppBarData(),
+            MaterialAppBarData(
+              centerTitle: true,
+            ),
         cupertino: (
           _,
           __,
         ) =>
-            CupertinoNavigationBarData(),
+            CupertinoNavigationBarData(
+              previousPageTitle: "Sample Items",
+              brightness: Brightness.light,
+            ),
       ),
       body: Center(
         child: PlatformText(
@@ -57,4 +87,7 @@ class SampleItemDetailsView extends StatelessWidget {
       ),
     );
   }
+}
+
+mixin Icons {
 }

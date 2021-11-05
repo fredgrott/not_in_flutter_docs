@@ -6,13 +6,15 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_detailsview.dart';
+import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
+import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
 
-import 'package:gtdd_ten/src/presentation/features/home/ui/sample_item_details_view.dart';
-import 'package:gtdd_ten/src/presentation/features/home/ui/sample_item_list_view.dart';
-import 'package:gtdd_ten/src/presentation/features/settings/ui/settings_view.dart';
+
 import 'package:page_object/page_object.dart';
 
-import 'golden_base_root_widget.dart';
+import 'golden_base_fpw_root_widget.dart';
+
 
 
 
@@ -31,7 +33,7 @@ class MyAppPageObject extends PageObject {
 
   SettingsViewPageObject get settingsScreen => SettingsViewPageObject(this);
   // have to refer to using the top inserted root widget
-  MyAppPageObject() : super(find.byType(GoldenBaseRootWidget));
+  MyAppPageObject() : super(find.byType(GoldenBaseFPWRootWidget));
 }
 
 // The getter generally need to  find one or more specific

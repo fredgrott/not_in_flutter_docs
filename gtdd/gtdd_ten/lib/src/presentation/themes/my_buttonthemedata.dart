@@ -8,16 +8,31 @@ import 'package:flutter/material.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_app_colorschemes.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_appcolors.dart';
 
+// Other Themes: TextButtonTheme
+//               ElevatedButtonTheme
+//               OutlinedButtonTheme
+//               TextButtonStyle
+//               ElevateButtonStle
+//               OutlineButtonStle
+//
+//               Button State Stle Overrides are in ButtonStyle
+
+
 ButtonThemeData myButtonThemeData = ButtonThemeData(
-  textTheme: ButtonTextTheme.accent,
+  textTheme: ButtonTextTheme.primary,
   minWidth: 88,
   height: 36,
   padding: EdgeInsetsGeometry.infinity,
   layoutBehavior: ButtonBarLayoutBehavior.padded,
   alignedDropdown: true,
-  buttonColor: myLightSecondaryVariantColor,
+  splashColor: myLightSurfaceColor,
+  highlightColor: myLightSecondaryColor,
+  hoverColor: myLightPrimaryColor,
+  focusColor: myLightPrimaryVariantColor,
   disabledColor: Colors.grey,
+  buttonColor: myLightSecondaryVariantColor,
   colorScheme: myLightColorScheme,
   materialTapTargetSize: MaterialTapTargetSize.padded,
+  
 
 );

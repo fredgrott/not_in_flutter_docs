@@ -28,7 +28,6 @@ Future<void> testExecutable(FutureOr<void> Function() testMain) async {
         Device.phone,
         Device.tabletLandscape,
         Device.tabletPortrait,
-        Device.iphone11,
         laptopMine,
         desktopMine,
         landscapePhone,

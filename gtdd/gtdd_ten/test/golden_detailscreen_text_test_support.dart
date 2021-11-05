@@ -8,11 +8,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:given_when_then/given_when_then.dart';
 import 'package:golden_toolkit/src/testing_tools.dart';
 import 'package:gtdd_ten/src/infrastructure/app_vars.dart';
+import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 
-import 'package:gtdd_ten/src/presentation/features/home/ui/sample_item_details_view.dart';
+
 import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
 
-import 'golden_base_root_widget_wrapper.dart';
+import 'golden_base_fpw_root_widget_wrapper.dart';
+
 import 'golden_custom_matchers.dart';
 import 'golden_page_objects.dart';
 
@@ -33,7 +35,7 @@ extension SampleItemDetailsViewScreenGiven on WidgetTestGiven<_WidgetTestHarness
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -51,7 +53,7 @@ extension SampleItemDetailsAppBarTitleThen on WidgetTestThen<_WidgetTestHarness>
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -70,7 +72,7 @@ extension SampleItemDetailsTextThen
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable

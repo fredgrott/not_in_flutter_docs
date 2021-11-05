@@ -3,8 +3,11 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:gtdd_ten/src/infrastructure/app_vars.dart';
 import 'package:gtdd_ten/src/my_app.dart';
+
+
 
 // Gist: just executes a Golden test the google way
 
@@ -41,6 +44,7 @@ void main() {
           });
           await expectLater(
             find.byType(MyApp),
+            
             matchesGoldenFile('main.png'),
           );
         },

@@ -3,8 +3,9 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
+import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_ten/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
 
 class SettingsView extends StatelessWidget {
@@ -40,6 +41,34 @@ class SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PlatformScaffold(
       appBar: PlatformAppBar(
+        leading: PlatformIconButton(
+          onPressed: () {
+            Navigator.restorablePushNamed(
+              context,
+              platformPageRoute<dynamic>(
+                settings: SampleItemListView.routeName as RouteSettings,
+                context: context,
+                
+                ) as String,
+            );
+          },
+          icon: Icon(PlatformIcons(context).back),
+          padding: const EdgeInsets.all(1),
+          material: (
+            _,
+            __,
+          ) =>
+              MaterialIconButtonData(
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          cupertino: (
+            _,
+            __,
+          ) =>
+              CupertinoIconButtonData(
+            pressedOpacity: 10,
+          ),
+        ),
         title: PlatformText(
           title,
           key: titleKey,
@@ -48,13 +77,21 @@ class SettingsView extends StatelessWidget {
             material: (data) => data.textTheme.headline5,
             cupertino: (data) => data.textTheme.navTitleTextStyle,
           ),
-          
         ),
-        material: (_, __,)  => MaterialAppBarData(
-
+        material: (
+          _,
+          __,
+        ) =>
+            MaterialAppBarData(
+          centerTitle: true,
         ),
-        cupertino: (_, __,) => CupertinoNavigationBarData(
-
+        cupertino: (
+          _,
+          __,
+        ) =>
+            CupertinoNavigationBarData(
+          previousPageTitle: "Sample Items",
+          brightness: Brightness.light,
         ),
       ),
       body: Padding(
@@ -76,7 +113,6 @@ class SettingsView extends StatelessWidget {
           onChanged: controller.updateThemeMode,
           items: [
             DropdownMenuItem(
-              
               value: ThemeMode.system,
               child: PlatformText(
                 dropMenuSystemThemeTitle,
@@ -89,7 +125,6 @@ class SettingsView extends StatelessWidget {
               ),
             ),
             DropdownMenuItem(
-              
               value: ThemeMode.light,
               child: PlatformText(
                 dropMenuLightThemeTitle,
@@ -102,7 +137,6 @@ class SettingsView extends StatelessWidget {
               ),
             ),
             DropdownMenuItem(
-              
               value: ThemeMode.dark,
               child: PlatformText(
                 dropMenuDarkThemeTitle,

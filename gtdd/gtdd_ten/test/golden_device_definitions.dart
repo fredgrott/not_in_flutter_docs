@@ -15,6 +15,7 @@ Device samsungNineAndroid = const Device(
     1440,
     3040,
   ),
+  safeArea: EdgeInsets.only(top: 44, bottom: 34,),
 );
 
 Device samsungEightAndroid = const Device(
@@ -22,6 +23,10 @@ Device samsungEightAndroid = const Device(
   size: Size(
     1440,
     2960,
+  ),
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
   ),
 );
 
@@ -31,6 +36,10 @@ Device pixelxlAndroid = const Device(
     1440,
     2560,
   ),
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
+  ),
 );
 
 Device pixelfouraAndroid = const Device(
@@ -38,6 +47,10 @@ Device pixelfouraAndroid = const Device(
   size: Size(
     1080,
     2340,
+  ),
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
   ),
 );
 
@@ -47,6 +60,10 @@ Device pixelfourxlAndroid = const Device(
     1440,
     3040,
   ),
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
+  ),
 );
 
 Device pixelfourAndroid = const Device(
@@ -54,6 +71,10 @@ Device pixelfourAndroid = const Device(
   size: Size(
     1080,
     2280,
+  ),
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
   ),
 );
 
@@ -63,6 +84,10 @@ Device pixelthreeaxlAndroid = const Device(
     2160,
   ),
   name: "Pixel3a-Android",
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
+  ),
 );
 
 Device pixelthreeaAndroid = const Device(
@@ -71,6 +96,10 @@ Device pixelthreeaAndroid = const Device(
     2220,
   ),
   name: "Pixel3a-Android",
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
+  ),
 );
 
 Device pixelthreeAndroid = const Device(
@@ -78,6 +107,10 @@ Device pixelthreeAndroid = const Device(
   size: Size(
     1440,
     2960,
+  ),
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
   ),
 );
 
@@ -87,6 +120,10 @@ Device iphonetenxIOS = const Device(
     2436,
   ),
   name: "iPhoneX-iOS",
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
+  ),
 );
 
 Device iphonetwelvepromaxIOS = const Device(
@@ -95,6 +132,10 @@ Device iphonetwelvepromaxIOS = const Device(
     2778,
   ),
   name: "iPhone12ProMax-IOS",
+  safeArea: EdgeInsets.only(
+    top: 44,
+    bottom: 34,
+  ),
 );
 
 Device laptopMine = const Device(

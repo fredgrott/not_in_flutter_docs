@@ -7,13 +7,15 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:given_when_then/given_when_then.dart';
 import 'package:golden_toolkit/src/testing_tools.dart';
 import 'package:gtdd_ten/src/infrastructure/app_vars.dart';
+import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
 
-import 'package:gtdd_ten/src/presentation/features/settings/ui/settings_view.dart';
+
 import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
 
 
 
-import 'golden_base_root_widget_wrapper.dart';
+import 'golden_base_fpw_root_widget_wrapper.dart';
+
 import 'golden_page_objects.dart';
 
 
@@ -35,7 +37,7 @@ extension SettingsScreenGiven on WidgetTestGiven<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -56,7 +58,7 @@ extension SettingsScreenUserSelectsSystemThemeWhen on WidgetTestWhen<_WidgetTest
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -86,7 +88,7 @@ extension SettingsScreenSystemThemeVisibleThen
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -107,7 +109,7 @@ extension SettingsScreenUserSelectsDarkThemeWhen
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -137,7 +139,7 @@ extension SettingsScreenUserHasChosenDarkThemeThen
       // simulating dark theme
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -160,7 +162,7 @@ extension SettingsScreenUserSelectsLightThemeWhen on WidgetTestWhen<_WidgetTestH
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable
@@ -189,7 +191,7 @@ extension SettingsScreenUserHasChosenLightTheme on WidgetTestThen<_WidgetTestHar
       // simulating dark theme
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
-        wrapper: goldenBaseRootWidgetWrapper(
+        wrapper: goldenBaseFPWRootWidgetWrapper(
           ourLightTheme: myLightThemeData,
           ourDarkTheme: myDarkThemeData,
           // ignore: cast_nullable_to_non_nullable

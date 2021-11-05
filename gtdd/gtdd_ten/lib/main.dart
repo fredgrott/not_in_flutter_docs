@@ -6,8 +6,10 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gtdd_ten/src/infrastructure/app_vars.dart';
-
 import 'package:gtdd_ten/src/my_app.dart';
+import 'package:gtdd_ten/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
+
+
 
 Future<void> main() async {
 
