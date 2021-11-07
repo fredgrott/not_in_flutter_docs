@@ -10,6 +10,8 @@ import 'package:gtdd_ten/src/domain/data/entities/sample_item.dart';
 
 import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_cupertinocolors.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_special_cupertino_textstyles.dart';
 
 
 class SampleItemListView extends StatelessWidget {
@@ -36,16 +38,13 @@ class SampleItemListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PlatformScaffold(
       appBar: PlatformAppBar(
+        widgetKey: const Key("SampleItemsAppBar"),
         title: PlatformText(
           title,
           key: titleKey,
           // To get the platform differences right Typography wise I need
           // to do one adjust per platform using Flutter Platform Widgets.
-          style: platformThemeData(
-            context,
-            material: (data) => data.textTheme.headline5,
-            cupertino: (data) => data.textTheme.navTitleTextStyle,
-          ),
+          
         ),
         trailingActions: <Widget>[
           PlatformIconButton(
@@ -67,6 +66,7 @@ class SampleItemListView extends StatelessWidget {
           __,
         ) =>
             MaterialAppBarData(
+              
               centerTitle: true,
             ),
         cupertino: (
@@ -74,6 +74,12 @@ class SampleItemListView extends StatelessWidget {
           __,
         ) =>
             CupertinoNavigationBarData(
+              title: PlatformText(
+            title,
+            style: myCupertinoNavigationBarTextStyle,
+            key: titleKey,
+          ),
+              backgroundColor: myCupertinoNavigationBarLightBackgroundColor,
               brightness: Brightness.light,
             ),
       ),
@@ -88,11 +94,7 @@ class SampleItemListView extends StatelessWidget {
               title: PlatformText(
                 "SampleItem ${item.id}",
                 key: ValueKey<int>(item.id),
-                style: platformThemeData(
-                  context, 
-                  material: (data) => data.textTheme.headline3,
-                  cupertino: (data) => data.textTheme.navLargeTitleTextStyle,
-                  ),
+                
               
                ),
                leading: const CircleAvatar(

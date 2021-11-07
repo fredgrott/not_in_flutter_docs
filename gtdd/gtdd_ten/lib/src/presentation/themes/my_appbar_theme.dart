@@ -3,27 +3,44 @@
 // license that can be found in the LICENSE file.
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_actionsiconthemedata.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_appcolors.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_iconthemedata.dart';
 
-AppBarTheme myAppBarTheme = AppBarTheme(
+// Gist: Cross-Platform wise the AppbarTheme only applies to the Material AppBar. 
+//  One has to set individual properties of the CupertinoNavigationBar.
+
+AppBarTheme myAppBarLightTheme = AppBarTheme(
   //brightness:
-  color: myLightPrimaryColor,
+  backgroundColor: myLightPrimaryColor,
   shadowColor: myLightPrimaryVariantColor,
-  //textTheme:
+  
   centerTitle: true,
   titleSpacing: 1,
-  iconTheme: myIconThemeData,
-  actionsIconTheme: myActionsIconThemeData,
+  iconTheme: myIconLightThemeData,
+  actionsIconTheme: myActionsIconLightThemeData,
   titleTextStyle: myTitleTextStyle,
   toolbarTextStyle: myToolbarTextStyle,
 );
 
-TextStyle myTitleTextStyle = const TextStyle(
-  fontWeight: FontWeight.bold,
+AppBarTheme myAppBarDarkTheme = AppBarTheme(
+  backgroundColor: myDarkPrimaryColor,
+  shadowColor: myDarkPrimaryVariantColor,
+  centerTitle: true,
+  titleSpacing: 1,
+  iconTheme: myIconDarkThemeData,
+  actionsIconTheme: myActionsIconDarkThemeData,
+  titleTextStyle: myTitleTextStyle,
+  toolbarTextStyle: myToolbarTextStyle,
 );
 
-TextStyle myToolbarTextStyle = const TextStyle(
+TextStyle myTitleTextStyle = TextStyle(
+  fontWeight: FontWeight.bold,
+  fontFamily: GoogleFonts.notoSans().fontFamily,
+);
+
+TextStyle myToolbarTextStyle = TextStyle(
   fontWeight: FontWeight.w600,
+  fontFamily: GoogleFonts.notoSans().fontFamily,
 );

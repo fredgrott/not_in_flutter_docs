@@ -5,6 +5,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_appcolors.dart';
 
-IconThemeData myIconThemeData = IconThemeData(
+IconThemeData myIconLightThemeData = IconThemeData(
   color: myLightSecondaryVariantColor,
+);
+
+IconThemeData myIconDarkThemeData = IconThemeData(
+  color: myDarkSecondaryVariantColor,
 );

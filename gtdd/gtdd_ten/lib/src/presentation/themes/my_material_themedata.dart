@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_app_colorschemes.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_appbar_theme.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_buttonthemedata.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_material_texttheme.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_typography.dart';
 
 // As of Oct ListTileThemeData is in process of being added to ThemeData
@@ -14,21 +15,23 @@ import 'package:gtdd_ten/src/presentation/themes/my_typography.dart';
 //                          accentColorBrightness
 //
 
-ThemeData myLightThemeData = ThemeData(
+ThemeData myLightMaterialThemeData = ThemeData(
   colorScheme: myLightColorScheme,
   typography: myTypography,
-  appBarTheme: myAppBarTheme,
+  appBarTheme: myAppBarLightTheme,
   buttonTheme: myButtonThemeData,
   visualDensity: VisualDensity.adaptivePlatformDensity,
   primaryColorBrightness: Brightness.light,
+  textTheme: myMaterialLightTextTheme,
   
 );
 
-ThemeData myDarkThemeData = ThemeData(
+ThemeData myDarkMaterialThemeData = ThemeData(
   colorScheme: myDarkColorScheme,
   typography: myTypography,
-  appBarTheme: myAppBarTheme,
+  appBarTheme: myAppBarDarkTheme,
   buttonTheme: myButtonThemeData,
   visualDensity: VisualDensity.adaptivePlatformDensity,
   primaryColorBrightness: Brightness.dark,
+  textTheme: myMaterialDarkTextTheme,
 );

@@ -10,13 +10,9 @@ import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_detailsvie
 import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
 
-
 import 'package:page_object/page_object.dart';
 
 import 'golden_base_fpw_root_widget.dart';
-
-
-
 
 // Should have as many getter as screens in the app.
 // We always use the inserted Root Widget test fixture
@@ -24,6 +20,9 @@ import 'golden_base_fpw_root_widget.dart';
 //
 // see: Page Object Model(POM) article for a general description of
 // it https://medium.com/tech-tajawal/page-object-model-pom-design-pattern-f9588630800b
+//
+// Note also due to use of Flutter PLatform Widgets for cross-platform one has to
+// finders and matchers slightl differently.
 class MyAppPageObject extends PageObject {
   SampleItemListViewPageObject get homeScreen =>
       SampleItemListViewPageObject(this);
@@ -40,9 +39,17 @@ class MyAppPageObject extends PageObject {
 // widgets of the same widget type as we save the specificity to
 // be fleshed out in our test expect matching declarations.
 class SampleItemListViewPageObject extends PageObject {
+  // Gist: AppBar is delivered dynamically so let's grab the widgetKey that
+  //       the PlatformAppBar will pass on to the Material Appbar or the
+  //       CupertinoNavigationbar.
+  Finder get appBar => find.descendant(
+        of: this,
+        matching: find.byKey(const Key("SampleItemsAppBar")),
+      );
+
   Finder get appbarTitle => find.descendant(
         of: this,
-        matching: find.byKey(SampleItemListView.titleKey),
+        matching: find.byKey(const Key("SamplSampleItemListView.title")),
       );
 
   Finder get listView => find.descendant(
@@ -80,15 +87,22 @@ class SampleItemListViewPageObject extends PageObject {
 }
 
 class SampleItemDetailsViewPageObject extends PageObject {
+  // Gist: AppBar is delivered dynamically so let's grab the widgetKey that
+  //       the PlatformAppBar will pass on to the Material Appbar or the
+  //       CupertinoNavigationbar.
+  Finder get appBar => find.descendant(
+        of: this,
+        matching: find.byKey(const Key("ItemDetailsAppBar")),
+      );
+
   Finder get appbarTitle => find.descendant(
         of: this,
-        matching: find.byKey(SampleItemDetailsView.titleKey),
+        matching: find.byKey(const Key("SampleItemDetailsView.title")),
       );
 
   Finder get textDetail => find.descendant(
         of: this,
-        matching: find.byKey(
-          SampleItemDetailsView.detailKey,
+        matching: find.byKey(const Key("SampleItemDetailsView.detail"),
         ),
       );
 
@@ -115,9 +129,17 @@ class SampleItemDetailsViewPageObject extends PageObject {
 //       no user interaction has occurred.
 
 class SettingsViewPageObject extends PageObject {
+  // Gist: AppBar is delivered dynamically so let's grab the widgetKey that
+  //       the PlatformAppBar will pass on to the Material Appbar or the
+  //       CupertinoNavigationbar.
+  Finder get appBar => find.descendant(
+        of: this,
+        matching: find.byKey(const Key("SettingsAppBar")),
+      );
+
   Finder get appbarTitle => find.descendant(
         of: this,
-        matching: find.byKey(SettingsView.titleKey),
+        matching: find.byKey(const Key("SettingsView.title")),
       );
 
   // DropDown Button items are often dynamically created so we
@@ -136,33 +158,39 @@ class SettingsViewPageObject extends PageObject {
   // and the menuitem one so we have to ask for the last one
   Finder get dropDownButtonSystem => find.descendant(
         of: this,
-        matching: find.byKey(
-          const Key('MySystem'),
-          skipOffstage: false,
-        ),
+        matching: find
+            .byKey(
+              const Key('MySystem'),
+              skipOffstage: false,
+            )
+            .last,
       );
 
   Finder get dropDownButtonLight => find.descendant(
         of: this,
-        matching: find.byKey(
-          const Key('MyLight'),
-          skipOffstage: false,
-        ),
+        matching: find
+            .byKey(
+              const Key('MyLight'),
+              skipOffstage: false,
+            )
+            .last,
       );
 
   Finder get dropDownButtonDark => find.descendant(
         of: this,
-        matching: find.byKey(
-          const Key('MyDark'),
-          skipOffstage: false,
-        ),
+        matching: find
+            .byKey(
+              const Key('MyDark'),
+              skipOffstage: false,
+            )
+            .last,
       );
 
   SettingsViewPageObject(Finder finder)
-      : super(find.descendant(
-          of: finder,
-          matching: find.byType(SettingsView),
-        ),);
-
-  
+      : super(
+          find.descendant(
+            of: finder,
+            matching: find.byType(SettingsView),
+          ),
+        );
 }

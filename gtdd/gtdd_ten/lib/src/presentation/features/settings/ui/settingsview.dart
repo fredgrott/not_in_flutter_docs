@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_ten/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_cupertinocolors.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_special_cupertino_textstyles.dart';
 
 class SettingsView extends StatelessWidget {
   static const routeName = '/settings';
@@ -41,6 +43,10 @@ class SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PlatformScaffold(
       appBar: PlatformAppBar(
+        // Gist: To grab(find) during testing we have to set the widgetketys of each
+        //       platform widget as it passes that widgetkety value onto the dynamically
+        //       delivered Material or Cupertino widget
+        widgetKey: const Key("SettingsAppBar"),
         leading: PlatformIconButton(
           onPressed: () {
             Navigator.restorablePushNamed(
@@ -48,8 +54,7 @@ class SettingsView extends StatelessWidget {
               platformPageRoute<dynamic>(
                 settings: SampleItemListView.routeName as RouteSettings,
                 context: context,
-                
-                ) as String,
+              ) as String,
             );
           },
           icon: Icon(PlatformIcons(context).back),
@@ -66,17 +71,12 @@ class SettingsView extends StatelessWidget {
             __,
           ) =>
               CupertinoIconButtonData(
-            pressedOpacity: 10,
+            pressedOpacity: 0.10,
           ),
         ),
         title: PlatformText(
           title,
           key: titleKey,
-          style: platformThemeData(
-            context,
-            material: (data) => data.textTheme.headline5,
-            cupertino: (data) => data.textTheme.navTitleTextStyle,
-          ),
         ),
         material: (
           _,
@@ -90,6 +90,13 @@ class SettingsView extends StatelessWidget {
           __,
         ) =>
             CupertinoNavigationBarData(
+          // have to set things as we have no appbar theme or themedata for cupertinonavigationbar
+          title: PlatformText(
+            title,
+            style: myCupertinoNavigationBarTextStyle,
+            key: titleKey,
+          ),
+          backgroundColor: myCupertinoNavigationBarLightBackgroundColor,
           previousPageTitle: "Sample Items",
           brightness: Brightness.light,
         ),
@@ -113,39 +120,27 @@ class SettingsView extends StatelessWidget {
           onChanged: controller.updateThemeMode,
           items: [
             DropdownMenuItem(
+              key: ValueKey<String>(ThemeMode.system.toString()),
               value: ThemeMode.system,
               child: PlatformText(
                 dropMenuSystemThemeTitle,
-                key: const Key('MySystem'),
-                style: platformThemeData(
-                  context,
-                  material: (data) => data.textTheme.headline5,
-                  cupertino: (data) => data.textTheme.navTitleTextStyle,
-                ),
+                
               ),
             ),
             DropdownMenuItem(
+              key: ValueKey<String>(ThemeMode.light.toString()),
               value: ThemeMode.light,
               child: PlatformText(
                 dropMenuLightThemeTitle,
-                key: const Key('MyLight'),
-                style: platformThemeData(
-                  context,
-                  material: (data) => data.textTheme.headline5,
-                  cupertino: (data) => data.textTheme.navTitleTextStyle,
-                ),
+                
               ),
             ),
             DropdownMenuItem(
+              key: ValueKey<String>(ThemeMode.dark.toString()),
               value: ThemeMode.dark,
               child: PlatformText(
                 dropMenuDarkThemeTitle,
-                key: const Key('MyDark'),
-                style: platformThemeData(
-                  context,
-                  material: (data) => data.textTheme.headline5,
-                  cupertino: (data) => data.textTheme.navTitleTextStyle,
-                ),
+                
               ),
             ),
           ],

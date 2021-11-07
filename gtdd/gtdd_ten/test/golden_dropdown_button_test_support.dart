@@ -9,15 +9,11 @@ import 'package:golden_toolkit/src/testing_tools.dart';
 import 'package:gtdd_ten/src/infrastructure/app_vars.dart';
 import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
 
-
-import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
-
-
+import 'package:gtdd_ten/src/presentation/themes/my_material_themedata.dart';
 
 import 'golden_base_fpw_root_widget_wrapper.dart';
 
 import 'golden_page_objects.dart';
-
 
 Future<void> Function(WidgetTester) dropButtonHarness(
   WidgetTestHarnessCallback<_WidgetTestHarness> callback,
@@ -38,8 +34,8 @@ extension SettingsScreenGiven on WidgetTestGiven<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
@@ -47,38 +43,62 @@ extension SettingsScreenGiven on WidgetTestGiven<_WidgetTestHarness> {
     });
     final app = MyAppPageObject();
     expect(
-      app.settingsScreen.appbarTitle,
+      app.settingsScreen.appBar,
       findsOneWidget,
     );
   }
 }
 
-extension SettingsScreenUserSelectsSystemThemeWhen on WidgetTestWhen<_WidgetTestHarness>{
-  Future<void> myUserChosesSystemTheme() async{
+extension SettingsScreenUserSelectsSystemThemeWhen
+    on WidgetTestWhen<_WidgetTestHarness> {
+  Future<void> myUserChosesSystemTheme() async {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
 
-    
-
     // when user taps and choose dark theme
 
-    final app = MyAppPageObject();
+    
 
-    // when user choses dark theme tap simulation
-    await tester.ensureVisible(app.settingsScreen.dropDownButton);
-    await tester.pumpAndSettle();
-    await tester.ensureVisible(app.settingsScreen.dropDownButtonSystem);
-    await tester.pumpAndSettle();
+    
+    // This is the way to grab anything that is dynamically generated list that will
+    // have two indexes such as a dropdown menu
+    expect(
+      (tester.widget(find.byKey(const Key("OurThemeMode"))) as DropdownButton)
+          .value,
+      equals(ThemeMode.system.toString()),
+    );
+    await tester.tap(find.text(ThemeMode.system.toString()));
+    // Need to call pump twice; once to complete the action and once to complete
+    // the animation.
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
+    // after opening the menu we have two widgets with text 'Greater'
+    // one in index stack of the dropdown button and one in the menu .
+    // apparently the last one is from the menu.
+    await tester.tap(find.text(ThemeMode.system.toString()).last);
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+
+    // We directly verify the value updated in the onchaged function.
+    // this gives Actual: ThemeMode:<ThemeMode.system>
+    //            Expected:  'ThemeMode.system'
+    // expect(settingsController.themeMode, ThemeMode.system.toString(),)
+    // so this is where my mock comes in as I have to then interact 
+    // with the mock to choose system and than 
+    // myMockedSettingsController.themeMode as the expected matcher.
+    expect(settingsController.themeMode, ThemeMode.system.toString(),);
+
+    
   }
 }
 
@@ -89,8 +109,8 @@ extension SettingsScreenSystemThemeVisibleThen
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
@@ -98,7 +118,7 @@ extension SettingsScreenSystemThemeVisibleThen
     });
     await screenMatchesGolden(
       tester,
-      "system theme visible after choosing system",
+      "system_theme_visible_after_choosing_system",
     );
   }
 }
@@ -110,25 +130,39 @@ extension SettingsScreenUserSelectsDarkThemeWhen
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
 
-   
+     // This is the way to grab anything that is dynamically generated list that will
+    // have two indexes such as a dropdown menu
+    expect(
+      (tester.widget(find.byKey(const Key("OurThemeMode"))) as DropdownButton)
+          .value,
+      equals(ThemeMode.dark.toString()),
+    );
+    await tester.tap(find.text(ThemeMode.dark.toString()));
+    // Need to call pump twice; once to complete the action and once to complete
+    // the animation.
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
-    // when user taps and choose dark theme
+    // after opening the menu we have two widgets with text 'Greater'
+    // one in index stack of the dropdown button and one in the menu .
+    // apparently the last one is from the menu.
+    await tester.tap(find.text(ThemeMode.dark.toString()).last);
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
-    final app = MyAppPageObject();
-
-    // when user choses dark theme tap simulation
-    await tester.ensureVisible(app.settingsScreen.dropDownButton);
-    await tester.pumpAndSettle();
-    await tester.ensureVisible(app.settingsScreen.dropDownButtonDark);
-    await tester.pumpAndSettle();
+    /// We directly verify the value updated in the onchaged function.
+    expect(
+      settingsController.themeMode,
+      ThemeMode.dark.toString(),
+    );
   }
 }
 
@@ -140,71 +174,87 @@ extension SettingsScreenUserHasChosenDarkThemeThen
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: ThemeMode.dark,
         ),
       );
     });
-    
 
     // now get our visual proof of the mocked simulation
     await screenMatchesGolden(
       tester,
-      "dark theme visible after user choses dark",
+      "dark_theme_visible_after_user_choses_dark",
     );
   }
 }
 
-extension SettingsScreenUserSelectsLightThemeWhen on WidgetTestWhen<_WidgetTestHarness>{
-  Future<void> myUserChosesLightTheme() async{
+extension SettingsScreenUserSelectsLightThemeWhen
+    on WidgetTestWhen<_WidgetTestHarness> {
+  Future<void> myUserChosesLightTheme() async {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
 
-    
     // when user taps and choose dark theme
 
-    final app = MyAppPageObject();
+     // This is the way to grab anything that is dynamically generated list that will
+    // have two indexes such as a dropdown menu
+    expect(
+      (tester.widget(find.byKey(const Key("OurThemeMode"))) as DropdownButton)
+          .value,
+      equals(ThemeMode.light.toString()),
+    );
+    await tester.tap(find.text(ThemeMode.light.toString()));
+    // Need to call pump twice; once to complete the action and once to complete
+    // the animation.
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
-    // when user choses dark theme tap simulation
-    await tester.ensureVisible(app.settingsScreen.dropDownButton);
-    await tester.pumpAndSettle();
-    await tester.ensureVisible(app.settingsScreen.dropDownButtonLight);
-    await tester.pumpAndSettle();
+    // after opening the menu we have two widgets with text 'Greater'
+    // one in index stack of the dropdown button and one in the menu .
+    // apparently the last one is from the menu.
+    await tester.tap(find.text(ThemeMode.light.toString()).last);
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
 
+    /// We directly verify the value updated in the onchaged function.
+    expect(
+      settingsController.themeMode,
+      ThemeMode.light.toString(),
+    );
   }
 }
 
-extension SettingsScreenUserHasChosenLightTheme on WidgetTestThen<_WidgetTestHarness>{
-  Future<void> myUserSeesLightThemeVisible() async{
+extension SettingsScreenUserHasChosenLightTheme
+    on WidgetTestThen<_WidgetTestHarness> {
+  Future<void> myUserSeesLightThemeVisible() async {
     await tester.runAsync<dynamic>(() async {
       // simulating dark theme
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: ThemeMode.light,
         ),
       );
     });
-    
 
     // now get our visual proof of the mocked simulation
     await screenMatchesGolden(
       tester,
-      "light theme visible after user choses light",
+      "ligh_theme_visible_after_user_choses_light",
     );
   }
 }

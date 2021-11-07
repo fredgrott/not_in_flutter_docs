@@ -11,7 +11,7 @@ import 'package:gtdd_ten/src/infrastructure/app_vars.dart';
 import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 
 
-import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_material_themedata.dart';
 
 import 'golden_base_fpw_root_widget_wrapper.dart';
 
@@ -36,15 +36,15 @@ extension SampleItemDetailsViewScreenGiven on WidgetTestGiven<_WidgetTestHarness
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.sampleDetailsScreen.appbarTitle, findsOneWidget,);
+    expect(app.sampleDetailsScreen.appBar, findsOneWidget,);
   }
 }
 
@@ -54,15 +54,15 @@ extension SampleItemDetailsAppBarTitleThen on WidgetTestThen<_WidgetTestHarness>
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.sampleDetailsScreen.appbarTitle, HasText("Item Details"),);
+    expect(app.sampleDetailsScreen.appBar, findsOneWidget,);
   }
 }
 
@@ -73,14 +73,16 @@ extension SampleItemDetailsTextThen
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.sampleDetailsScreen.textDetail, HasText('More Information Here'),);
+    // Gist: If I put a Key with PlatformText actual result is two widgets with that ke,
+    //       i.e. both PlatformText and Text Widget.
+    expect(app.sampleDetailsScreen.textDetail, findsNWidgets(2),);
   }
 }

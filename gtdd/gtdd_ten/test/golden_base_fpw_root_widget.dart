@@ -82,6 +82,9 @@ class GoldenBaseFPWRootWidget extends StatelessWidget {
                 __,
               ) =>
                   CupertinoAppData(
+                    // since I deliver the right Material Theme dynamically 
+                    // based on ThemeMode I do not have to provide a parameter option 
+                    // for this item for the wrapper.
                 theme: myCupertinoBasedMaterialThemeData,
                 // no onGenerateRoute in root widget
               ),

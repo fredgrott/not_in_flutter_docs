@@ -27,7 +27,7 @@ flutter
 
 flutter pub run dart_code_metrics:metrics lib --reporter=html --output-directory=reports\metrics
 
-flutter test --update-goldens
+flutter test --update-goldens  
 
 
 flutter test --machine | tojunit -o reports\test\test.xml

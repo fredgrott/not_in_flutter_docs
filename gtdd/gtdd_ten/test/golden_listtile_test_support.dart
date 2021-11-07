@@ -10,7 +10,7 @@ import 'package:gtdd_ten/src/infrastructure/app_vars.dart';
 import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
 
 
-import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_material_themedata.dart';
 
 import 'golden_base_fpw_root_widget_wrapper.dart';
 
@@ -37,15 +37,15 @@ extension SampleScreenGiven on WidgetTestGiven<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.homeScreen.appbarTitle, findsOneWidget,);
+    expect(app.homeScreen.appBar, findsOneWidget,);
   }
 }
 
@@ -55,8 +55,8 @@ extension SampleScreenListViewWhen on WidgetTestWhen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
@@ -73,8 +73,8 @@ extension SampleScreenListTileThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
@@ -91,16 +91,18 @@ extension SampleScreenListTileOneThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
+
+    // Gist: Two widgets as it will be both a PlatformText Widget and Text Widget
     expect(
-      app.homeScreen.listTileOne, findsOneWidget,
+      app.homeScreen.listTileOne, findsNWidgets(2),
     );
   }
 }
@@ -111,17 +113,18 @@ extension SampleScreenListTileTwoThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
+    // Gist: Two widgets as it will be both a PlatformText Widget and Text Widget
     expect(
       app.homeScreen.listTileTwo,
-      findsOneWidget,
+      findsNWidgets(2),
     );
   }
 }
@@ -132,17 +135,18 @@ extension SampleScreenListTileThreeThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode  as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
+    // Gist: Two widgets as it will be both a PlatformText Widget and Text Widget
     expect(
       app.homeScreen.listTileThree,
-      findsOneWidget,
+      findsNWidgets(2),
     );
   }
 }

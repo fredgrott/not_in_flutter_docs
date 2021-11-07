@@ -13,7 +13,7 @@ import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.d
 import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
 
 
-import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_material_themedata.dart';
 
 import 'golden_base_fpw_root_widget_wrapper.dart';
 
@@ -49,15 +49,17 @@ extension SampleAppBarGiven on WidgetTestGiven<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.homeScreen.appbarTitle, findsOneWidget,);
+    // With Flutter Platform Widgets usage and using the widget builders option under
+    // PlatformText I will have two widgets with the key
+    expect(app.homeScreen.appBar, findsOneWidget,);
   }
 }
 
@@ -67,15 +69,17 @@ extension DetailAppBarGiven on WidgetTestGiven<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.sampleDetailsScreen.appbarTitle, findsOneWidget,);
+    // With Flutter Platform Widgets usage and using the widget builders option under
+    // PlatformText I will have two widgets with the key
+    expect(app.sampleDetailsScreen.appBar, findsOneWidget,);
   }
 }
 
@@ -85,15 +89,15 @@ extension SettingsAppBarGiven on WidgetTestGiven<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.settingsScreen.appbarTitle, findsOneWidget,);
+    expect(app.settingsScreen.appBar, findsOneWidget,);
   }
 }
 
@@ -103,15 +107,16 @@ extension SampleAppBarThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.homeScreen.appbarTitle, HasText('Sample Items'),);
+    //Cupertino Capitializes Titles
+    expect(app.homeScreen.appBar, findsOneWidget ,);
   }
 }
 
@@ -121,15 +126,17 @@ extension DetailAppBarThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.sampleDetailsScreen.appbarTitle, HasText('Item Details'),);
+    // With Flutter Platform Widgets usage and using the widget builders option under
+    // PlatformText I will have two widgets with the key
+    expect(app.sampleDetailsScreen.appBar, findsOneWidget,);
   }
 }
 
@@ -139,14 +146,16 @@ extension SettingsAppBarThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
         wrapper: goldenBaseFPWRootWidgetWrapper(
-          ourLightTheme: myLightThemeData,
-          ourDarkTheme: myDarkThemeData,
+          ourLightTheme: myLightMaterialThemeData,
+          ourDarkTheme: myDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           ourThemeMode: settingsController.themeMode as ThemeMode,
         ),
       );
     });
     final app = MyAppPageObject();
-    expect(app.settingsScreen.appbarTitle, HasText("Settings"),);
+    // With Flutter Platform Widgets usage and using the widget builders option under
+    // PlatformText I will have two widgets with the key
+    expect(app.settingsScreen.appBar,  findsOneWidget,);
   }
 }

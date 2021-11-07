@@ -10,7 +10,7 @@ import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_detailsvie
 import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
 
-import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_material_themedata.dart';
 
 import 'golden_base_fpw_root_widget_wrapper.dart';
 
@@ -65,8 +65,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -76,7 +76,7 @@ void main() {
 
           await screenMatchesGolden(
             tester,
-            "sample item list multiple screens material light",
+            "sample_item_list_multiple_screens_material_light",
           );
         },
       );
@@ -107,8 +107,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -118,7 +118,7 @@ void main() {
 
           await screenMatchesGolden(
             tester,
-            "sample item list multiple screens material dark",
+            "sample_item_list_multiple_screens_material_dark",
           );
         },
       );
@@ -149,8 +149,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -160,7 +160,7 @@ void main() {
 
           await screenMatchesGolden(
             tester,
-            "sample item list multiple screens cupertino light",
+            "sample_item_list_multiple_screens_cupertino_light",
           );
         },
       );
@@ -191,8 +191,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -202,7 +202,7 @@ void main() {
 
           await screenMatchesGolden(
             tester,
-            "sample item list multiple screens cupertino dark",
+            "sample_item_list_multiple_screens_cupertino_dark",
           );
         },
       );
@@ -234,8 +234,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -245,7 +245,7 @@ void main() {
 
           await screenMatchesGolden(
             tester,
-            "sample item view multiple screens-Material-Light",
+            "sample_item_view_multiple_screens_material_light",
           );
         },
       );
@@ -276,8 +276,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -287,7 +287,7 @@ void main() {
 
           await screenMatchesGolden(
             tester,
-            "detail view multiple screens-Cupertino-Light",
+            "detail_view_multiple_screens_cupertino_light",
           );
         },
       );
@@ -318,8 +318,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -329,7 +329,7 @@ void main() {
 
           await screenMatchesGolden(
             tester,
-            "detail view multiple screens-Material-Dark",
+            "detail_view_multiple_screens_material_dark",
           );
         },
       );
@@ -360,8 +360,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -371,7 +371,7 @@ void main() {
 
           await screenMatchesGolden(
             tester,
-            "sdetail view multiple screens-Cupertino-Dark",
+            "detail_view_multiple_screens_cupertino_dark",
           );
         },
       );
@@ -430,8 +430,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -440,7 +440,7 @@ void main() {
             });
             await screenMatchesGolden(
             tester,
-            "settings view page multiple screens material light",
+            "settings_view_page_multiple_screens_material_light",
           );
           },);
 
@@ -471,8 +471,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -481,7 +481,7 @@ void main() {
           });
           await screenMatchesGolden(
             tester,
-            "settings view page multiple screens cupertino light",
+            "settings_view_page_multiple_screens_cupertino_light",
           );
         },
       );
@@ -513,8 +513,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -523,7 +523,7 @@ void main() {
           });
           await screenMatchesGolden(
             tester,
-            "settings view page multiple screens material dark",
+            "settings_view_page_multiple_screens_material_dark",
           );
         },
       );
@@ -555,8 +555,8 @@ void main() {
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -565,7 +565,7 @@ void main() {
           });
           await screenMatchesGolden(
             tester,
-            "settings view page multiple screens cupertino dark",
+            "settings_view_page_multiple_screens_cupertino_dark",
           );
         },
       );

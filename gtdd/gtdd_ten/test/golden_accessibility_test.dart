@@ -7,7 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:gtdd_ten/src/infrastructure/app_vars.dart';
-import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_cupertinobasematerialdata.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_material_themedata.dart';
 
 import 'golden_base_lite_root_widget_wrapper.dart';
 import 'golden_listview.dart';
@@ -42,7 +43,7 @@ void main() {
             wrap: goldenBaseLiteRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.android,
-              myTheme: myLightThemeData,),
+              myTheme: myLightMaterialThemeData,),
           )
             ..addScenario(
               'Default font size',
@@ -79,7 +80,7 @@ void main() {
             wrap: goldenBaseLiteRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.android,
-              myTheme: myLightThemeData,),
+              myTheme: myLightMaterialThemeData,),
           )
             ..addScenario(
               'another normal',
@@ -111,7 +112,7 @@ void main() {
             wrap: goldenBaseLiteRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.android,
-              myTheme: myDarkThemeData,
+              myTheme: myDarkMaterialThemeData,
             ),
           )
             ..addScenario(
@@ -149,7 +150,7 @@ void main() {
             wrap: goldenBaseLiteRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.android,
-              myTheme: myDarkThemeData,
+              myTheme: myDarkMaterialThemeData,
             ),
           )
             ..addScenario(
@@ -184,7 +185,7 @@ void main() {
             wrap: goldenBaseLiteRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.iOS,
-              myTheme: myLightThemeData,
+              myTheme: myLightCupertinoThemeData,
             ),
           )
             ..addScenario(
@@ -220,7 +221,7 @@ void main() {
             widthToHeightRatio: 0.5,
             wrap: goldenBaseLiteRootWidgetWrapper(
               platform: TargetPlatform.iOS,
-              myTheme: myLightThemeData,
+              myTheme: myLightCupertinoThemeData,
             ),
           )
             ..addScenario(
@@ -253,7 +254,7 @@ void main() {
             wrap: goldenBaseLiteRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.iOS,
-              myTheme: myDarkThemeData,
+              myTheme: myDarkCupertinoThemeData,
             ),
           )
             ..addScenario(
@@ -289,7 +290,7 @@ void main() {
             widthToHeightRatio: 0.5,
             wrap: goldenBaseLiteRootWidgetWrapper(
               platform: TargetPlatform.iOS,
-              myTheme: myDarkThemeData,
+              myTheme: myDarkCupertinoThemeData,
             ),
           )
             ..addScenario(

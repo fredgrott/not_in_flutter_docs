@@ -8,6 +8,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_cupertinocolors.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_special_cupertino_textstyles.dart';
 
 class SampleItemDetailsView extends StatelessWidget {
   static const routeName = '/sample_item';
@@ -18,7 +20,7 @@ class SampleItemDetailsView extends StatelessWidget {
 
   static String detail = 'More Information Here';
 
-  static Key detailKey = const Key('SampleItemDetailsView.detail');
+  
 
   
 
@@ -28,6 +30,7 @@ class SampleItemDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return PlatformScaffold(
       appBar: PlatformAppBar(
+        widgetKey: const Key("ItemDetailsAppBar"),
         leading: PlatformIconButton(
           onPressed: () {
             Navigator.restorablePushNamed(
@@ -39,12 +42,14 @@ class SampleItemDetailsView extends StatelessWidget {
             );
           },
           icon: Icon(PlatformIcons(context).back),
+          
           padding: const EdgeInsets.all(1),
           material: (_, __,)  => MaterialIconButtonData(
+
             visualDensity: VisualDensity.adaptivePlatformDensity,
           ),
           cupertino: (_, __,) => CupertinoIconButtonData(
-            pressedOpacity: 10,
+            pressedOpacity: 0.10,
           ),
         ),
         title: PlatformText(
@@ -52,17 +57,14 @@ class SampleItemDetailsView extends StatelessWidget {
           key: titleKey,
           // To get the platform differences right Typography wise I need
           // to do one adjust per platform using Flutter Platform Widgets.
-          style: platformThemeData(
-            context,
-            material: (data) => data.textTheme.headline5,
-            cupertino: (data) => data.textTheme.navTitleTextStyle,
-          ),
+          
         ),
         material: (
           _,
           __,
         ) =>
             MaterialAppBarData(
+              
               centerTitle: true,
             ),
         cupertino: (
@@ -70,6 +72,9 @@ class SampleItemDetailsView extends StatelessWidget {
           __,
         ) =>
             CupertinoNavigationBarData(
+              widgetKey: titleKey,
+              title: PlatformText(title, style: myCupertinoNavigationBarTextStyle,),
+              backgroundColor: myCupertinoNavigationBarLightBackgroundColor,
               previousPageTitle: "Sample Items",
               brightness: Brightness.light,
             ),
@@ -77,17 +82,10 @@ class SampleItemDetailsView extends StatelessWidget {
       body: Center(
         child: PlatformText(
           detail,
-          key: detailKey,
-          style: platformThemeData(
-            context, 
-            material: (data) => data.textTheme.bodyText1,
-            cupertino: (data) => data.textTheme.textStyle,
-            ),
+          key: const Key("SampleItemDetailsView.detail"),
+          
         ),
       ),
     );
   }
-}
-
-mixin Icons {
 }

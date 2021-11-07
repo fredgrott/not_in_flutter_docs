@@ -10,10 +10,10 @@ import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_detailsvie
 import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
 
-import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_material_themedata.dart';
 
 import 'golden_base_fpw_root_widget_wrapper.dart';
-import 'golden_device_definitions.dart';
+
 
 
 void main() {
@@ -47,8 +47,8 @@ void main() {
               const SampleItemListView(),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -71,8 +71,8 @@ void main() {
               const SampleItemListView(),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -93,8 +93,8 @@ void main() {
               const SampleItemListView(),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode:ThemeMode.dark,
               ),
@@ -115,8 +115,8 @@ void main() {
               const SampleItemListView(),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -143,8 +143,8 @@ void main() {
               const SampleItemDetailsView(),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -165,8 +165,8 @@ void main() {
               const SampleItemDetailsView(),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -187,8 +187,8 @@ void main() {
               const SampleItemDetailsView(),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -209,8 +209,8 @@ void main() {
               const SampleItemDetailsView(),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -231,8 +231,8 @@ void main() {
               SettingsView(controller: settingsController,),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -255,8 +255,8 @@ void main() {
               ),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: settingsController.themeMode as ThemeMode,
               ),
@@ -279,8 +279,8 @@ void main() {
               ),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode: ThemeMode.dark,
               ),
@@ -303,8 +303,8 @@ void main() {
               ),
               wrapper: goldenBaseFPWRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                ourLightTheme: myLightThemeData,
-                ourDarkTheme: myDarkThemeData,
+                ourLightTheme: myLightMaterialThemeData,
+                ourDarkTheme: myDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 ourThemeMode:ThemeMode.dark,
               ),

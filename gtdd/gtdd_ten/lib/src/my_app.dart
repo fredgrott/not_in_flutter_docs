@@ -12,7 +12,7 @@ import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_detailsvie
 import 'package:gtdd_ten/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_ten/src/presentation/features/settings/ui/settingsview.dart';
 import 'package:gtdd_ten/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
-import 'package:gtdd_ten/src/presentation/themes/my_app_themedata.dart';
+import 'package:gtdd_ten/src/presentation/themes/my_material_themedata.dart';
 import 'package:gtdd_ten/src/presentation/themes/my_cupertinobasematerialdata.dart';
 
 class MyApp extends StatelessWidget {
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
     // both Theme as parent and PlatformProvider. This way I can properly
     // platforms during Goldens testing for example.
     return Theme(
-      data: myLightThemeData,
+      data: myLightMaterialThemeData,
       child: PlatformProvider(
         settings: PlatformSettingsData(iosUsesMaterialWidgets: true),
         builder: (context) => AnimatedBuilder(
@@ -60,8 +60,8 @@ class MyApp extends StatelessWidget {
                 __,
               ) =>
                   MaterialAppData(
-                theme: myLightThemeData,
-                darkTheme: myDarkThemeData,
+                theme: myLightMaterialThemeData,
+                darkTheme: myDarkMaterialThemeData,
                 themeMode: settingsController.themeMode,
                 onGenerateRoute: (RouteSettings routeSettings) {
                   // so we have Material transitions on non-Apple devices
