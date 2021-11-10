@@ -4,7 +4,9 @@
 
 // ignore_for_file: cast_nullable_to_non_nullable
 
+
 import 'package:flutter/material.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_listview.dart';
@@ -12,10 +14,7 @@ import 'package:gtdd_twelve/src/presentation/features/settings/ui/settingsview.d
 
 import 'package:page_object/page_object.dart';
 
-
 import 'golden_basefullfwp_rootwidget.dart';
-
-
 
 // Should have as many getter as screens in the app.
 // We always use the inserted Root Widget test fixture
@@ -45,24 +44,45 @@ class SampleItemListViewPageObject extends PageObject {
   // Gist: AppBar is delivered dynamically so let's grab the widgetKey that
   //       the PlatformAppBar will pass on to the Material Appbar or the
   //       CupertinoNavigationbar.
+  //
+  //      Rather than find.byKey which might get more than one match in FPW usage
+  //      one instead should use find.byWidgetPredicate see:
+  //      https://api.flutter.dev/flutter/flutter_test/CommonFinders/byWidgetPredicate.html
+  //
+
+  // Gist: With cross-platform FPW we need to find the parent PlatformAppBAr that will be above the
+  //       Material AppBar or the CupertinoNavigationBar. This will findOneWidget true.
   Finder get appBar => find.descendant(
         of: this,
-        matching: find.byKey(const Key("SampleItemsAppBar")),
+        matching: find.byWidgetPredicate(
+          (Widget widget) =>
+              widget is PlatformAppBar &&
+              widget.key == const Key("SampleItemsAppBar"),
+        ),
       );
 
+  // This will find one widget the Parent of Appbar or CupertinoNavigationbar Text Widget which will
+  // be a platform text Widget.
   Finder get appbarTitle => find.descendant(
         of: this,
-        matching: find.byKey(const Key("SamplSampleItemListView.title")),
+        matching: find.byWidgetPredicate(
+          (Widget widget) =>
+              widget is PlatformText &&
+              widget.key == const Key("SamplSampleItemListView.title"),
+        ),
       );
 
+  // Finds a listView with the key of ListView
   Finder get listView => find.descendant(
         of: this,
-        matching: find.byKey(const Key('ListView')),
+        matching: find.byWidgetPredicate((Widget widget) =>
+            widget is ListView && widget.key == const Key("ListView"),),
       );
 
+  // This will find many list tiles and should have findManyWidgets matcher
   Finder get listTile => find.descendant(
         of: this,
-        matching: find.byType(ListTile),
+        matching: find.byWidgetPredicate((Widget widget) => widget is ListTile),
       );
 
   Finder get listTileOne => find.descendant(
@@ -95,17 +115,28 @@ class SampleItemDetailsViewPageObject extends PageObject {
   //       CupertinoNavigationbar.
   Finder get appBar => find.descendant(
         of: this,
-        matching: find.byKey(const Key("ItemDetailsAppBar")),
+        matching: find.byWidgetPredicate(
+          (Widget widget) =>
+              widget is PlatformAppBar &&
+              widget.key == const Key("ItemDetailsAppBar"),
+        ),
       );
-
+  // Finds One PlatformText with a unique key
   Finder get appbarTitle => find.descendant(
         of: this,
-        matching: find.byKey(const Key("SampleItemDetailsView.title")),
+        matching: find.byWidgetPredicate(
+          (Widget widget) =>
+              widget is PlatformText &&
+              widget.key == const Key("SampleItemDetailsView.title"),
+        ),
       );
 
   Finder get textDetail => find.descendant(
         of: this,
-        matching: find.byKey(const Key("SampleItemDetailsView.detail"),
+        matching: find.byWidgetPredicate(
+          (Widget widget) =>
+              widget is PlatformText &&
+              widget.key == const Key("SampleItemDetailsView.detail"),
         ),
       );
 
@@ -137,23 +168,29 @@ class SettingsViewPageObject extends PageObject {
   //       CupertinoNavigationbar.
   Finder get appBar => find.descendant(
         of: this,
-        matching: find.byKey(const Key("SettingsAppBar")),
+        matching: find.byWidgetPredicate(
+          (Widget widget) =>
+              widget is PlatformAppBar &&
+              widget.key == const Key("SettingsAppBar"),
+        ),
       );
 
   Finder get appbarTitle => find.descendant(
         of: this,
-        matching: find.byKey(const Key("SettingsView.title")),
+        matching: find.byWidgetPredicate(
+          (Widget widget) =>
+              widget is PlatformText &&
+              widget.key == const Key("SettingsView.title"),
+        ),
       );
 
-  // DropDown Button items are often dynamically created so we
-  // need to use a use case of tap dropdown, then tap test object
-  // wanted(item choice) so the sequence is find key on dropdownbutton
-  // then find the text key of menu item.
+  // Using find.byWidgetPredicate to find DropdownButton Parent with unique key
   Finder get dropDownButton => find.descendant(
         of: this,
-        matching: find.byKey(
-          const Key('OurThemeMode'),
-          skipOffstage: false,
+       matching: find.byWidgetPredicate(
+          (Widget widget) =>
+              widget is DropdownButton &&
+              widget.key == const Key("OurThemeMode"),
         ),
       );
 
