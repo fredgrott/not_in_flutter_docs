@@ -14,12 +14,44 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  # localization helper
+  intl: ^0.17.0
+  # localization automation
+  intl_utils: ^2.4.0
+  # custom fonts
+  google_fonts: ^2.1.0
+  equatable: ^2.0.3
+  dartz: ^0.10.0
+  flutter_platform_widgets: ^1.10.0
+
 
 dev_dependencies:
+  integration_test:
+    sdk: flutter
   flutter_test:
     sdk: flutter
+  # workflow automation
+  build_runner: ^2.1.4
+  # workflow automation
+  derry: ^1.4.3
+  # code metrics
+  dart_code_metrics: ^4.5.0
+  # goldens
+  golden_toolkit: ^0.10.0
+  # mocking
+  mocktail: ^0.2.0
+  # testing page object model
+  page_object: ^0.2.0
+  # bdd harness and fixtures  testing
+  given_when_then: ^0.2.0
+  
+
 
   flutter_lints: ^1.0.0
+
+dependency_overrides:
+  mocktail: ^0.2.0
+
 
 flutter:
   uses-material-design: true
@@ -30,3 +62,15 @@ flutter:
   assets:
     # Add assets from the images directory to the application.
     - assets/images/
+    - google_fonts/
+    - images/
+# flutter intl for localization settings
+flutter_intl:
+  enabled: true   
+  class_name: S   
+  main_locale: en 
+  arb_dir: lib/src/localization
+  output_dir: lib/src/localization_gen
+  use_deferred_loading: false
+
+scripts: derry.yaml
