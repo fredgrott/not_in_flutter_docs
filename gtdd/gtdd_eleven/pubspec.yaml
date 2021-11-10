@@ -38,15 +38,11 @@ dev_dependencies:
   golden_toolkit: ^0.10.0
   # mocking
   mocktail: ^0.2.0
-  # mocking navigation
-  mockingjay: ^0.1.1
   # testing page object model
   page_object: ^0.2.0
   # bdd harness and fixtures  testing
   given_when_then: ^0.2.0
-  # property tester
-  glados: ^1.1.1
-
+  
 
 
   flutter_lints: ^1.0.0

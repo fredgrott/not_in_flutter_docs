@@ -8,8 +8,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:gtdd_eleven/src/presentation/features/home/ui/sampleitem_listview.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_cupertinocolors.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_special_cupertino_textstyles.dart';
 
 class SampleItemDetailsView extends StatelessWidget {
   static const routeName = '/sample_item';
@@ -83,8 +81,8 @@ class SampleItemDetailsView extends StatelessWidget {
         ) =>
             CupertinoNavigationBarData(
               widgetKey: titleKey,
-              title: PlatformText(title, style: myCupertinoNavigationBarTextStyle,),
-              backgroundColor: myCupertinoNavigationBarLightBackgroundColor,
+              title: PlatformText(title,),
+              
               previousPageTitle: "Sample Items",
               brightness: Brightness.light,
             ),

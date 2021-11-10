@@ -8,8 +8,9 @@ import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:gtdd_eleven/src/infrastructure/app_vars.dart';
 import 'package:gtdd_eleven/src/presentation/features/settings/ui/settingsview.dart';
 import 'package:gtdd_eleven/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_cupertinobasematerialdata.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_material_themedata.dart';
+import 'package:gtdd_eleven/src/presentation/themes/material_themedata.dart';
+
+
 import 'package:mocktail/mocktail.dart';
 
 
@@ -52,11 +53,12 @@ void main() {
               await tester.pumpWidgetBuilder(
                 SettingsView(controller: settingsController),
                 wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                  theme: myLightMaterialThemeData,
-                  darkTheme: myDarkMaterialThemeData,
+                  theme: materialLightMaterialThemeData,
+                  darkTheme: materialDarkMaterialThemeData,
                   // ignore: cast_nullable_to_non_nullable
                   myThemeMode: settingsController.themeMode as ThemeMode,
-                  myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                  
+                  
                 ),
               );
 
@@ -122,11 +124,12 @@ void main() {
             await tester.pumpWidgetBuilder(
               SettingsView(controller: settingsController),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: settingsController.themeMode as ThemeMode,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
+                
               ),
             );
 
@@ -194,11 +197,12 @@ void main() {
             await tester.pumpWidgetBuilder(
               SettingsView(controller: settingsController),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: settingsController.themeMode as ThemeMode,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
+                
               ),
             );
 

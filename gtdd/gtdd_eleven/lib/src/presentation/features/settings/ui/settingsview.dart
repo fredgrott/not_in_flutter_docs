@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:gtdd_eleven/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_eleven/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_cupertinocolors.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_special_cupertino_textstyles.dart';
 
 class SettingsView extends StatelessWidget {
   static const routeName = '/settings';
@@ -112,10 +110,10 @@ class SettingsView extends StatelessWidget {
           // https://github.com/stryder-dev/flutter_platform_widgets/blob/master/lib/src/platform_text.dart
           title: PlatformText(
             title,
-            style: myCupertinoNavigationBarTextStyle,
+            
             key: titleKey,
           ),
-          backgroundColor: myCupertinoNavigationBarLightBackgroundColor,
+         
           previousPageTitle: "Sample Items",
           brightness: Brightness.light,
         ),

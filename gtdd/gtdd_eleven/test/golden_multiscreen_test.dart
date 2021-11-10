@@ -9,9 +9,8 @@ import 'package:gtdd_eleven/src/infrastructure/app_vars.dart';
 import 'package:gtdd_eleven/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 import 'package:gtdd_eleven/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_eleven/src/presentation/features/settings/ui/settingsview.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_cupertinobasematerialdata.dart';
+import 'package:gtdd_eleven/src/presentation/themes/material_themedata.dart';
 
-import 'package:gtdd_eleven/src/presentation/themes/my_material_themedata.dart';
 
 import 'golden_base_rootwidgetwrapper.dart';
 
@@ -50,11 +49,11 @@ void main() {
               const SampleItemListView(),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: settingsController.themeMode as ThemeMode,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -75,11 +74,11 @@ void main() {
               const SampleItemListView(),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -98,11 +97,11 @@ void main() {
               const SampleItemListView(),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -121,11 +120,11 @@ void main() {
               const SampleItemListView(),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -150,11 +149,11 @@ void main() {
               const SampleItemDetailsView(),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-               theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+               theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -173,11 +172,11 @@ void main() {
               const SampleItemDetailsView(),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -196,11 +195,11 @@ void main() {
               const SampleItemDetailsView(),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -219,11 +218,11 @@ void main() {
               const SampleItemDetailsView(),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -242,11 +241,11 @@ void main() {
               SettingsView(controller: settingsController,),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -267,11 +266,11 @@ void main() {
               ),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+               
               ),
             );
           });
@@ -292,11 +291,11 @@ void main() {
               ),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.windows,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });
@@ -317,11 +316,11 @@ void main() {
               ),
               wrapper: goldenBaseFullFWPRootWidgetWrapper(
                 platform: TargetPlatform.macOS,
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+                
               ),
             );
           });

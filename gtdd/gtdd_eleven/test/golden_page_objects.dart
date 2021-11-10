@@ -12,7 +12,8 @@ import 'package:gtdd_eleven/src/presentation/features/settings/ui/settingsview.d
 
 import 'package:page_object/page_object.dart';
 
-import 'golden_basefull_fwp_rootwidget.dart';
+
+import 'golden_basefullfwp_rootwidget.dart';
 
 
 

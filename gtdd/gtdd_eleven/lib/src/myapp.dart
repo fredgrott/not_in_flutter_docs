@@ -11,8 +11,11 @@ import 'package:gtdd_eleven/src/presentation/features/home/ui/sampleitem_details
 import 'package:gtdd_eleven/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_eleven/src/presentation/features/settings/ui/settingsview.dart';
 import 'package:gtdd_eleven/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_cupertinobasematerialdata.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_material_themedata.dart';
+import 'package:gtdd_eleven/src/presentation/routes/my_routeobserver.dart';
+import 'package:gtdd_eleven/src/presentation/themes/material_themedata.dart';
+
+
+
 
 class MyApp extends StatelessWidget {
   final SettingsController settingsController;
@@ -31,7 +34,7 @@ class MyApp extends StatelessWidget {
         Widget? child,
       ) {
         return Theme(
-          data: myLightMaterialThemeData,
+          data: materialLightMaterialThemeData,
           // Switches platforms so we can get same feature as Android Studio of
           // being able to view iOS on android and vice versa. Source is at
           // https://github.com/stryder-dev/flutter_platform_widgets/blob/master/lib/src/platform_provider.dart
@@ -65,6 +68,7 @@ class MyApp extends StatelessWidget {
                 ), // English, no country code
               ],
               onGenerateTitle: (BuildContext context) => S.of(context).appTitle,
+              navigatorObservers: [MyRouteObserver()],
               onGenerateRoute: (RouteSettings routeSettings) {
                 // platformPageRoute is Flutter Platform Widgets way to deliver
                 // the right platform transitions along with nav route generation.
@@ -97,8 +101,8 @@ class MyApp extends StatelessWidget {
                 __,
               ) =>
                   MaterialAppData(
-                theme: myLightMaterialThemeData,
-                darkTheme: myDarkMaterialThemeData,
+                theme: materialLightMaterialThemeData,
+                darkTheme: materialDarkMaterialThemeData,
                 themeMode: settingsController.themeMode,
               ),
               cupertino: (
@@ -108,7 +112,7 @@ class MyApp extends StatelessWidget {
                   CupertinoAppData(
                 // we pass a MaterialBasedCupertinoThemeData thing here to route with full material colors through
                 // the Cupertino Widget Themes.
-                theme: myCupertinoBasedMaterialThemeData,
+                
               ),
             ),
           ),

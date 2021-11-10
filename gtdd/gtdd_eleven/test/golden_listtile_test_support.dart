@@ -8,10 +8,9 @@ import 'package:given_when_then/given_when_then.dart';
 import 'package:golden_toolkit/src/testing_tools.dart';
 import 'package:gtdd_eleven/src/infrastructure/app_vars.dart';
 import 'package:gtdd_eleven/src/presentation/features/home/ui/sampleitem_listview.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_cupertinobasematerialdata.dart';
+import 'package:gtdd_eleven/src/presentation/themes/material_themedata.dart';
 
 
-import 'package:gtdd_eleven/src/presentation/themes/my_material_themedata.dart';
 
 
 
@@ -39,11 +38,12 @@ extension SampleScreenGiven on WidgetTestGiven<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFullFWPRootWidgetWrapper(
-          theme: myLightMaterialThemeData,
-          darkTheme: myDarkMaterialThemeData,
+          theme: materialLightMaterialThemeData,
+          darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+          
+          
         ),
       );
     });
@@ -58,11 +58,12 @@ extension SampleScreenListViewWhen on WidgetTestWhen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFullFWPRootWidgetWrapper(
-          theme: myLightMaterialThemeData,
-          darkTheme: myDarkMaterialThemeData,
+          theme: materialLightMaterialThemeData,
+          darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+          
+          
         ),
       );
     });
@@ -77,11 +78,12 @@ extension SampleScreenListTileThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFullFWPRootWidgetWrapper(
-          theme: myLightMaterialThemeData,
-          darkTheme: myDarkMaterialThemeData,
+          theme: materialLightMaterialThemeData,
+          darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+          
+          
         ),
       );
     });
@@ -96,11 +98,12 @@ extension SampleScreenListTileOneThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFullFWPRootWidgetWrapper(
-          theme: myLightMaterialThemeData,
-          darkTheme: myDarkMaterialThemeData,
+          theme: materialLightMaterialThemeData,
+          darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+          
+          
         ),
       );
     });
@@ -119,11 +122,12 @@ extension SampleScreenListTileTwoThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFullFWPRootWidgetWrapper(
-          theme: myLightMaterialThemeData,
-          darkTheme: myDarkMaterialThemeData,
+          theme: materialLightMaterialThemeData,
+          darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+          
+          
         ),
       );
     });
@@ -142,11 +146,12 @@ extension SampleScreenListTileThreeThen on WidgetTestThen<_WidgetTestHarness> {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
         wrapper: goldenBaseFullFWPRootWidgetWrapper(
-          theme: myLightMaterialThemeData,
-          darkTheme: myDarkMaterialThemeData,
+          theme: materialLightMaterialThemeData,
+          darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+          
+          
         ),
       );
     });

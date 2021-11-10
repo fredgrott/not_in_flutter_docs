@@ -10,8 +10,6 @@ import 'package:gtdd_eleven/src/domain/data/entities/sample_item.dart';
 
 import 'package:gtdd_eleven/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 import 'package:gtdd_eleven/src/presentation/features/settings/ui/settingsview.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_cupertinocolors.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_special_cupertino_textstyles.dart';
 
 
 class SampleItemListView extends StatelessWidget {
@@ -85,10 +83,10 @@ class SampleItemListView extends StatelessWidget {
             CupertinoNavigationBarData(
               title: PlatformText(
             title,
-            style: myCupertinoNavigationBarTextStyle,
+            
             key: titleKey,
           ),
-              backgroundColor: myCupertinoNavigationBarLightBackgroundColor,
+              
               brightness: Brightness.light,
             ),
       ),

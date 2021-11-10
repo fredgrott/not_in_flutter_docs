@@ -6,8 +6,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
 import 'package:gtdd_eleven/src/infrastructure/app_vars.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_cupertinobasematerialdata.dart';
-import 'package:gtdd_eleven/src/presentation/themes/my_material_themedata.dart';
+import 'package:gtdd_eleven/src/presentation/themes/material_themedata.dart';
+
 
 import 'golden_base_rootwidgetwrapper.dart';
 import 'golden_listview.dart';
@@ -42,9 +42,9 @@ void main() {
             wrap: goldenBaseLiteFWPRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.android,
-              theme: myLightMaterialThemeData,
-              darkTheme: myDarkMaterialThemeData,
-              myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+              theme: materialLightMaterialThemeData,
+              darkTheme: materialDarkMaterialThemeData,
+              
             ),
           )
             ..addScenario(
@@ -82,9 +82,9 @@ void main() {
             wrap: goldenBaseLiteFWPRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.android,
-              theme: myLightMaterialThemeData,
-              darkTheme: myDarkMaterialThemeData,
-              myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+              theme: materialLightMaterialThemeData,
+              darkTheme: materialDarkMaterialThemeData,
+              
             ),
           )
             ..addScenario(
@@ -117,9 +117,9 @@ void main() {
             wrap: goldenBaseLiteFWPRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.android,
-              theme: myLightMaterialThemeData,
-              darkTheme: myDarkMaterialThemeData,
-              myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+              theme: materialLightMaterialThemeData,
+              darkTheme: materialDarkMaterialThemeData,
+              
             ),
           )
             ..addScenario(
@@ -157,9 +157,9 @@ void main() {
             wrap: goldenBaseLiteFWPRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.android,
-              theme: myLightMaterialThemeData,
-              darkTheme: myDarkMaterialThemeData,
-              myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+              theme: materialLightMaterialThemeData,
+              darkTheme: materialDarkMaterialThemeData,
+              
             ),
           )
             ..addScenario(
@@ -192,9 +192,9 @@ void main() {
             wrap: goldenBaseLiteFWPRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.iOS,
-              theme: myLightMaterialThemeData,
-              darkTheme: myDarkMaterialThemeData,
-              myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+              theme: materialLightMaterialThemeData,
+              darkTheme: materialDarkMaterialThemeData,
+              
             ),
           )
             ..addScenario(
@@ -230,9 +230,9 @@ void main() {
             widthToHeightRatio: 0.5,
             wrap: goldenBaseLiteFWPRootWidgetWrapper(
               platform: TargetPlatform.iOS,
-              theme: myLightMaterialThemeData,
-              darkTheme: myDarkMaterialThemeData,
-              myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+              theme: materialLightMaterialThemeData,
+              darkTheme: materialDarkMaterialThemeData,
+              
             ),
           )
             ..addScenario(
@@ -265,9 +265,9 @@ void main() {
             wrap: goldenBaseLiteFWPRootWidgetWrapper(
               // ignore: avoid_redundant_argument_values
               platform: TargetPlatform.iOS,
-              theme: myLightMaterialThemeData,
-              darkTheme: myDarkMaterialThemeData,
-              myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+              theme: materialLightMaterialThemeData,
+              darkTheme: materialDarkMaterialThemeData,
+              
             ),
           )
             ..addScenario(
@@ -303,9 +303,9 @@ void main() {
             widthToHeightRatio: 0.5,
             wrap: goldenBaseLiteFWPRootWidgetWrapper(
               platform: TargetPlatform.iOS,
-              theme: myLightMaterialThemeData,
-              darkTheme: myDarkMaterialThemeData,
-              myCupertinoTheme: myCupertinoBasedMaterialThemeData,
+              theme: materialLightMaterialThemeData,
+              darkTheme: materialDarkMaterialThemeData,
+              
             ),
           )
             ..addScenario(

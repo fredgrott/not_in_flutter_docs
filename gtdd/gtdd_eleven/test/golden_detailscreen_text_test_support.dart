@@ -9,9 +9,9 @@ import 'package:given_when_then/given_when_then.dart';
 import 'package:golden_toolkit/src/testing_tools.dart';
 import 'package:gtdd_eleven/src/infrastructure/app_vars.dart';
 import 'package:gtdd_eleven/src/presentation/features/home/ui/sampleitem_detailsview.dart';
+import 'package:gtdd_eleven/src/presentation/themes/material_themedata.dart';
 
 
-import 'package:gtdd_eleven/src/presentation/themes/my_material_themedata.dart';
 
 
 
@@ -37,10 +37,12 @@ extension SampleItemDetailsViewScreenGiven on WidgetTestGiven<_WidgetTestHarness
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
         wrapper: goldenBaseFullFWPRootWidgetWrapper(
-          theme: myLightMaterialThemeData,
-          darkTheme: myDarkMaterialThemeData,
+          theme: materialLightMaterialThemeData,
+          darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
+          
+          
         ),
       );
     });
@@ -55,10 +57,12 @@ extension SampleItemDetailsAppBarTitleThen on WidgetTestThen<_WidgetTestHarness>
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
         wrapper: goldenBaseFullFWPRootWidgetWrapper(
-          theme: myLightMaterialThemeData,
-          darkTheme: myDarkMaterialThemeData,
+          theme: materialLightMaterialThemeData,
+          darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
+          
+          
         ),
       );
     });
@@ -74,10 +78,12 @@ extension SampleItemDetailsTextThen
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
         wrapper: goldenBaseFullFWPRootWidgetWrapper(
-          theme: myLightMaterialThemeData,
-          darkTheme: myDarkMaterialThemeData,
+          theme: materialLightMaterialThemeData,
+          darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
+          
+          
         ),
       );
     });
