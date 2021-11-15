@@ -6,7 +6,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gtdd_twelve/src/infrastructure/app_vars.dart';
-import 'package:gtdd_twelve/src/myapp.dart';
+import 'package:gtdd_twelve/src/my_app.dart';
+
 
 // Gist: This is a modification of the Flutter Skeleton App as it 
 //       lack some key steaks and potatoes best practices of 

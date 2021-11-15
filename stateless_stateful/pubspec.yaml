@@ -29,6 +29,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  lifecycle: ^0.4.1
+  logging: ^1.0.2
+  logging_appenders: ^1.0.0
+
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -38,6 +42,9 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  # code metrics
+  dart_code_metrics: ^4.5.0
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

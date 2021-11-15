@@ -3,7 +3,10 @@
 // license that can be found in the LICENSE file.
 
 
+import 'package:flutter/widgets.dart';
 import 'package:gtdd_twelve/src/presentation/features/settings/services/settings_service.dart';
 import 'package:gtdd_twelve/src/presentation/features/settings/viewcontrollers/settings_controller.dart';
 
 final settingsController = SettingsController(SettingsService());
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();

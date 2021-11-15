@@ -2,7 +2,6 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
-
 import 'package:flutter/material.dart';
 
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
@@ -11,7 +10,6 @@ import 'package:gtdd_twelve/src/domain/data/entities/sample_item.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 import 'package:gtdd_twelve/src/presentation/features/settings/ui/settingsview.dart';
 
-
 class SampleItemListView extends StatelessWidget {
   static const routeName = '/';
 
@@ -19,7 +17,18 @@ class SampleItemListView extends StatelessWidget {
 
   static String title = 'Sample Items';
 
-  static Key titleKey = const Key('SampleItemListView.title');
+  // Gist: Best practice in Test Widget Key implementation is to set
+  //       a static var that the Test Finder will use to attempt to match
+
+  static Key appBarKey = const Key('AppBarKey');
+
+  static Key listViewKey = const Key("ListViewKey");
+
+  static Key navButtonToSettingsKey = const Key('NavButtonToSettingsKey');
+
+  static Key titleKey = const Key('SampleItemListViewTitleKey');
+
+  static Key listTileKey = const Key('ListTileKey');
 
   static Key listTileTitleKey = const Key('ListTileKey');
 
@@ -40,7 +49,9 @@ class SampleItemListView extends StatelessWidget {
       //
       //
       appBar: PlatformAppBar(
-        widgetKey: const Key("SampleItemsAppBar"),
+        
+        widgetKey: appBarKey,
+
         //
         //
         title: PlatformText(
@@ -48,12 +59,12 @@ class SampleItemListView extends StatelessWidget {
           key: titleKey,
           // To get the platform differences right Typography wise I need
           // to do one adjust per platform using Flutter Platform Widgets.
-          
         ),
         trailingActions: <Widget>[
           //
           //
           PlatformIconButton(
+            widgetKey: navButtonToSettingsKey,
             //I whenever possible adapt to target platform specifics.
             //
             icon: Icon(PlatformIcons(context).settings),
@@ -73,55 +84,55 @@ class SampleItemListView extends StatelessWidget {
           __,
         ) =>
             MaterialAppBarData(
-              
-              centerTitle: true,
-            ),
+          centerTitle: true,
+        ),
         cupertino: (
           _,
           __,
         ) =>
             CupertinoNavigationBarData(
-              title: PlatformText(
+          title: PlatformText(
             title,
-            
             key: titleKey,
           ),
-              
-              brightness: Brightness.light,
-            ),
+          brightness: Brightness.light,
+        ),
       ),
       body: ListView.builder(
-          key: const Key('ListView'),
-          restorationId: 'sampleItemListView',
-          itemCount: items.length,
-          itemBuilder: (BuildContext context, int index,) {
-            final item = items[index];
+        key: listViewKey,
+        restorationId: 'sampleItemListView',
+        itemCount: items.length,
+        itemBuilder: (
+          BuildContext context,
+          int index,
+        ) {
+          final item = items[index];
 
-            return ListTile(
-              //
-              //
-              title: PlatformText(
-                "SampleItem ${item.id}",
-                key: ValueKey<int>(item.id),
-                
-              
-               ),
-               leading: const CircleAvatar(
-                 // Display the Flutter Logo image asset.
-                 foregroundImage: AssetImage('assets/images/flutter_logo.png'),
-               ),
+          return ListTile(
+            key: listTileKey,
+            //
+            //
+            title: PlatformText(
+              "SampleItem ${item.id}",
+              key: ValueKey<int>(item.id),
+            ),
+            leading: const CircleAvatar(
+              // Display the Flutter Logo image asset.
+              foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+            ),
 
-               onTap: () {
-                // Navigate to the details page. If the user leaves and returns to
-                // the app after it has been killed while running in the
-                // background, the navigation stack is restored.
-                Navigator.restorablePushNamed(
-                  context,
-                  SampleItemDetailsView.routeName,
-                );
+            onTap: () {
+              // Navigate to the details page. If the user leaves and returns to
+              // the app after it has been killed while running in the
+              // background, the navigation stack is restored.
+              Navigator.restorablePushNamed(
+                context,
+                SampleItemDetailsView.routeName,
+              );
             },
-            );
-          },),
+          );
+        },
+      ),
     );
   }
 }

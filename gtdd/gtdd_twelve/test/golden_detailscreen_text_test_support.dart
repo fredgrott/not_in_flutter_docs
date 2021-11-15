@@ -9,14 +9,12 @@ import 'package:given_when_then/given_when_then.dart';
 import 'package:golden_toolkit/src/testing_tools.dart';
 import 'package:gtdd_twelve/src/infrastructure/app_vars.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_detailsview.dart';
+import 'package:gtdd_twelve/src/presentation/themes/cupertino_themedata.dart';
 import 'package:gtdd_twelve/src/presentation/themes/material_themedata.dart';
 
 
 
-
-
-
-import 'golden_base_rootwidgetwrapper.dart';
+import 'golden_base_widgetwrapper.dart';
 import 'golden_page_objects.dart';
 
 
@@ -36,11 +34,12 @@ extension SampleItemDetailsViewScreenGiven on WidgetTestGiven<_WidgetTestHarness
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
+          myCupertinoThemeData: cupertinoThemeData,
           
           
         ),
@@ -56,11 +55,12 @@ extension SampleItemDetailsAppBarTitleThen on WidgetTestThen<_WidgetTestHarness>
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
+          myCupertinoThemeData: cupertinoThemeData,
           
           
         ),
@@ -77,11 +77,12 @@ extension SampleItemDetailsTextThen
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
+          myCupertinoThemeData: cupertinoThemeData,
           
           
         ),
@@ -90,6 +91,6 @@ extension SampleItemDetailsTextThen
     final app = MyAppPageObject();
     // Gist: If I put a Key with PlatformText actual result is two widgets with that ke,
     //       i.e. both PlatformText and Text Widget.
-    expect(app.sampleDetailsScreen.textDetail, findsNWidgets(2),);
+    expect(app.sampleDetailsScreen.textDetail, findsOneWidget,);
   }
 }

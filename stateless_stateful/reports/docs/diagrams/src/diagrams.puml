@@ -1,0 +1,98 @@
+@startuml
+set namespaceSeparator ::
+
+class "stateless_stateful::src::infrastructure::app_logging.dart::MyDevLogRecordFormatter" {
+  +StringBuffer formatToStringBuffer()
+}
+
+"logging_appenders::src::logrecord_formatter.dart::LogRecordFormatter" <|-- "stateless_stateful::src::infrastructure::app_logging.dart::MyDevLogRecordFormatter"
+
+class "stateless_stateful::src::infrastructure::app_logging.dart::MyReleaseLogRecordFormatter" {
+  +StringBuffer formatToStringBuffer()
+}
+
+"logging_appenders::src::logrecord_formatter.dart::LogRecordFormatter" <|-- "stateless_stateful::src::infrastructure::app_logging.dart::MyReleaseLogRecordFormatter"
+
+class "stateless_stateful::src::infrastructure::app_logging.dart::MyDevLogAppender" {
+  +void Function(Object)? printer
+  +MyDevLogAppender setupLogging()
+  +void handle()
+}
+
+"stateless_stateful::src::infrastructure::app_logging.dart::MyDevLogAppender" o-- "null::void Function(Object)"
+"logging_appenders::src::base_appender.dart::BaseLogAppender" <|-- "stateless_stateful::src::infrastructure::app_logging.dart::MyDevLogAppender"
+
+class "stateless_stateful::src::infrastructure::app_logging.dart::MyReleaseLogAppender" {
+  +void Function(Object)? printer
+  +MyReleaseLogAppender setupLogging()
+  +void handle()
+}
+
+"stateless_stateful::src::infrastructure::app_logging.dart::MyReleaseLogAppender" o-- "null::void Function(Object)"
+"logging_appenders::src::base_appender.dart::BaseLogAppender" <|-- "stateless_stateful::src::infrastructure::app_logging.dart::MyReleaseLogAppender"
+
+class "stateless_stateful::src::myapp.dart::MyApp" {
+  +Widget build()
+}
+
+"flutter::src::widgets::framework.dart::StatelessWidget" <|-- "stateless_stateful::src::myapp.dart::MyApp"
+
+class "stateless_stateful::src::presentation::features::home::ui::myhomepage.dart::MyHomePage" {
+  +String title
+  +State<MyHomePage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "stateless_stateful::src::presentation::features::home::ui::myhomepage.dart::MyHomePage"
+
+class "stateless_stateful::src::presentation::features::home::ui::myhomepage.dart::_MyHomePageState" {
+  -int _counter
+  +void onLifecycleEvent()
+  +Widget build()
+  -void _incrementCounter()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "stateless_stateful::src::presentation::features::home::ui::myhomepage.dart::_MyHomePageState"
+"lifecycle::src::lifecycle_aware.dart::LifecycleAware" <|-- "stateless_stateful::src::presentation::features::home::ui::myhomepage.dart::_MyHomePageState"
+"lifecycle::src::lifecycle_mixin.dart::LifecycleMixin" <|-- "stateless_stateful::src::presentation::features::home::ui::myhomepage.dart::_MyHomePageState"
+
+class "stateless_stateful::src::presentation::features::home::ui::my_homepage.dart::MyHomePage" {
+  +String title
+  +State<MyHomePage> createState()
+}
+
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "stateless_stateful::src::presentation::features::home::ui::my_homepage.dart::MyHomePage"
+
+class "stateless_stateful::src::presentation::features::home::ui::my_homepage.dart::_MyHomePageState" {
+  -int _counter
+  +Widget build()
+  -void _incrementCounter()
+}
+
+"flutter::src::widgets::framework.dart::State" <|-- "stateless_stateful::src::presentation::features::home::ui::my_homepage.dart::_MyHomePageState"
+
+class "stateless_stateful::src::presentation::features::home::ui::overlaty_log.dart::LogEntry" {
+  {static} -OverlayEntry? _logEntry
+  +LogEntryState createState()
+  {static} +void init()
+}
+
+"stateless_stateful::src::presentation::features::home::ui::overlaty_log.dart::LogEntry" o-- "flutter::src::widgets::overlay.dart::OverlayEntry"
+"flutter::src::widgets::framework.dart::StatefulWidget" <|-- "stateless_stateful::src::presentation::features::home::ui::overlaty_log.dart::LogEntry"
+
+class "stateless_stateful::src::presentation::features::home::ui::overlaty_log.dart::LogEntryState" {
+  -ScrollController _controller
+  +void initState()
+  +void dispose()
+  +void add()
+  +Widget build()
+}
+
+"stateless_stateful::src::presentation::features::home::ui::overlaty_log.dart::LogEntryState" o-- "flutter::src::widgets::scroll_controller.dart::ScrollController"
+"flutter::src::widgets::framework.dart::State" <|-- "stateless_stateful::src::presentation::features::home::ui::overlaty_log.dart::LogEntryState"
+
+class "stateless_stateful::src::presentation::features::home::ui::overlaty_log.dart::LogManager" {
+  +void add()
+}
+
+
+@enduml

@@ -15,22 +15,26 @@ class SettingsView extends StatelessWidget {
 
   static String title = 'Settings';
 
-  static Key titleKey = const Key('SettingsView.title');
+  static Key appBarKey = const Key('AppBarKey');
+
+  static Key navButtonToHome = const Key('NavButtonToHome');
+
+  static Key ourThemeModeDropDownMenuKey =
+      const Key('OurThemeModeDropDownMenuKey');
+
+  static Key titleKey = const Key('SettingsViewTitleKey');
 
   static String dropMenuSystemThemeTitle = 'System Theme';
 
-  static Key dropMenuSystemThemeTitleKey =
-      const Key('SettingsView.dropMenuSystemThemeTitle');
+  static Key dropDownSystemKey = ValueKey<String>('$ThemeMode.system');
+
+  static Key dropDownLightKey = ValueKey<String>('$ThemeMode.light');
+
+  static Key dropDownDarkKey = ValueKey<String>('$ThemeMode.dark');
 
   static String dropMenuLightThemeTitle = 'Light Theme';
 
-  static Key dropMenuLightThemeTitleKey =
-      const Key('SettingsView.dropMenuLightThemeTitle');
-
   static String dropMenuDarkThemeTitle = 'Dark Theme';
-
-  static Key dropMenuDarkThemeTitleKey =
-      const Key('SettingsView.dropMenuDarkThemeTitle');
 
   const SettingsView({
     Key? key,
@@ -55,10 +59,12 @@ class SettingsView extends StatelessWidget {
         // Gist: To grab(find) during testing we have to set the widgetketys of each
         //       platform widget as it passes that widgetkety value onto the dynamically
         //       delivered Material or Cupertino widget
-        widgetKey: const Key("SettingsAppBar"),
+        
+        widgetKey: appBarKey,
         // PlatformIconButton
         // https://github.com/stryder-dev/flutter_platform_widgets/blob/master/lib/src/platform_icon_button.dart
         leading: PlatformIconButton(
+          widgetKey: navButtonToHome,
           onPressed: () {
             Navigator.restorablePushNamed(
               context,
@@ -110,10 +116,9 @@ class SettingsView extends StatelessWidget {
           // https://github.com/stryder-dev/flutter_platform_widgets/blob/master/lib/src/platform_text.dart
           title: PlatformText(
             title,
-            
             key: titleKey,
           ),
-         
+
           previousPageTitle: "Sample Items",
           brightness: Brightness.light,
         ),
@@ -130,28 +135,28 @@ class SettingsView extends StatelessWidget {
         // the parent assumes value of child when an item choice is
         // made by the user.
         child: DropdownButton<ThemeMode>(
-          key: const Key('OurThemeMode'),
+          key: ourThemeModeDropDownMenuKey,
           // Read the selected themeMode from the controller
           value: controller.themeMode,
           // Call the updateThemeMode method any time the user selects a theme.
           onChanged: controller.updateThemeMode,
           items: [
             DropdownMenuItem(
-              key: ValueKey<String>(ThemeMode.system.toString()),
+              key: dropDownSystemKey,
               value: ThemeMode.system,
               child: PlatformText(
                 dropMenuSystemThemeTitle,
               ),
             ),
             DropdownMenuItem(
-              key: ValueKey<String>(ThemeMode.light.toString()),
+              key: dropDownLightKey,
               value: ThemeMode.light,
               child: PlatformText(
                 dropMenuLightThemeTitle,
               ),
             ),
             DropdownMenuItem(
-              key: ValueKey<String>(ThemeMode.dark.toString()),
+              key: dropDownDarkKey,
               value: ThemeMode.dark,
               child: PlatformText(
                 dropMenuDarkThemeTitle,

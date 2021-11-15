@@ -10,11 +10,13 @@ import 'package:gtdd_twelve/src/infrastructure/app_vars.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_twelve/src/presentation/features/settings/ui/settingsview.dart';
+import 'package:gtdd_twelve/src/presentation/themes/cupertino_themedata.dart';
 import 'package:gtdd_twelve/src/presentation/themes/material_themedata.dart';
 
 
 
-import 'golden_base_rootwidgetwrapper.dart';
+
+import 'golden_base_widgetwrapper.dart';
 import 'golden_page_objects.dart';
 
 Future<void> Function(WidgetTester) appbarHarness(
@@ -35,13 +37,13 @@ extension SampleAppBarGiven on WidgetTestGiven<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
           
-          
+          myCupertinoThemeData: cupertinoThemeData,
         ),
       );
     });
@@ -60,12 +62,12 @@ extension DetailAppBarGiven on WidgetTestGiven<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
         ),
       );
     });
@@ -84,12 +86,12 @@ extension SettingsAppBarGiven on WidgetTestGiven<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
         ),
       );
     });
@@ -106,12 +108,12 @@ extension SampleAppBarThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
         ),
       );
     });
@@ -129,12 +131,12 @@ extension DetailAppBarThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemDetailsView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
         ),
       );
     });
@@ -153,12 +155,12 @@ extension SettingsAppBarThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         SettingsView(controller: settingsController),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
         ),
       );
     });

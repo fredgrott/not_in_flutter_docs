@@ -5,6 +5,9 @@
 import 'package:flutter/material.dart';
 import 'package:gtdd_twelve/src/presentation/themes/material_themedata.dart';
 
+// Gist: If we want Material Colors and Font Styles for Cupertino Widgets, this theme 
+//       is used in the CupertinoApp theme slot.
+
 MaterialBasedCupertinoThemeData materialBasedCupertinoThemeData =
     MaterialBasedCupertinoThemeData(
         materialTheme: materialLightMaterialThemeData,);

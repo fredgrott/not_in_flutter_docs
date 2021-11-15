@@ -5,7 +5,8 @@
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:gtdd_twelve/src/infrastructure/app_vars.dart';
-import 'package:gtdd_twelve/src/myapp.dart';
+import 'package:gtdd_twelve/src/my_app.dart';
+
 
 
 

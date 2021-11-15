@@ -8,13 +8,15 @@ import 'package:given_when_then/given_when_then.dart';
 import 'package:golden_toolkit/src/testing_tools.dart';
 import 'package:gtdd_twelve/src/infrastructure/app_vars.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_listview.dart';
+import 'package:gtdd_twelve/src/presentation/themes/cupertino_themedata.dart';
 import 'package:gtdd_twelve/src/presentation/themes/material_themedata.dart';
 
 
 
 
 
-import 'golden_base_rootwidgetwrapper.dart';
+
+import 'golden_base_widgetwrapper.dart';
 import 'golden_page_objects.dart';
 
 
@@ -37,11 +39,12 @@ extension SampleScreenGiven on WidgetTestGiven<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
+          myCupertinoThemeData: cupertinoThemeData,
           
           
         ),
@@ -57,12 +60,12 @@ extension SampleScreenListViewWhen on WidgetTestWhen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
           
         ),
       );
@@ -77,12 +80,12 @@ extension SampleScreenListTileThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
           
         ),
       );
@@ -97,12 +100,12 @@ extension SampleScreenListTileOneThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
           
         ),
       );
@@ -121,12 +124,12 @@ extension SampleScreenListTileTwoThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
           
         ),
       );
@@ -145,12 +148,12 @@ extension SampleScreenListTileThreeThen on WidgetTestThen<_WidgetTestHarness> {
     await tester.runAsync<dynamic>(() async {
       await tester.pumpWidgetBuilder(
         const SampleItemListView(),
-        wrapper: goldenBaseFullFWPRootWidgetWrapper(
+        wrapper: goldenBaseWidgetWrapper(
           theme: materialLightMaterialThemeData,
           darkTheme: materialDarkMaterialThemeData,
           // ignore: cast_nullable_to_non_nullable
           myThemeMode: settingsController.themeMode as ThemeMode,
-          
+          myCupertinoThemeData: cupertinoThemeData,
           
         ),
       );

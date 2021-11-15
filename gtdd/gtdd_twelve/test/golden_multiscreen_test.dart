@@ -9,14 +9,10 @@ import 'package:gtdd_twelve/src/infrastructure/app_vars.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_twelve/src/presentation/features/settings/ui/settingsview.dart';
+import 'package:gtdd_twelve/src/presentation/themes/cupertino_themedata.dart';
 import 'package:gtdd_twelve/src/presentation/themes/material_themedata.dart';
 
-
-import 'golden_base_rootwidgetwrapper.dart';
-
-
-
-
+import 'golden_base_widgetwrapper.dart';
 
 void main() {
   setUpAll(() async {
@@ -40,28 +36,215 @@ void main() {
   group(
     'Golden Tests MultiScreen',
     () {
+      Future<void> _givenSampleItemListViewScreenMaterialLigt(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          const SampleItemListView(),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.windows,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: settingsController.themeMode as ThemeMode,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSampleItemListViewSceenMaterialDark(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          const SampleItemListView(),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.windows,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.dark,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSampleItemListViewScreenCupertinoLight(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          const SampleItemListView(),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.macOS,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.light,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSampleItemListViewScreenCupertinoDark(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          const SampleItemListView(),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.macOS,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.dark,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSampleItemDetailsViewScreenMaterialLight(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          const SampleItemDetailsView(),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.windows,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.light,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSampleItemDetailsViewScreenCupertinoLight(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          const SampleItemDetailsView(),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.macOS,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.light,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSampleItemDetailsViewMaterialDark(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          const SampleItemDetailsView(),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.windows,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.dark,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSampleItemDetailsViewScreenCupertinoDark(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          const SampleItemDetailsView(),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.macOS,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.dark,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSettingsViewScreenMaterialLight(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          SettingsView(
+            controller: settingsController,
+          ),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.windows,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.light,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSettingsViewScreenCupertinoLight(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          SettingsView(
+            controller: settingsController,
+          ),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.macOS,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.light,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSettingsViewScreenMaterialDark(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          SettingsView(
+            controller: settingsController,
+          ),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.windows,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.dark,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
+
+      Future<void> _givenSettingsViewScreenCupertinoDark(
+        WidgetTester tester,
+      ) async {
+        await tester.pumpWidgetBuilder(
+          SettingsView(
+            controller: settingsController,
+          ),
+          wrapper: goldenBaseWidgetWrapper(
+            platform: TargetPlatform.macOS,
+            theme: materialLightMaterialThemeData,
+            darkTheme: materialDarkMaterialThemeData,
+            // ignore: cast_nullable_to_non_nullable
+            myThemeMode: ThemeMode.dark,
+            myCupertinoThemeData: cupertinoThemeData,
+          ),
+        );
+      }
 
       testGoldens(
         'Home Screen - Responsive Material Light',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              const SampleItemListView(),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.windows,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: settingsController.themeMode as ThemeMode,
-                
-              ),
-            );
+            await _givenSampleItemListViewScreenMaterialLigt(tester);
           });
           await multiScreenGolden(
-            
             tester,
             'home_screen_responsive_material_light',
-             
           );
         },
       );
@@ -70,17 +253,7 @@ void main() {
         'Home Screen - Responsive Cupertino Light',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              const SampleItemListView(),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.macOS,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.light,
-                
-              ),
-            );
+            await _givenSampleItemListViewScreenCupertinoLight(tester);
           });
           await multiScreenGolden(
             tester,
@@ -93,17 +266,7 @@ void main() {
         'Home Screen - Responsive Material Dark',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              const SampleItemListView(),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.windows,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.dark,
-                
-              ),
-            );
+            await _givenSampleItemListViewSceenMaterialDark(tester);
           });
           await multiScreenGolden(
             tester,
@@ -116,17 +279,7 @@ void main() {
         'Home Screen - Responsive Cupertino Dark',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              const SampleItemListView(),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.macOS,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.dark,
-                
-              ),
-            );
+            await _givenSampleItemListViewScreenCupertinoDark(tester);
           });
           await multiScreenGolden(
             tester,
@@ -135,27 +288,11 @@ void main() {
         },
       );
 
-
-
-
-
-      
-
       testGoldens(
         'Detail Screen- Responsive Material Light',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              const SampleItemDetailsView(),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.windows,
-               theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.light,
-                
-              ),
-            );
+            await _givenSampleItemDetailsViewScreenMaterialLight(tester);
           });
           await multiScreenGolden(
             tester,
@@ -168,17 +305,7 @@ void main() {
         'Detail Screen- Responsive Cupertino Light',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              const SampleItemDetailsView(),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.macOS,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.light,
-                
-              ),
-            );
+            await _givenSampleItemDetailsViewScreenCupertinoLight(tester);
           });
           await multiScreenGolden(
             tester,
@@ -191,17 +318,7 @@ void main() {
         'Detail Screen- Responsive Material Dark',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              const SampleItemDetailsView(),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.windows,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.dark,
-                
-              ),
-            );
+            await _givenSampleItemDetailsViewMaterialDark(tester);
           });
           await multiScreenGolden(
             tester,
@@ -214,17 +331,7 @@ void main() {
         'Detail Screen- Responsive Cupertino Dark',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              const SampleItemDetailsView(),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.macOS,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.dark,
-                
-              ),
-            );
+            await _givenSampleItemDetailsViewScreenCupertinoDark(tester);
           });
           await multiScreenGolden(
             tester,
@@ -234,45 +341,23 @@ void main() {
       );
 
       testGoldens(
-          'Settings Screen - Responsive Material Light', 
-          (WidgetTester tester) async {
-            await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              SettingsView(controller: settingsController,),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.windows,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.light,
-                
-              ),
-            );
+        'Settings Screen - Responsive Material Light',
+        (WidgetTester tester) async {
+          await tester.runAsync<dynamic>(() async {
+            await _givenSettingsViewScreenMaterialLight(tester);
           });
           await multiScreenGolden(
             tester,
             'settings_screen_responsive_material_light',
           );
+        },
+      );
 
-          },);
-
-        testGoldens(
+      testGoldens(
         'Settings Screen - Responsive Cupertino Light',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              SettingsView(
-                controller: settingsController,
-              ),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.macOS,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.light,
-               
-              ),
-            );
+            await _givenSettingsViewScreenCupertinoLight(tester);
           });
           await multiScreenGolden(
             tester,
@@ -285,19 +370,7 @@ void main() {
         'Settings Screen - Responsive Material Dark',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              SettingsView(
-                controller: settingsController,
-              ),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.windows,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.dark,
-                
-              ),
-            );
+            await _givenSettingsViewScreenMaterialDark(tester);
           });
           await multiScreenGolden(
             tester,
@@ -310,19 +383,7 @@ void main() {
         'Settings Screen - Responsive Cupertino Dark',
         (WidgetTester tester) async {
           await tester.runAsync<dynamic>(() async {
-            await tester.pumpWidgetBuilder(
-              SettingsView(
-                controller: settingsController,
-              ),
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
-                platform: TargetPlatform.macOS,
-                theme: materialLightMaterialThemeData,
-                darkTheme: materialDarkMaterialThemeData,
-                // ignore: cast_nullable_to_non_nullable
-                myThemeMode: ThemeMode.dark,
-                
-              ),
-            );
+            await _givenSettingsViewScreenCupertinoDark(tester);
           });
           await multiScreenGolden(
             tester,
@@ -330,8 +391,6 @@ void main() {
           );
         },
       );
-
-
     },
   );
 }

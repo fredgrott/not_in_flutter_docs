@@ -9,11 +9,13 @@ import 'package:gtdd_twelve/src/infrastructure/app_vars.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_detailsview.dart';
 import 'package:gtdd_twelve/src/presentation/features/home/ui/sampleitem_listview.dart';
 import 'package:gtdd_twelve/src/presentation/features/settings/ui/settingsview.dart';
+import 'package:gtdd_twelve/src/presentation/themes/cupertino_themedata.dart';
 import 'package:gtdd_twelve/src/presentation/themes/material_themedata.dart';
 
 
 
-import 'golden_base_rootwidgetwrapper.dart';
+
+import 'golden_base_widgetwrapper.dart';
 import 'golden_device_definitions.dart';
 
 void main() {
@@ -62,13 +64,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
+                myCupertinoThemeData: cupertinoThemeData,
                 
               ),
             );
@@ -105,13 +108,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
+                myCupertinoThemeData: cupertinoThemeData,
                 
               ),
             );
@@ -148,14 +152,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                
+                myCupertinoThemeData: cupertinoThemeData,
               ),
             );
             await tester.pumpAndSettle();
@@ -191,14 +195,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                
+                myCupertinoThemeData: cupertinoThemeData,
               ),
             );
             await tester.pumpAndSettle();
@@ -235,14 +239,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                
+                myCupertinoThemeData: cupertinoThemeData,
               ),
             );
             await tester.pumpAndSettle();
@@ -278,14 +282,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                
+                myCupertinoThemeData: cupertinoThemeData,
               ),
             );
             await tester.pumpAndSettle();
@@ -321,14 +325,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                
+                myCupertinoThemeData: cupertinoThemeData,
               ),
             );
             await tester.pumpAndSettle();
@@ -364,14 +368,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                
+                myCupertinoThemeData: cupertinoThemeData,
               ),
             );
             await tester.pumpAndSettle();
@@ -435,14 +439,14 @@ void main() {
             await tester.runAsync<dynamic>(() async {
               await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                
+                myCupertinoThemeData: cupertinoThemeData,
 
               ),
             );
@@ -478,14 +482,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.light,
-                
+                myCupertinoThemeData: cupertinoThemeData,
               ),
             );
             await tester.pumpAndSettle();
@@ -521,14 +525,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.android,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                
+                myCupertinoThemeData: cupertinoThemeData,
               ),
             );
             await tester.pumpAndSettle();
@@ -564,14 +568,14 @@ void main() {
           await tester.runAsync<dynamic>(() async {
             await tester.pumpDeviceBuilder(
               builder,
-              wrapper: goldenBaseFullFWPRootWidgetWrapper(
+              wrapper: goldenBaseWidgetWrapper(
                 // ignore: avoid_redundant_argument_values
                 platform: TargetPlatform.iOS,
                 theme: materialLightMaterialThemeData,
                 darkTheme: materialDarkMaterialThemeData,
                 // ignore: cast_nullable_to_non_nullable
                 myThemeMode: ThemeMode.dark,
-                
+                myCupertinoThemeData: cupertinoThemeData,
               ),
             );
             await tester.pumpAndSettle();
