@@ -1,13 +1,29 @@
+// Copyright 2021 Fredrick Allan Grott. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:gtdd_thirteen/src/infrastructure/app_logging.dart';
+import 'package:gtdd_thirteen/src/infrastructure/app_vars.dart';
+import 'package:gtdd_thirteen/src/my_app.dart';
 
-import 'src/app.dart';
-import 'src/settings/settings_controller.dart';
-import 'src/settings/settings_service.dart';
+// Gist: This is a modification of the Flutter Skeleton App as it
+//       lack some key steaks and potatoes best practices of
+//       Flutter App Development and Design.
 
-void main() async {
-  // Set up the SettingsController, which will glue user settings to multiple
-  // Flutter Widgets.
-  final settingsController = SettingsController(SettingsService());
+Future<void> main() async {
+  initLogger();
+
+  // to get license as needed when you use custom fonts
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('google_fonts/OFL.txt');
+    yield LicenseEntryWithLineBreaks(
+      ['google_fonts'],
+      license,
+    );
+  });
 
   // Load the user's preferred theme while the splash screen is displayed.
   // This prevents a sudden theme change when the app is first displayed.
@@ -16,5 +32,9 @@ void main() async {
   // Run the app and pass in the SettingsController. The app listens to the
   // SettingsController for changes, then passes it further down to the
   // SettingsView.
-  runApp(MyApp(settingsController: settingsController));
+  runApp(
+    MyApp(
+      settingsController: settingsController,
+    ),
+  );
 }

@@ -1,0 +1,96 @@
+# Uses the derry cmd line and package to semi-automate 
+# flutter project workflows, see:
+# https://pub.dev/packages/derry/install
+
+# cmd-line is: derry build
+build:
+  - flutter pub run build_runner build
+
+# cmd-line is: derry flutterdeps
+flutterdeps:
+  - flutter pub global run pubviz --format=dot print > reports/flutterdeps/output.dot
+
+# cmd-line is: derry analyze
+analyze:
+  - flutter analyze > reports\analyze_report.txt
+
+# note that on MS windows you have to 
+# hack the analysis exclude for gen code for it to work
+# ie use \ path separators
+#
+# cmd-line is: derry uml platName
+uml:
+  win64:
+    - dcdg -o reports\docs\diagrams\src\diagrams.puml
+    - java -jar D:\myOpt\plantuml\plantuml.jar reports\docs\diagrams\src\diagrams.puml -o reports\diagrams\out\diagrapms.png -config reports\docs\diagrams\style\myplantstylesheet.iuml
+    - echo uml png generated
+mac64:
+    - dcdg -o reports/docs/diagrams/src/diagrams.puml
+    - java -jar D:/myOpt/plantuml/plantuml.jar reports/docs/diagrams/src/diagrams.puml -o reports/diagrams/out/diagrapms.png -config reports/docs/diagrams/style/myplantstylesheet.iuml
+    - echo uml png generated
+linux64:
+    - dcdg -o reports/docs/diagrams/src/diagrams.puml
+    - java -jar D:/myOpt/plantuml/plantuml.jar reports/docs/diagrams/src/diagrams.puml -o reports/diagrams/out/diagrapms.png -config reports/docs/diagrams/style/myplantstylesheet.iuml
+    - echo uml png generated
+
+
+#  cmd-line is: derry mymetrics platformName
+mymetics:
+  win64:
+    - metrics lib --reporter=html --output-directory=reports\metrics
+    - echo code metrics report generated
+  mac64:    
+    - metrics lib --reporter=html --output-directory=reports/metrics
+    - echo code metrics report generated
+  linux64:
+    - metrics lib --reporter=html --output-directory=reports/metrics
+    - echo code metrics report generated
+
+# cmd-lind is: derry mygoldens platName
+mygoldens:
+  win64:
+    - flutter test --update-goldens --machine | tojunit -o reports\test\test.xml
+    - junit2html reports\test\test.xml reports\test\test.html
+    - echo goldens report generated
+  mac64:
+    - flutter test --update-goldens --machine | tojunit -o reports/test/test.xml
+    - junit2html reports/test/test.xml reports/test/test.html
+    - echo goldens report generated
+  linux64:
+    - flutter test --update-goldens --machine | tojunit -o reports/test/test.xml
+    - junit2html reports/test/test.xml reports/test/test.html
+    - echo goldens report generated
+
+# cmd-line is: derry test platName
+test:
+  win64:
+    - flutter test --machine | tojunit -o reports\test\test.xml
+    - junit2html reports\test\test.xml reports\test\test.html
+    - echo widget tests reports created
+  mac64:
+    - flutter test --machine | tojunit -o reports/test/test.xml
+    - junit2html reports/test/test.xml reports/test/test.html
+    - echo widget tests reports created
+  linux64:
+    - flutter test --machine | tojunit -o reports/test/test.xml
+    - junit2html reports/test/test.xml reports/test/test.html
+    - echo widget tests reports created
+
+# cmd-line is: derry mycoverage platName
+mycoverage:
+  win64:
+    - flutter test --coverage --coverage-path reports\coverage\lcov.info
+    - perl C:\ProgramData\chocolatey\lib\lcov\tools\bin\genhtml reports\coverage\lcov.info -o reports\coverage\html
+    - echo coverage report generated
+  mac64:
+    - flutter test --coverage --coverage-path reports/coverage/lcov.info
+    - $GENHTML coverage/lcov.info -o reports/coverage/html
+    - echo coverage report generated
+  linux64:
+    - flutter test --coverage --coverage-path reports/coverage/lcov.info
+    - $GENTHML coverage/lcov.info -o reports/coverage/html
+    - echo coverage report generated
+
+# cmd-line is: derry mydocs
+mydocs:
+  - dartdoc --output reports/docs/api
