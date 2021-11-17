@@ -4,7 +4,6 @@
 
 // ignore_for_file: unnecessary_parenthesis
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
@@ -16,12 +15,13 @@ import 'package:gtdd_thirteen/src/presentation/themes/cupertino_themedata.dart';
 import 'package:gtdd_thirteen/src/presentation/themes/material_themedata.dart';
 import 'package:mocktail/mocktail.dart';
 
-
 import 'golden_base_widgetwrapper.dart';
 import 'golden_navigation_matchers.dart';
 import 'golden_page_objects.dart';
 
 class MockNavigatorObserver extends Mock implements NavigatorObserver {}
+
+class MockRoute extends Mock implements Route<dynamic> {}
 
 // Can not use as Fake uses reflection which we do not have
 // on web or mobile
@@ -30,9 +30,12 @@ class MockNavigatorObserver extends Mock implements NavigatorObserver {}
 void main() {
   late NavigatorObserver mockNavigationObserver;
 
+  late Route<dynamic> mockRoute;
+
   setUpAll(() async {
+    mockRoute = MockRoute();
     // to mock Route<dynamic> using mocktail
-    registerFallbackValue(Route<dynamic>);
+    registerFallbackValue(mockRoute);
     // This Flutter Engine is running binding turns off
     // http and  https access which is why we use mocks
     // in goldens testing driven design.

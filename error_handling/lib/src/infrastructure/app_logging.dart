@@ -106,8 +106,13 @@ class MyReleaseLogRecordFormatter extends LogRecordFormatter {
 // Appenders
 
 class MyDevLogAppender extends BaseLogAppender {
+  void Function(Object line)? printer;
+
+
   MyDevLogAppender({LogRecordFormatter? formatter})
       : super(formatter ?? defaultLogRecordFormatter());
+
+  
 
   MyDevLogAppender setupLogging({
     Level level = Level.ALL,
@@ -120,7 +125,7 @@ class MyDevLogAppender extends BaseLogAppender {
       ..attachToLogger(Logger.root);
   }
 
-  void Function(Object line)? printer;
+  
 
   @override
   void handle(LogRecord record) {
@@ -135,6 +140,8 @@ MyDevLogAppender defaultLogAppender({
     MyDevLogAppender(formatter: formatter);
 
 class MyReleaseLogAppender extends BaseLogAppender {
+  void Function(Object line)? printer;
+
   MyReleaseLogAppender({LogRecordFormatter? formatter})
       : super(formatter ?? defaultReleaseLogRecordFormatter());
 
@@ -149,7 +156,7 @@ class MyReleaseLogAppender extends BaseLogAppender {
       ..attachToLogger(Logger.root);
   }
 
-  void Function(Object line)? printer;
+  
 
   @override
   void handle(LogRecord record) {
