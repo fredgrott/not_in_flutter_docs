@@ -1,0 +1,74 @@
+name: getit_fullmetal
+description: A new Flutter project.
+
+# Prevent accidental publishing to pub.dev.
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.15.0-178.1.beta <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  # localization helper
+  intl: ^0.17.0
+  # localization automation
+  intl_utils: ^2.4.0
+  # custom fonts
+  equatable: ^2.0.3
+  dartz: ^0.10.0
+  flutter_platform_widgets: ^1.10.0
+  lifecycle: ^0.4.1
+  logging: ^1.0.2
+  logging_appenders: ^1.0.0
+  get_it: ^7.2.0
+  get_it_mixin: ^3.1.3
+  get_storage: ^2.0.3
+  meta: ^1.7.0
+  flutter_secure_storage: ^5.0.2
+  rxdart: ^0.27.2
+  shared_preferences: ^2.0.8
+  
+  google_fonts: ^2.1.0
+  
+
+
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  # workflow automation
+  build_runner: ^2.1.4
+  # code metrics
+  dart_code_metrics: ^4.5.0
+  
+
+  flutter_lints: ^1.0.0
+
+flutter:
+  uses-material-design: true
+
+  # Enable generation of localized Strings from arb files.
+  generate: true
+
+  assets:
+    # Add assets from the images directory to the application.
+    - assets/images/
+    - images/
+    - google_fonts/
+# flutter intl for localization settings
+flutter_intl:
+  enabled: true   
+  class_name: S   
+  main_locale: en 
+  arb_dir: lib/src/localization
+  output_dir: lib/src/localization_gen
+  use_deferred_loading: false

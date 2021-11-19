@@ -1,0 +1,48 @@
+Since project workflow semi-automation not set up yet this the cmdline stuff you need to 
+execute for project code feedback. For those that follow me on medium, the deps I am using are:
+dart binaries are
+dcdg
+analyzer_formatter
+pubviz
+junitreport
+
+
+other
+plantUML and java
+Lcov and Perl
+Graphviz
+junit2html and python
+
+# to generate code for bdd-widegt-test, built_value etc when creating code changes
+flutter packages pub run build_runner watch --delete-conflicting-outputs
+
+
+flutter pub global run pubviz --format=dot print > reports/flutterdeps/output.dot
+
+flutter pub global run dcdg -o reports\docs\diagrams\src\diagrams.puml
+
+
+flutter 
+
+
+flutter pub run dart_code_metrics:metrics lib --reporter=html --output-directory=reports\metrics
+
+flutter test --update-goldens  
+
+
+flutter test --machine | tojunit -o reports\test\test.xml
+  junit2html reports\test\test.xml reports\test\test.html
+
+flutter test --coverage --coverage-path reports\coverage\lcov.info
+perl C:\ProgramData\chocolatey\lib\lcov\tools\bin\genhtml reports\coverage\lcov.info -o reports\coverage\html
+
+flutter analyze > reports\analyze_report.txt
+
+
+dartdoc --output reports/docs/api
+dhttpd --path reports/docs/api
+
+flutter pub run intl_utils:generate
+
+
+flutter pub run flutter_native_splash:create
